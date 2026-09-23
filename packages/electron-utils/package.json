@@ -13,7 +13,9 @@
     "./remote-image": "./src/remote-image.ts",
     "./renderer-protocol": "./src/renderer-protocol.ts",
     "./renderer-scheme": "./src/renderer-scheme.ts",
-    "./safe-remote-url": "./src/safe-remote-url.ts"
+    "./safe-remote-url": "./src/safe-remote-url.ts",
+    "./watchdog": "./src/watchdog.ts",
+    "./renderer-watchdog": "./src/renderer-watchdog.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit",

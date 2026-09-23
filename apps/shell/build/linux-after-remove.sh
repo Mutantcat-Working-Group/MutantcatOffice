@@ -7,7 +7,7 @@ case "$1" in
   0|remove|purge) ;;
   *) exit 0 ;;
 esac
-if [ -L /usr/bin/genoffice ] && [ "$(readlink /usr/bin/genoffice)" = "/opt/GenOffice/resources/cli/genoffice" ]; then
+if [ -L /usr/bin/genoffice ] && [ "$(readlink /usr/bin/genoffice)" = "/opt/MutantcatOffice/resources/cli/genoffice" ]; then
   rm -f /usr/bin/genoffice
 fi
 exit 0

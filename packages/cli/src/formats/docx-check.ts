@@ -151,7 +151,7 @@ function checkFields(
         'field_not_evaluated',
         'warning',
         blank[0]!,
-        `table of contents: ${blank.length} of ${toc.length} entries have no page number; Word computes them on open, or open and save in GenOffice`,
+        `table of contents: ${blank.length} of ${toc.length} entries have no page number; Word computes them on open, or open and save in MutantcatOffice`,
       ),
     )
   }

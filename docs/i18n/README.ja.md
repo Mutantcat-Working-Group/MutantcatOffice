@@ -2,12 +2,12 @@
   <a href="https://genoffice.ai/">
     <picture>
       <source srcset="../assets/readme/hero-dark.webp" media="(prefers-color-scheme: dark)">
-      <img src="../assets/readme/hero.webp" alt="GenOffice — オープンソースの AI オフィススイート：Docs、Sheets、Slides、PDF、Markdown、HTML と内蔵 AI パネル" width="100%">
+      <img src="../assets/readme/hero.webp" alt="MutantcatOffice — オープンソースの AI オフィススイート：Docs、Sheets、Slides、PDF、Markdown、HTML と内蔵 AI パネル" width="100%">
     </picture>
   </a>
 </p>
 
-<h1 align="center">GenOffice</h1>
+<h1 align="center">MutantcatOffice</h1>
 
 <p align="center"><b>世界初のフル機能を備えたオープンソース AI オフィススイート。</b><br>
 Word、Excel、PowerPoint、PDF ファイルを、あなたとあなたの AI が編集し、実際のファイル形式のまま保存します。</p>
@@ -30,7 +30,7 @@ Word、Excel、PowerPoint、PDF ファイルを、あなたとあなたの AI �
   <a href="../../PRIVACY.md"><b>プライバシー</b></a>
 </p>
 
-GenOffice は、macOS・Windows・Linux で動作する、Microsoft Office に代わる無料のオープンソース製品です。ネイティブの `.docx`・`.xlsx`・`.pptx` ファイルを開いて保存できるほか、PDF・Markdown・HTML の編集にも対応し、あらゆるドキュメントの隣に AI エージェントを配置します。取って付けたようなチャットボックスではなく、ファイルを読み込み、変更を加え、何をどう変更したかを正確に示してくれるエディタです。
+MutantcatOffice は、macOS・Windows・Linux で動作する、Microsoft Office に代わる無料のオープンソース製品です。ネイティブの `.docx`・`.xlsx`・`.pptx` ファイルを開いて保存できるほか、PDF・Markdown・HTML の編集にも対応し、あらゆるドキュメントの隣に AI エージェントを配置します。取って付けたようなチャットボックスではなく、ファイルを読み込み、変更を加え、何をどう変更したかを正確に示してくれるエディタです。
 
 - **実際のファイル形式、バイト単位で保持。** 編集した部分だけが書き換えられます。それ以外の部分はファイル内でバイト単位そのまま保持されるため、ドキュメントは Word・Excel・PowerPoint でも問題なく動作し続けます。
 - **レビューできる AI。** 編集内容は変更履歴と差分として反映され、ワンクリックで元に戻せます。スプレッドシートには貼り付けの数値ではなく、実際に機能する数式が入ります。デッキやページはキャンバス上に生成され、そのまま自由に編集できます。
@@ -51,8 +51,8 @@ GenOffice は、macOS・Windows・Linux で動作する、Microsoft Office に�
 
 <table>
 <tr>
-<td width="50%"><img src="../assets/readme/docs-report.webp" alt="GenOffice Docs で、全幅の表紙画像、網掛けの KPI 表、ヘッダーとフッターを備えた 2 段組みの年次報告書ページを 80% ズームで表示している様子（AI パネルは折りたたみ）"></td>
-<td width="50%"><img src="../assets/readme/docs-ai.webp" alt="GenOffice Docs：バナー画像付きの会社概要ページ。AI が Overview を整えて新しい箇条書きセクションを挿入し、パネルにはワンクリックで元に戻せるボタンが表示されている"></td>
+<td width="50%"><img src="../assets/readme/docs-report.webp" alt="MutantcatOffice Docs で、全幅の表紙画像、網掛けの KPI 表、ヘッダーとフッターを備えた 2 段組みの年次報告書ページを 80% ズームで表示している様子（AI パネルは折りたたみ）"></td>
+<td width="50%"><img src="../assets/readme/docs-ai.webp" alt="MutantcatOffice Docs：バナー画像付きの会社概要ページ。AI が Overview を整えて新しい箇条書きセクションを挿入し、パネルにはワンクリックで元に戻せるボタンが表示されている"></td>
 </tr>
 <tr>
 <td><b>Word と同じレイアウトでファイルを開く</b> — 2 段組セクション、フチなし画像、網掛けの表、ヘッダーとフッター、Word の行メトリクスに基づくページ送りまで再現します。スタイル、コメント、変更履歴、数式、手書き（インク）もそのまま保持されます。</td>
@@ -64,8 +64,8 @@ GenOffice は、macOS・Windows・Linux で動作する、Microsoft Office に�
 
 <table>
 <tr>
-<td width="50%"><img src="../assets/readme/sheets-ai.webp" alt="GenOffice Sheets：AI が SUMIF 数式を使って地域・カテゴリ別売上をまとめた Summary シートと縦棒グラフを追加し、適用した 43 件の変更と元に戻すボタンを表示している"></td>
-<td width="50%"><img src="../assets/readme/sheets-qa.webp" alt="GenOffice Sheets：「Q2 の売上で最も高かった地域は？」という質問に対し、AI が Europe と回答し、カテゴリ別の内訳と、参照したセルへのリンクを Orders シートの隣に表示している"></td>
+<td width="50%"><img src="../assets/readme/sheets-ai.webp" alt="MutantcatOffice Sheets：AI が SUMIF 数式を使って地域・カテゴリ別売上をまとめた Summary シートと縦棒グラフを追加し、適用した 43 件の変更と元に戻すボタンを表示している"></td>
+<td width="50%"><img src="../assets/readme/sheets-qa.webp" alt="MutantcatOffice Sheets：「Q2 の売上で最も高かった地域は？」という質問に対し、AI が Europe と回答し、カテゴリ別の内訳と、参照したセルへのリンクを Orders シートの隣に表示している"></td>
 </tr>
 <tr>
 <td><b>作ってもらう</b> — 一文の指示だけで、エージェントが地域・カテゴリ別の本物の <code>SUMIF</code> 数式を使った Summary シートを追加し、縦棒グラフを挿入し、43 件の変更をひとまとめの取り消し可能な操作として適用します。</td>
@@ -75,15 +75,15 @@ GenOffice は、macOS・Windows・Linux で動作する、Microsoft Office に�
 
 ### 3 · Slides — 1 つのプロンプトから `.pptx` デッキへ
 
-<img src="../assets/readme/slides-generate.webp" alt="GenOffice Slides が Aurora Home の投資家向けデッキを生成するタイムラプス：AI がパネルでストーリーラインを設計し、スライドがキャンバス上に次々と現れ、完成したデッキは締めのアスクで終わる" width="100%">
+<img src="../assets/readme/slides-generate.webp" alt="MutantcatOffice Slides が Aurora Home の投資家向けデッキを生成するタイムラプス：AI がパネルでストーリーラインを設計し、スライドがキャンバス上に次々と現れ、完成したデッキは締めのアスクで終わる" width="100%">
 
 <table>
 <tr>
-<td width="50%"><img src="../assets/readme/slides-cover.webp" alt="GenOffice Slides：AI が生成した Aurora Home の投資家向けデッキの表紙スライドをキャンバス上に表示し、パネルには元の 1 行プロンプトと AI が作成した内容の要約が表示されている"></td>
-<td width="50%"><img src="../assets/readme/slides-ai.webp" alt="GenOffice Slides：同じ 11 枚構成のデッキのデザインされたクロージングスライド。左側にサムネイル一覧、AI パネルにストーリーラインの要約が表示されている"></td>
+<td width="50%"><img src="../assets/readme/slides-cover.webp" alt="MutantcatOffice Slides：AI が生成した Aurora Home の投資家向けデッキの表紙スライドをキャンバス上に表示し、パネルには元の 1 行プロンプトと AI が作成した内容の要約が表示されている"></td>
+<td width="50%"><img src="../assets/readme/slides-ai.webp" alt="MutantcatOffice Slides：同じ 11 枚構成のデッキのデザインされたクロージングスライド。左側にサムネイル一覧、AI パネルにストーリーラインの要約が表示されている"></td>
 </tr>
 <tr>
-<td><b>入力は 1 行だけ</b> — 「Aurora Home 向けの 10 枚構成の投資家向けピッチデッキを作って…」。GenOffice がストーリーラインを組み立て、数値をリサーチし、すべてのスライドを本物の <code>.pptx</code> としてキャンバスに描き出します。</td>
+<td><b>入力は 1 行だけ</b> — 「Aurora Home 向けの 10 枚構成の投資家向けピッチデッキを作って…」。MutantcatOffice がストーリーラインを組み立て、数値をリサーチし、すべてのスライドを本物の <code>.pptx</code> としてキャンバスに描き出します。</td>
 <td><b>完成したデッキが出てくる</b> — 統一されたタイポグラフィと画像、締めの Call to Action を備えた、デザイン済みの 11 枚のスライド。マスター、レイアウト、スマートガイド、非破壊トリミングでそのまま編集を続けることも、パネルにデザインの変更・文章の書き直し・順序の入れ替えを頼むこともできます。</td>
 </tr>
 </table>
@@ -92,8 +92,8 @@ GenOffice は、macOS・Windows・Linux で動作する、Microsoft Office に�
 
 <table>
 <tr>
-<td width="50%"><img src="../assets/readme/pdf-edit.webp" alt="GenOffice PDF：テキスト編集モードがページ内のすべてのテキストブロックを枠線で示し、その場での編集を可能にする一方、AI パネルはレポートについての質問にページ引用付きで回答している"></td>
-<td width="50%"><img src="../assets/readme/pdf-convert.webp" alt="GenOffice Docs が、Helios の四半期レビュー PDF からローカルで変換された Word 文書を、元の PDF の隣の 2 つ目のタブで開いている様子"></td>
+<td width="50%"><img src="../assets/readme/pdf-edit.webp" alt="MutantcatOffice PDF：テキスト編集モードがページ内のすべてのテキストブロックを枠線で示し、その場での編集を可能にする一方、AI パネルはレポートについての質問にページ引用付きで回答している"></td>
+<td width="50%"><img src="../assets/readme/pdf-convert.webp" alt="MutantcatOffice Docs が、Helios の四半期レビュー PDF からローカルで変換された Word 文書を、元の PDF の隣の 2 つ目のタブで開いている様子"></td>
 </tr>
 <tr>
 <td><b>ページの中で直接編集</b> — テキスト編集モードは各テキストブロックを枠線で示し、その場での打ち直しができます。上から隠す注釈ではなく、PDFium を通じてコンテンツストリーム自体を元のフォントのまま書き換えます。長いレポートについて AI に尋ねれば、ページ引用付きで回答が返ってきます。</td>
@@ -105,11 +105,11 @@ GenOffice は、macOS・Windows・Linux で動作する、Microsoft Office に�
 
 ページの目的と対象読者を伝えるだけです。AI はまず**デザインブリーフ**（フック、カラーパレット、タイポグラフィ、スタイルの方向性）を提案し、そのトークンに沿って単一の自己完結型 `.html` ファイルを組み立てます。
 
-<img src="../assets/readme/html-restyle-motion.webp" alt="GenOffice HTML が Lumen のランディングページを再デザインするタイムラプス：パネルでの1回の Restyle リクエストにより、ダークな Midnight Studio ページが暖色系の Solar Daybreak バージョンへと変わる一方、すべてのセクションと文言はそのまま保たれる" width="100%">
+<img src="../assets/readme/html-restyle-motion.webp" alt="MutantcatOffice HTML が Lumen のランディングページを再デザインするタイムラプス：パネルでの1回の Restyle リクエストにより、ダークな Midnight Studio ページが暖色系の Solar Daybreak バージョンへと変わる一方、すべてのセクションと文言はそのまま保たれる" width="100%">
 
 <table>
 <tr>
-<td width="50%"><img src="../assets/readme/html-ai.webp" alt="GenOffice HTML：ソーラーデスクランプ向けに生成された、ダークな Midnight Studio 方向性のランディングページをライブプレビューで表示し、AI パネルには作成したページの要約が表示されている"></td>
+<td width="50%"><img src="../assets/readme/html-ai.webp" alt="MutantcatOffice HTML：ソーラーデスクランプ向けに生成された、ダークな Midnight Studio 方向性のランディングページをライブプレビューで表示し、AI パネルには作成したページの要約が表示されている"></td>
 <td width="50%"><img src="../assets/readme/html-restyle.webp" alt="同じ Lumen のランディングページを AI が暖かみのある Solar Daybreak 方向性にリスタイルした様子：紙のような背景、セリフ体の見出し、オレンジのアクセントに変わりつつ、すべてのセクションと文章はそのまま保持されている"></td>
 </tr>
 <tr>
@@ -119,8 +119,8 @@ GenOffice は、macOS・Windows・Linux で動作する、Microsoft Office に�
 </table>
 <table>
 <tr>
-<td width="50%"><img src="../assets/readme/html-dashboard.webp" alt="GenOffice HTML：フリーランスデザイナー向けに生成された、暖かみのあるリネン調の個人ダッシュボード UI。左側のレール、セリフ体の挨拶文、4 つの指標カードを備えている"></td>
-<td width="50%"><img src="../assets/readme/html-report.webp" alt="GenOffice HTML：ブロードシート紙のスタイルで生成された EV 市場のデータレポート。セリフ体のマストヘッド、17.3 million という見出し数字、統計行を備えている"></td>
+<td width="50%"><img src="../assets/readme/html-dashboard.webp" alt="MutantcatOffice HTML：フリーランスデザイナー向けに生成された、暖かみのあるリネン調の個人ダッシュボード UI。左側のレール、セリフ体の挨拶文、4 つの指標カードを備えている"></td>
+<td width="50%"><img src="../assets/readme/html-report.webp" alt="MutantcatOffice HTML：ブロードシート紙のスタイルで生成された EV 市場のデータレポート。セリフ体のマストヘッド、17.3 million という見出し数字、統計行を備えている"></td>
 </tr>
 <tr>
 <td><b>UI モックアップ</b> — 「personal dashboard」のスターターは、ペルソナをそのまま動くレイアウトに変換します：左側のレール、挨拶文、課金可能時間のスパークライン、請求書と稼働率のカード。すべて開発者に渡せる本物の HTML です。</td>
@@ -132,8 +132,8 @@ GenOffice は、macOS・Windows・Linux で動作する、Microsoft Office に�
 
 <table>
 <tr>
-<td width="50%"><img src="../assets/readme/markdown-ai.webp" alt="GenOffice Markdown：選択した段落に Ask AI のポップオーバーが表示され、入力した指示と、Polish・Make more concise・Expand・Fix grammar といった提案チップ、さらに「今すぐ送信」と「キューに追加」のボタンが並んでいる"></td>
-<td width="50%"><img src="../assets/readme/markdown-render.webp" alt="GenOffice Markdown が、表・Mermaid フローチャート・タスクリストを含むローンチノート文書を表示し、左側には AI パネルのスタータープロンプトが並んでいる"></td>
+<td width="50%"><img src="../assets/readme/markdown-ai.webp" alt="MutantcatOffice Markdown：選択した段落に Ask AI のポップオーバーが表示され、入力した指示と、Polish・Make more concise・Expand・Fix grammar といった提案チップ、さらに「今すぐ送信」と「キューに追加」のボタンが並んでいる"></td>
+<td width="50%"><img src="../assets/readme/markdown-render.webp" alt="MutantcatOffice Markdown が、表・Mermaid フローチャート・タスクリストを含むローンチノート文書を表示し、左側には AI パネルのスタータープロンプトが並んでいる"></td>
 </tr>
 <tr>
 <td><b>選択範囲について Ask AI</b> — どの文章を選択しても <b>Ask AI</b> チップが表示されます。指示を入力するか提案を選び、その場で送信するか、複数の編集をキューに入れて一括で実行することもできます。同じ操作はどのアプリでも使えます。</td>
@@ -141,20 +141,20 @@ GenOffice は、macOS・Windows・Linux で動作する、Microsoft Office に�
 </tr>
 </table>
 
-### 7 · CLI — コーディングエージェントが、あなたのマシン上で GenOffice を操作
+### 7 · CLI — コーディングエージェントが、あなたのマシン上で MutantcatOffice を操作
 
-GenOffice には `genoffice` コマンドラインとエージェントスキルが同梱されています。スキルをインストールすれば、Claude Code、Codex、Cursor、Gemini CLI、GitHub Copilot、OpenCode、Windsurf が、アプリと同じエンジンを通じて本物の Office ファイルを作成・変換・読み取り・編集できます。ウィンドウを開く必要はありません。
+MutantcatOffice には `genoffice` コマンドラインとエージェントスキルが同梱されています。スキルをインストールすれば、Claude Code、Codex、Cursor、Gemini CLI、GitHub Copilot、OpenCode、Windsurf が、アプリと同じエンジンを通じて本物の Office ファイルを作成・変換・読み取り・編集できます。ウィンドウを開く必要はありません。
 
-<img src="../assets/readme/cli-deck-in-app.webp" alt="GenOffice Slides が、コーディングエージェントが genoffice コマンドラインで組み立てた 8 枚構成の太陽系デッキを表示している様子：キャンバスには表紙スライド、左側に 8 枚のサムネイル、AI パネルは開いた状態" width="100%">
+<img src="../assets/readme/cli-deck-in-app.webp" alt="MutantcatOffice Slides が、コーディングエージェントが genoffice コマンドラインで組み立てた 8 枚構成の太陽系デッキを表示している様子：キャンバスには表紙スライド、左側に 8 枚のサムネイル、AI パネルは開いた状態" width="100%">
 
 <table>
 <tr>
 <td width="50%"><img src="../assets/readme/cli-slides-grid.webp" alt="太陽系デッキのレンダリング済みスライド 8 枚を並べたもの：表紙、探査の年表、4 つの重要な数字、惑星の直径の棒グラフ、岩石惑星と巨大惑星の比較、太陽が 99.8% を占めるというヒーロー数字、4 つの巨大惑星のグリッド、まとめ"></td>
-<td width="50%"><img src="../assets/readme/cli-integrations.webp" alt="GenOffice の設定、連携ページ：genoffice スキルが Claude Code にインストール済みで、Codex と Cursor の横にはインストールボタンが表示されている"></td>
+<td width="50%"><img src="../assets/readme/cli-integrations.webp" alt="MutantcatOffice の設定、連携ページ：genoffice スキルが Claude Code にインストール済みで、Codex と Cursor の横にはインストールボタンが表示されている"></td>
 </tr>
 <tr>
 <td><b>エージェントへのプロンプトは 1 つ</b> — 「太陽系についての 8 枚構成のデッキを作って」。エージェントはスキルを読み、スタイルシート、アウトライン、スライドごとのページ仕様を書き、<code>genoffice image</code> で 2 枚の写真を生成し、<code>genoffice slides check</code> にはみ出しや重なりのある要素を弾かせてから、<code>genoffice create</code> で <code>.pptx</code> を組み立て、<code>slides render</code> でスライドごとの PNG を受け取って確認します。</td>
-<td><b>インストールは設定 → 連携から 1 回だけ</b> — GenOffice がこのコンピューター上で見つかったコーディングエージェントを一覧し、選んだそれぞれにスキルを書き込みます。スキルを zip としてダウンロードするか、<code>npx skills add genspark-ai/genoffice</code> を実行しても構いません。コマンドとワークフローの全体は <a href="#command-line-and-agent-skill">コマンドラインとエージェントスキル</a> にあります。</td>
+<td><b>インストールは設定 → 連携から 1 回だけ</b> — MutantcatOffice がこのコンピューター上で見つかったコーディングエージェントを一覧し、選んだそれぞれにスキルを書き込みます。スキルを zip としてダウンロードするか、<code>npx skills add genspark-ai/genoffice</code> を実行しても構いません。コマンドとワークフローの全体は <a href="#command-line-and-agent-skill">コマンドラインとエージェントスキル</a> にあります。</td>
 </tr>
 </table>
 
@@ -167,12 +167,12 @@ Desktop、Cursor、その他任意の MCP クライアントは、スキルの�
 もう 1 つの HTTP サーバーを使えば、エージェントが目に見えるエディタータブで
 Word ドキュメントを組み立てる様子を見守ることもできます。
 
-<img src="../assets/readme/mcp-deck-motion.webp" alt="Claude Code が genoffice MCP サーバー経由で 8 枚構成の再生可能エネルギー投資家向けブリーフィングデッキを組み立てるタイムラプス：search で図版と写真を探し、media で候補の写真を 1 枚ずつ確認し、deck_start がスタイルシートとアウトラインを書き込み、deck_page が検査済みのページを 1 枚ずつ追加し、deck_build が .pptx を組み立て、slides_render がスライドごとの画像を返す。完成したデッキはその後 GenOffice Slides で開かれる" width="100%">
+<img src="../assets/readme/mcp-deck-motion.webp" alt="Claude Code が genoffice MCP サーバー経由で 8 枚構成の再生可能エネルギー投資家向けブリーフィングデッキを組み立てるタイムラプス：search で図版と写真を探し、media で候補の写真を 1 枚ずつ確認し、deck_start がスタイルシートとアウトラインを書き込み、deck_page が検査済みのページを 1 枚ずつ追加し、deck_build が .pptx を組み立て、slides_render がスライドごとの画像を返す。完成したデッキはその後 MutantcatOffice Slides で開かれる" width="100%">
 
 <table>
 <tr>
-<td width="50%"><img src="../assets/readme/mcp-deck-in-app.webp" alt="GenOffice Slides が、Claude Code が genoffice MCP サーバー経由で組み立てた 8 枚構成の再生可能エネルギー 2026 デッキを表示している様子：キャンバスには風力発電所の写真入りの表紙スライド、左側に 8 枚のサムネイル"></td>
-<td width="50%"><img src="../assets/readme/mcp-integrations.webp" alt="GenOffice の設定、連携ページ、MCP 部分：Claude Code 用の 1 行の claude mcp add コマンド、Cursor・Claude Desktop・その他の MCP クライアント用の JSON ブロック、その下にあるローカル HTTP サーバーのオプション"></td>
+<td width="50%"><img src="../assets/readme/mcp-deck-in-app.webp" alt="MutantcatOffice Slides が、Claude Code が genoffice MCP サーバー経由で組み立てた 8 枚構成の再生可能エネルギー 2026 デッキを表示している様子：キャンバスには風力発電所の写真入りの表紙スライド、左側に 8 枚のサムネイル"></td>
+<td width="50%"><img src="../assets/readme/mcp-integrations.webp" alt="MutantcatOffice の設定、連携ページ、MCP 部分：Claude Code 用の 1 行の claude mcp add コマンド、Cursor・Claude Desktop・その他の MCP クライアント用の JSON ブロック、その下にあるローカル HTTP サーバーのオプション"></td>
 </tr>
 <tr>
 <td><b>プロンプト 1 つ、ツール呼び出し 38 回、ターミナルなし</b> — 「2026 年の再生可能エネルギーについての 8 枚構成の投資家向けブリーフィングを、表紙とその他写真が役立つ場所に実写を入れて作って」。エージェントは <code>search</code> で図版と写真を集め、<code>media</code> で候補の写真それぞれが実写かどうかを確認したうえで、スタイルシートとアウトラインを添えて <code>deck_start</code> を呼び出し、続けてスライドごとに <code>deck_page</code> を呼び出します。各ページはアウトラインとパレットに沿っているか検査に通ってから保持され、<code>deck_build</code> が <code>.pptx</code> を組み立て、<code>slides_audit</code> がはみ出しを探し、<code>slides_render</code> がモデルが確認できる画像コンテンツとしてスライドごとの PNG を返し、最後に <code>deck_replace</code> が気に入らなかった 3 ページを修正します。</td>
@@ -180,7 +180,7 @@ Word ドキュメントを組み立てる様子を見守ることもできます
 </tr>
 </table>
 
-## GenOffice を選ぶ理由
+## MutantcatOffice を選ぶ理由
 
 - **オープンソース**。Apache-2.0 ライセンスで、GitHub 上で公開開発。
 - **自分のマシンで動く。** macOS・Windows・Linux 向けのネイティブアプリ。ファイル
@@ -225,7 +225,7 @@ OpenAI、Gemini、Doubao/Seedream、GLM、Grok、Qwen、MiniMax、または任�
 
 アプリがファイルに対してできることはすべて、`genoffice` コマンドラインからターミナルで行えます。
 Word、Excel、PowerPoint、PDF、Markdown、HTML の検査・変換・作成・読み取り・編集を、同じエンジンで
-ヘッドレスに実行します。GenOffice と一緒にインストールされ、独自のランタイムは不要で、ドキュメント
+ヘッドレスに実行します。MutantcatOffice と一緒にインストールされ、独自のランタイムは不要で、ドキュメント
 をどこかへ送信することもありません。同梱の**エージェントスキル**と組み合わせれば、コーディング
 エージェントは Markdown による代用品ではなく、本物の Office ファイルを生み出すドキュメント作業者に
 なります。
@@ -236,11 +236,11 @@ Claude Desktop とあらゆる MCP クライアントでも動作します。
 
 ### スキルをインストールする
 
-| 方法                                    | 動作                                                                                                                                                                                       |
-| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| アプリの **設定 → 連携**                | このコンピューター上で見つかったエージェントを一覧し、ワンクリックで選んだそれぞれにスキルを書き込みます。GenOffice のリリースに新しいスキルが含まれていると**更新**ボタンが表示されます。 |
-| 同じページの **zip としてダウンロード** | claude.ai、Claude デスクトップアプリ、その他のアシスタントがアップロード用スキルとして受け付ける構成です。                                                                                 |
-| `npx skills add genspark-ai/genoffice`  | このリポジトリから、スキルに対応する任意のエージェントにインストールします。                                                                                                               |
+| 方法                                    | 動作                                                                                                                                                                                             |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| アプリの **設定 → 連携**                | このコンピューター上で見つかったエージェントを一覧し、ワンクリックで選んだそれぞれにスキルを書き込みます。MutantcatOffice のリリースに新しいスキルが含まれていると**更新**ボタンが表示されます。 |
+| 同じページの **zip としてダウンロード** | claude.ai、Claude デスクトップアプリ、その他のアシスタントがアップロード用スキルとして受け付ける構成です。                                                                                       |
+| `npx skills add genspark-ai/genoffice`  | このリポジトリから、スキルに対応する任意のエージェントにインストールします。                                                                                                                     |
 
 その後、新しいチャットを始めてドキュメントを依頼してください。スキルは、いつ `genoffice` を使うべきか、
 編集前にファイルをどう読むか、自分の成果物をどう確認するかをエージェントに教えます。
@@ -269,7 +269,7 @@ genoffice open sales.xlsx                          # hand the result to the edit
 スキルの段階的なワークフローに従い、CLI が各段階を次に進む前に検査していました。
 
 ```bash
-genoffice capabilities --json                        # which cloud tools GenOffice has configured
+genoffice capabilities --json                        # which cloud tools MutantcatOffice has configured
 genoffice guide slides design                        # the deck workflow and layout library
 genoffice image "the eight planets in a row …" --aspect 16:9 --out deck/assets/cover.jpg
 genoffice slides check deck/outline.json --json      # 8 pages, no findings
@@ -283,7 +283,7 @@ genoffice open deck/solar-system.pptx
 ```
 
 `genoffice` の内部でモデル呼び出しは一切行われません。考えるのはエージェント、組み立てと検査は CLI
-が担い、結果は通常の `.pptx` として GenOffice や PowerPoint で開けます。
+が担い、結果は通常の `.pptx` として MutantcatOffice や PowerPoint で開けます。
 
 <a id="mcp-server"></a>
 
@@ -294,10 +294,10 @@ genoffice open deck/solar-system.pptx
 渡したくないアシスタント向けの方法です。接続方法は 2 つあり、どちらも
 **設定 → 連携 → MCP** にすぐコピーできるスニペット付きで用意されています：
 
-| 方法                            | 内容                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **A · `genoffice mcp`**（推奨） | アシスタント自身が起動する stdio サーバーで、GenOffice を起動しておく必要はありません。コマンドごとに 1 つのツール（`info`、`convert`、`create_docx`、`create_xlsx`、`create_pptx`、`create_pdf`、`docs_read` / `docs_apply` / `docs_check`、`sheet_*`、`slides_*`、`render`、`guide`、`search`、`image`、`media`、`open`）に加えて、段階的なデッキフロー `deck_start` → `deck_page` → `deck_build` → `deck_replace` があります。Ops、スペック、Markdown はすべてインラインで渡されるため、ファイルシステムを持たないクライアントでも動作します。 |
-| **B · ローカル HTTP サーバー**  | GenOffice アプリ内部で `http://127.0.0.1:3093/mcp`（Streamable HTTP、レガシー SSE 対応）として動作します。そのツールは目に見える Word エディタータブを操作します：`create_session`、`insert_content`、`replace_blocks`、`apply_ops`、`read_document`、`save_session`。ドキュメントが形になっていく様子をその場で見られます。デフォルトはオフで、同じ設定パネルで有効にできます。                                                                                                                                                                  |
+| 方法                            | 内容                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **A · `genoffice mcp`**（推奨） | アシスタント自身が起動する stdio サーバーで、MutantcatOffice を起動しておく必要はありません。コマンドごとに 1 つのツール（`info`、`convert`、`create_docx`、`create_xlsx`、`create_pptx`、`create_pdf`、`docs_read` / `docs_apply` / `docs_check`、`sheet_*`、`slides_*`、`render`、`guide`、`search`、`image`、`media`、`open`）に加えて、段階的なデッキフロー `deck_start` → `deck_page` → `deck_build` → `deck_replace` があります。Ops、スペック、Markdown はすべてインラインで渡されるため、ファイルシステムを持たないクライアントでも動作します。 |
+| **B · ローカル HTTP サーバー**  | MutantcatOffice アプリ内部で `http://127.0.0.1:3093/mcp`（Streamable HTTP、レガシー SSE 対応）として動作します。そのツールは目に見える Word エディタータブを操作します：`create_session`、`insert_content`、`replace_blocks`、`apply_ops`、`read_document`、`save_session`。ドキュメントが形になっていく様子をその場で見られます。デフォルトはオフで、同じ設定パネルで有効にできます。                                                                                                                                                                  |
 
 ```bash
 # Claude Code
@@ -310,12 +310,12 @@ claude mcp add --transport stdio genoffice -- genoffice mcp
 ```
 
 ここでの `genoffice` は、アプリに同梱されているあの CLI そのものです
-（macOS では `/Applications/GenOffice.app/Contents/Resources/cli/genoffice`。
+（macOS では `/Applications/MutantcatOffice.app/Contents/Resources/cli/genoffice`。
 設定パネルに、実際のインストール先の正確なパスが表示されます）。このサーバー
 は独自のワークフロー手順を備えており、操作リファレンスを `genoffice://guide/*`
 リソースとして公開するため、スキルは不要です。スキルと MCP サーバーは共存
 でき、どちらを使うかはアシスタントが選びます。クラウド機能（`search`、
-`image`、`media`）は引き続き GenOffice で設定したプロバイダーを経由し、それ
+`image`、`media`）は引き続き MutantcatOffice で設定したプロバイダーを経由し、それ
 以外はすべてローカルで動作し、`GENOFFICE_ALLOWED_ROOTS` によりすべてのツール
 が指定したフォルダに限定されます。
 
@@ -338,7 +338,7 @@ deck_replace(dir, n, page) ×3 · slides_render(file, out)
                                          → three pages fixed after looking at the renders
 ```
 
-38 回の呼び出し、約 13 分間、そしてアシスタントは一度もターミナルに触れませんでした。図版、写真、ガイド、検査、レンダリングの結果はすべて MCP ツールの結果としてやり取りされました。マシンの外に出たのは `search` と `media` だけで、GenOffice に設定されたプロバイダーへ送られました。
+38 回の呼び出し、約 13 分間、そしてアシスタントは一度もターミナルに触れませんでした。図版、写真、ガイド、検査、レンダリングの結果はすべて MCP ツールの結果としてやり取りされました。マシンの外に出たのは `search` と `media` だけで、MutantcatOffice に設定されたプロバイダーへ送られました。
 
 <a id="download"></a>
 
@@ -360,7 +360,7 @@ deck_replace(dir, n, page) ×3 · slides_render(file, out)
 <details>
 <summary><b>Linux へのインストール</b></summary>
 
-deb は apt でインストールできます — 依存関係も自動的に取得され、GenOffice がアプリケーション
+deb は apt でインストールできます — 依存関係も自動的に取得され、MutantcatOffice がアプリケーション
 メニューに追加されます。
 
 ```bash
@@ -379,8 +379,8 @@ AppImage はそのまま実行できます：FUSE 2 ランタイムをインス�
 に実行権限を付けてから実行してください。
 
 ```bash
-chmod +x GenOffice-<version>.AppImage
-./GenOffice-<version>.AppImage
+chmod +x MutantcatOffice-<version>.AppImage
+./MutantcatOffice-<version>.AppImage
 ```
 
 </details>
@@ -401,9 +401,6 @@ docx を開く ─► 元ファイルをハッシュ付きでアーカイブ（�
           ─► zip を再パック；他のすべてのエントリはバイト単位でそのままコピー
 ```
 
-パッケージ単位の詳しい解説（docx/pptx エンジン、`pdf2docx`、`html2docx`、エージェントコアと
-プロバイダー）は [CONTRIBUTING.md](../../CONTRIBUTING.md#engine-packages) にあります。
-
 ## 開発
 
 ```bash
@@ -419,42 +416,40 @@ npm run dist:linux   # package Linux AppImage + deb + rpm
 ```
 
 sheets アプリでは、xlsx サイドカー用に Rust ツールチェーン（PATH 上に `cargo`）も別途必要
-です。`npm run build -w @genoffice/sheets` を実行すれば自動的にビルドされます。すべての変更
-が満たすべきチェック内容や、プルリクエストの取り込み方については
-[CONTRIBUTING.md](../../CONTRIBUTING.md) を参照してください。
+です。`npm run build -w @genoffice/sheets` を実行すれば自動的にビルドされます。
 
 ## コミュニティ
 
-GenOffice は活発に開発が続いており、みなさんのフィードバックがその方向性を形づくっています。
+MutantcatOffice は活発に開発が続いており、みなさんのフィードバックがその方向性を形づくっています。
 
 - **バグの報告や機能のリクエスト**は
   [GitHub Issues](https://github.com/genspark-ai/genoffice/issues) で受け付けています。
-- **GenOffice のグループチャット**に
+- **MutantcatOffice のグループチャット**に
   [GenTeam](https://genoffice.ai/join) から参加すると、開発チームや他のユーザーと直接話せます。
-- GenOffice が役に立ったら**リポジトリにスターを付けてください** — プロジェクトを支援する
+- MutantcatOffice が役に立ったら**リポジトリにスターを付けてください** — プロジェクトを支援する
   一番簡単な方法です。
 
 ## よくある質問
 
 <details>
-<summary><b>GenOffice は無料ですか？</b></summary>
+<summary><b>MutantcatOffice は無料ですか？</b></summary>
 
-はい。GenOffice は Apache-2.0 ライセンスのもとで無料かつオープンソースで提供されています —
+はい。MutantcatOffice は Apache-2.0 ライセンスのもとで無料かつオープンソースで提供されています —
 試用期間もアプリ自体の有料プランもありません。
 
 </details>
 
 <details>
-<summary><b>GenOffice で Microsoft の Word、Excel、PowerPoint ファイルを開けますか？</b></summary>
+<summary><b>MutantcatOffice で Microsoft の Word、Excel、PowerPoint ファイルを開けますか？</b></summary>
 
-はい。GenOffice はネイティブの `.docx`、`.xlsx`、`.pptx` ファイルを開いて保存できます。保存
+はい。MutantcatOffice はネイティブの `.docx`、`.xlsx`、`.pptx` ファイルを開いて保存できます。保存
 はバイト単位で保持されるため、触れなかった部分はそのまま書き戻され、ドキュメントは Microsoft
 Office でも問題なく動作し続けます。
 
 </details>
 
 <details>
-<summary><b>GenOffice はオフラインで使えますか？</b></summary>
+<summary><b>MutantcatOffice はオフラインで使えますか？</b></summary>
 
 ドキュメントの編集は完全にローカルで行われます — ファイルは開く・編集・保存・変換のどの場面
 でもマシンの外に出ることはありません。AI 機能（エージェント、検索、画像ツール）を使うには
@@ -464,7 +459,7 @@ Office でも問題なく動作し続けます。
 </details>
 
 <details>
-<summary><b>GenOffice で PDF ファイルを編集できますか？</b></summary>
+<summary><b>MutantcatOffice で PDF ファイルを編集できますか？</b></summary>
 
 はい — 上から隠す注釈ではなく、ページのコンテンツストリーム自体を元のフォントを保ったまま
 書き換える、本物の PDF テキスト・画像編集に対応しています。
@@ -472,7 +467,7 @@ Office でも問題なく動作し続けます。
 </details>
 
 <details>
-<summary><b>GenOffice で PDF を Word、Excel、PowerPoint に変換できますか？</b></summary>
+<summary><b>MutantcatOffice で PDF を Word、Excel、PowerPoint に変換できますか？</b></summary>
 
 はい — すべてオンデバイスで行われます：PDFium による文字レベルの抽出と、形状に基づくレイア
 ウト解析を使い、クラウドサービスやアップロードは一切発生しません。スキャンされたページにも
@@ -484,7 +479,7 @@ Office でも問題なく動作し続けます。
 <details>
 <summary><b>自分の AI モデルや API キーを使えますか？</b></summary>
 
-はい。キー不要の Genspark サインインに加えて、GenOffice は Claude、OpenAI、Gemini、
+はい。キー不要の Genspark サインインに加えて、MutantcatOffice は Claude、OpenAI、Gemini、
 DeepSeek、Kimi、GLM、Qwen、Doubao、MiniMax、Grok、Mistral、OpenRouter、Requesty、OpenCode Zen/Go 向け
 に自分のキーを持ち込むことができ、任意の OpenAI 互換エンドポイント（ローカルモデルサーバー
 を含む）にも対応しています。検索、画像生成、画像／動画解析は、設定 → AI メディア＆検索でそ
@@ -493,7 +488,7 @@ DeepSeek、Kimi、GLM、Qwen、Doubao、MiniMax、Grok、Mistral、OpenRouter、
 </details>
 
 <details>
-<summary><b>GenOffice で HTML を Word に変換できますか？</b></summary>
+<summary><b>MutantcatOffice で HTML を Word に変換できますか？</b></summary>
 
 はい — HTML アプリの「Word として書き出す」を使うと、完全にオンデバイスでネイティブかつ編
 集可能な `.docx` が生成されます。ページは内蔵の Chromium でレンダリングされたうえで、見出
@@ -504,9 +499,9 @@ DeepSeek、Kimi、GLM、Qwen、Doubao、MiniMax、Grok、Mistral、OpenRouter、
 </details>
 
 <details>
-<summary><b>Claude Code、Codex、Cursor、またはスクリプトから GenOffice を操作できますか？</b></summary>
+<summary><b>Claude Code、Codex、Cursor、またはスクリプトから MutantcatOffice を操作できますか？</b></summary>
 
-はい。GenOffice は、同じエンジンをヘッドレスで実行する `genoffice` コマンドラインをインストール
+はい。MutantcatOffice は、同じエンジンをヘッドレスで実行する `genoffice` コマンドラインをインストール
 します。ターミナルやスクリプトからドキュメントの検査・変換・作成・読み取り・編集ができ、プログラ
 ム向けに `--json` 出力も用意されています。同梱のエージェントスキルは Claude Code、Codex、Cursor、
 Gemini CLI、GitHub Copilot、OpenCode、Windsurf にその使い方を教えます。インストールは
@@ -516,12 +511,12 @@ Gemini CLI、GitHub Copilot、OpenCode、Windsurf にその使い方を教えま
 </details>
 
 <details>
-<summary><b>GenOffice はデータを収集しますか？</b></summary>
+<summary><b>MutantcatOffice はデータを収集しますか？</b></summary>
 
 公式のパッケージ版ビルドは、デフォルトで限定的な利用状況の分析データを送信しますが、設定 →
 一般からいつでも送信を無効にできます。分析データにドキュメントの内容、ファイル名、ファイル
 パス、アカウント情報、メールアドレスが含まれることはありません。収集されるイベントとデータ
-の詳細は [GenOffice のプライバシー](../../PRIVACY.md)を参照してください。
+の詳細は [MutantcatOffice のプライバシー](../../PRIVACY.md)を参照してください。
 
 </details>
 
@@ -533,7 +528,7 @@ Gemini CLI、GitHub Copilot、OpenCode、Windsurf にその使い方を教えま
 
 ## クレジット
 
-GenOffice は、以下のオープンソースプロジェクトなしには実現できませんでした。
+MutantcatOffice は、以下のオープンソースプロジェクトなしには実現できませんでした。
 
 - [Electron](https://www.electronjs.org/) — すべてのアプリのデスクトップランタイム。
 - [Univer](https://github.com/dream-num/univer)（Apache-2.0）— Sheets が拡張しているスプレッ
@@ -577,10 +572,10 @@ MIT/Apache-2.0/BSD-3-Clause/OFL のいずれかです。
 
 ## ライセンス
 
-GenOffice は [Apache License 2.0](../../LICENSE) のもとでライセンスされていますが、1 つ例外
+MutantcatOffice は [Apache License 2.0](../../LICENSE) のもとでライセンスされていますが、1 つ例外
 があります：`ee/` ディレクトリは将来のエンタープライズモジュール用に予約されており、
-[GenOffice Enterprise License](../../ee/LICENSE) が適用されます。
+[MutantcatOffice Enterprise License](../../ee/LICENSE) が適用されます。
 
-GenOffice および Genspark の名称とロゴは Mainfunc, Inc. の商標です。Apache-2.0 ライセンスは
+MutantcatOffice および Genspark の名称とロゴは Mainfunc, Inc. の商標です。Apache-2.0 ライセンスは
 これらの使用を許諾するものではありません（セクション 6 を参照）。フォークする場合は、独自の
 ブランディングを使用してください。

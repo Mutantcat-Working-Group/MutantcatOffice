@@ -147,7 +147,7 @@ describe('genoffice slides render', () => {
     })
     const pptx = join(dir, 'r.pptx')
     expect((await run(['create', '--type', 'pptx', '--spec', spec, '--out', pptx])).code).toBe(0)
-    // a stand-in for the GenOffice binary: copies a prepared PDF to --out and prints the envelope
+    // a stand-in for the MutantcatOffice binary: copies a prepared PDF to --out and prints the envelope
     const pdf = writeMinimalPdf(join(dir, 'export.pdf'))
     const fake = join(dir, 'fake-genoffice.sh')
     writeFileSync(

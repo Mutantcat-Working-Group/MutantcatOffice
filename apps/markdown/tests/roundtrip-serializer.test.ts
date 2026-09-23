@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { execFileSync } from 'node:child_process'
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { Editor } from '@tiptap/core'
 import { buildExtensions } from '../src/renderer/editor/extensions'
@@ -124,6 +124,7 @@ const root = resolve(import.meta.dirname, '../../..')
 const corpus = execFileSync('git', ['ls-files', '-z', '*.md'], { cwd: root, encoding: 'utf8' })
   .split('\0')
   .filter(Boolean)
+  .filter((path) => existsSync(resolve(root, path)))
 describe('tracked repository Markdown corpus', () => {
   it('includes README variants and a nonempty corpus', () => {
     expect(corpus.length).toBeGreaterThan(50)

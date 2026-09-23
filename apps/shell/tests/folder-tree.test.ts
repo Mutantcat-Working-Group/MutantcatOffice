@@ -293,10 +293,10 @@ describe('helpers', () => {
   })
 
   it('describeRoot creates a missing root and reports it usable', () => {
-    const fresh = join(root, 'GenOffice')
+    const fresh = join(root, 'MutantcatOffice')
     expect(describeRoot(fresh)).toEqual({
       path: fresh,
-      name: 'GenOffice',
+      name: 'MutantcatOffice',
       usable: true,
       readable: true,
       removable: false,

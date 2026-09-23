@@ -51,7 +51,7 @@ export function mcpLaunch(cli: { status: string; launcherDir: string }): McpLaun
   const dir = cli.launcherDir
   if (dir.includes('\\')) {
     return {
-      command: `${dir}\\..\\..\\GenOffice.exe`,
+      command: `${dir}\\..\\..\\MutantcatOffice.exe`,
       args: [`${dir}\\genoffice.cjs`, 'mcp'],
       env: { ELECTRON_RUN_AS_NODE: '1' },
     }

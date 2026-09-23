@@ -1,6 +1,7 @@
 import { basename } from 'node:path'
 import { BrowserWindow } from 'electron'
 import type { WebContents, WebContentsView } from 'electron'
+import type { WatchRendererOptions } from '@genoffice/electron-utils/renderer-watchdog'
 
 import {
   docsQueryDirty,
@@ -199,8 +200,10 @@ export function createDetachedEditorWindow(options: {
   title: string
   filePath?: string
   applyMenuFor: (kind: TabKind) => void
+  /** optional renderer-watchdog hook: the reparented view stays monitored */
+  watchRenderer?: (wc: WebContents, options?: WatchRendererOptions) => void
 }): BrowserWindow {
-  const { view, kind, title, filePath, applyMenuFor } = options
+  const { view, kind, title, filePath, applyMenuFor, watchRenderer } = options
   const size = DEFAULT_SIZE[kind] ?? { width: 1360, height: 900 }
   const win = new BrowserWindow({
     ...size,
@@ -229,6 +232,7 @@ export function createDetachedEditorWindow(options: {
   onChanged()
 
   win.contentView.addChildView(view)
+  watchRenderer?.(view.webContents, kind === 'slides' ? { unresponsiveReloadMs: null } : undefined)
   const layout = () => {
     if (win.isDestroyed()) return
     const bounds = win.getContentBounds()

@@ -156,6 +156,7 @@ function makeShellWindow(): FakeShellWindow {
 let shellWindow: FakeShellWindow
 let onChanged: ReturnType<typeof vi.fn>
 let applyMenuFor: ReturnType<typeof vi.fn>
+let watchRenderer: ReturnType<typeof vi.fn>
 let manager: TabManager
 
 function lastCreatedView(factory: ReturnType<typeof vi.fn>): FakeView {
@@ -173,17 +174,20 @@ beforeEach(() => {
   shellWindow = makeShellWindow()
   onChanged = vi.fn()
   applyMenuFor = vi.fn()
+  watchRenderer = vi.fn()
   manager = new TabManager(
     shellWindow as never,
     () => onChanged(),
     (kind) => applyMenuFor(kind),
+    undefined,
+    (...args: unknown[]) => watchRenderer(...args),
   )
 })
 
 describe('initial state', () => {
   it('starts with only the non-closable, active Home tab', () => {
     expect(manager.list()).toEqual([
-      { id: 'home', kind: 'home', title: 'GenOffice', closable: false, active: true },
+      { id: 'home', kind: 'home', title: 'MutantcatOffice', closable: false, active: true },
     ])
   })
 })
@@ -196,7 +200,7 @@ describe('opening tabs', () => {
     expect(tabs[1]).toMatchObject({
       id,
       kind: 'docs',
-      title: 'GenOffice Docs',
+      title: 'MutantcatOffice Docs',
       closable: true,
       active: true,
     })
@@ -212,7 +216,7 @@ describe('opening tabs', () => {
     manager.openSlidesTab('/tmp/deck.pptx')
     manager.openPdfTab('/tmp/scan.pdf')
     expect(manager.list().map((t) => t.title)).toEqual([
-      'GenOffice',
+      'MutantcatOffice',
       'report.docx',
       'budget.xlsx',
       'deck.pptx',
@@ -223,7 +227,11 @@ describe('opening tabs', () => {
   it('uses module default titles for pathless tabs', () => {
     manager.openSheetsTab()
     manager.openSlidesTab()
-    expect(manager.list().map((t) => t.title)).toEqual(['GenOffice', 'AI Sheets', 'AI Slides'])
+    expect(manager.list().map((t) => t.title)).toEqual([
+      'MutantcatOffice',
+      'AI Sheets',
+      'AI Slides',
+    ])
   })
 
   it('assigns unique, monotonic tab ids', () => {
@@ -239,6 +247,35 @@ describe('opening tabs', () => {
     expect(markDocsNewBlank).toHaveBeenCalledTimes(1)
     manager.openSheetsTab(undefined, { newBlank: true })
     expect(setSheetsNewBlank).toHaveBeenCalledTimes(1)
+  })
+})
+
+describe('watchdog wiring', () => {
+  it('feeds the home webContents and every new tab view to the watchdog', () => {
+    manager.watchShellWebContents()
+    expect(watchRenderer).toHaveBeenCalledWith(shellWindow.webContents)
+
+    manager.openDocsTab()
+    expect(watchRenderer).toHaveBeenLastCalledWith(lastCreatedView(createDocsView).webContents)
+
+    manager.openSlidesTab()
+    expect(watchRenderer).toHaveBeenLastCalledWith(lastCreatedView(createSlidesView).webContents, {
+      unresponsiveReloadMs: null,
+    })
+  })
+
+  it('feeds the warmed spare sheets view to the watchdog', () => {
+    vi.useFakeTimers()
+    try {
+      const homeLoaded = shellWindow.webContents.once.mock.calls.find(
+        ([event]) => event === 'did-finish-load',
+      )
+      ;(homeLoaded![1] as () => void)()
+      vi.advanceTimersByTime(1500)
+      expect(watchRenderer).toHaveBeenCalledWith(lastCreatedView(createSheetsView).webContents)
+    } finally {
+      vi.useRealTimers()
+    }
   })
 })
 

@@ -340,7 +340,7 @@ interface RuntimePaths {
   preloadPath: string
   rendererUrl?: string
   rendererFile?: string
-  /** Shell router used to open exported PDFs in a new GenOffice tab. */
+  /** Shell router used to open exported PDFs in a new MutantcatOffice tab. */
   openGeneratedPath?: (path: string) => boolean
 }
 
@@ -1163,6 +1163,7 @@ export function createMarkdownView(openPath?: string | null): WebContentsView {
       contextIsolation: true,
       nodeIntegration: false,
       sandbox: true,
+      backgroundThrottling: false,
     },
   })
   grantAndTrack(view.webContents, openPath)

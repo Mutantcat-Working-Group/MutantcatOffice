@@ -1,6 +1,6 @@
 # @genoffice/cli
 
-`genoffice` is the GenOffice command line. It exposes the suite's document engines
+`genoffice` is the MutantcatOffice command line. It exposes the suite's document engines
 to scripts and AI agents without opening a window: the packaged app runs the
 bundled CLI on its own Node runtime (`ELECTRON_RUN_AS_NODE`), so nothing extra
 has to be installed.
@@ -35,7 +35,7 @@ genoffice convert report.docx --to html               # the Word editor's standa
 genoffice convert page.html --to docx                 # html2docx, same as the HTML app's Export as Word
 genoffice convert report.docx --to md                 # GFM via the markdown editor's serializer
 genoffice convert book.xlsx --to csv [--sheet Data]   # one sheet, cell text as displayed, UTF-8 BOM, CRLF
-genoffice capabilities --json                        # which cloud features GenOffice has configured (no network call)
+genoffice capabilities --json                        # which cloud features MutantcatOffice has configured (no network call)
 genoffice search "electron headless export" [--images] [--max 6] --json
 genoffice image "isometric office, soft light" --aspect 16:9 --out hero.png
 genoffice media photo.jpg --ask "What text is in this picture?" --json
@@ -76,7 +76,7 @@ ranges, available ids, sheet names, usage lines) come back as fields in
 `genoffice mcp` serves the same commands as Model Context Protocol tools on
 stdio, for clients that cannot run a shell or should not (Claude Desktop,
 Cursor, sandboxed agents). Nothing else is needed on the machine: the process
-runs on the app's Node runtime like every other command, and GenOffice itself
+runs on the app's Node runtime like every other command, and MutantcatOffice itself
 only starts, hidden, for the conversions that need its renderer.
 
 ```bash
@@ -121,7 +121,7 @@ file store.
 
 ## Putting genoffice on the PATH
 
-- **macOS**: the app tries to symlink `/usr/local/bin/genoffice` (or `/opt/homebrew/bin/genoffice`) on every launch until one succeeds. If neither directory is writable it stays silent; run `genoffice install-cli` from the launcher, or `sudo mkdir -p /usr/local/bin && sudo ln -sf "/Applications/GenOffice.app/Contents/Resources/cli/genoffice" /usr/local/bin/genoffice`.
+- **macOS**: the app tries to symlink `/usr/local/bin/genoffice` (or `/opt/homebrew/bin/genoffice`) on every launch until one succeeds. If neither directory is writable it stays silent; run `genoffice install-cli` from the launcher, or `sudo mkdir -p /usr/local/bin && sudo ln -sf "/Applications/MutantcatOffice.app/Contents/Resources/cli/genoffice" /usr/local/bin/genoffice`.
 - **Windows**: the installer appends `<install dir>\resources\cli` to the user PATH (`apps/shell/build/installer.nsh`, REG_EXPAND_SZ preserved, removed on uninstall) and the app re-checks once per version; new terminals see `genoffice`. The directory holds `genoffice.cmd` for cmd / PowerShell and the extension-less `genoffice` for Git Bash.
 - **Linux**: the deb/rpm post-install links `/usr/bin/genoffice`; the AppImage relies on the first-launch symlink into `/usr/local/bin` when it is writable.
 
@@ -152,7 +152,7 @@ Independently of the PATH, every launch of the packaged app writes the launcher 
   unrestricted.
 - `apply --out` onto another existing file needs `--force`, like `create` / `convert`;
   editing in place never does. Unknown options are rejected instead of ignored.
-- A file the running GenOffice shell has open in a tab is not rewritten in place
+- A file the running MutantcatOffice shell has open in a tab is not rewritten in place
   (exit 2, `detail.gui_pid`): the shell publishes its open tabs to
   `userData/open-documents.json` and genoffice reads it (`GENOFFICE_USER_DATA`
   overrides the location). `--force` writes anyway; the editor then warns about
@@ -171,7 +171,7 @@ otherwise Genspark is the default when signed in (`~/.genoffice/auth.json`)
 and cloud tools are on, with free-source fallbacks when unavailable. Parallel
 and Tavily provide web search only. Image generation and media analysis use
 the corresponding provider chosen in the app's AI settings
-(`GenOffice/ai-settings.json` in the platform config directory, override with
+(`MutantcatOffice/ai-settings.json` in the platform config directory, override with
 `GENOFFICE_AI_SETTINGS`). `HTTPS_PROXY` / `HTTP_PROXY` / `ALL_PROXY` are honoured.
 Search results, image bytes and analysis text come back in the JSON `detail`;
 `image` also writes the file. These are the only commands that send data off
@@ -185,7 +185,7 @@ packages/cli/bin/genoffice info file.docx  # falls back to the system node
 ```
 
 Conversions that need an app renderer (Word/PowerPoint/Excel/HTML/Markdown → PDF,
-Word → HTML, HTML → Word, `create --type pdf`) run inside the GenOffice binary
+Word → HTML, HTML → Word, `create --type pdf`) run inside the MutantcatOffice binary
 through its hidden `--headless-export` mode: genoffice spawns it (Dock hidden, no
 window), reads the JSON envelope it prints and maps its exit code. Set
 `GENOFFICE_APP_BIN` to point at a specific executable; in a checkout the dev Electron

@@ -8,6 +8,7 @@ import {
 } from '@genoffice/ai-provider/browser'
 import type { AiSettings, CodexModelCatalog } from '@genoffice/ai-provider/browser'
 import { installDropOpenBridge } from '@genoffice/electron-utils/drop-open'
+import { installWatchdogPong } from '@genoffice/electron-utils/watchdog'
 import { normalizeAiPanelPrefs } from '@genoffice/ui/ai-panel-prefs'
 import type {
   AccountLoginEvent,
@@ -579,3 +580,4 @@ contextBridge.exposeInMainWorld('aiOfficeTabs', tabsApi)
 
 // open documents dragged from the OS anywhere over Home or the tab strip
 installDropOpenBridge()
+installWatchdogPong(ipcRenderer)

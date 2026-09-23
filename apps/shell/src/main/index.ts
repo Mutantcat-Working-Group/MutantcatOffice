@@ -49,6 +49,7 @@ import {
   editMenuTemplate,
   installContextMenu,
   installNavigationGuard,
+  RendererWatchdog,
   isUsableSaveDir,
   HEADLESS_EXIT,
   formatHeadlessEnvelope,
@@ -328,7 +329,7 @@ import { applyUpdateChannel, checkForUpdatesNow, initAutoUpdater } from './updat
 import { isUpdateChannel, type UpdateChannel } from '../shared/update-api'
 
 /**
- * GenOffice unified shell: ONE Electron app, ONE BrowserWindow, hosting the
+ * MutantcatOffice unified shell: ONE Electron app, ONE BrowserWindow, hosting the
  * docs and sheets modules as WebContentsView tabs behind a WPS-style tab
  * strip. The shell owns the lifecycle — single-instance lock, file-
  * association routing by extension, and per-active-tab menu switching.
@@ -338,13 +339,13 @@ import { isUpdateChannel, type UpdateChannel } from '../shared/update-api'
 
 // ANY unpacked run (`npm run shell`, `npm run dev`, `npx electron .`) must not
 // share the installed app's userData or single-instance lock — otherwise a dev
-// run silently quits and forwards its argv to the running installed GenOffice.
+// run silently quits and forwards its argv to the running installed MutantcatOffice.
 // GENOFFICE_USER_DATA: test drivers point this at a scratch dir so an
 // automated instance can run alongside the dev instance (separate lock).
 if (!app.isPackaged)
   app.setPath(
     'userData',
-    process.env.GENOFFICE_USER_DATA ?? join(app.getPath('appData'), 'GenOffice Dev'),
+    process.env.GENOFFICE_USER_DATA ?? join(app.getPath('appData'), 'MutantcatOffice Dev'),
   )
 
 /**
@@ -359,12 +360,17 @@ if (headlessArgv.kind !== 'none') {
   app.dock?.hide()
 }
 
-// The product rename from "AI Office" to GenOffice changed the userData path; migrate old user data once
-if (app.isPackaged) {
-  const oldDir = join(app.getPath('appData'), 'AI Office')
+function migrateUserDataDir(oldDir: string): void {
   const newDir = app.getPath('userData')
   const newEmpty = !existsSync(newDir) || readdirSync(newDir).length === 0
   if (newEmpty && existsSync(oldDir)) cpSync(oldDir, newDir, { recursive: true })
+}
+
+// Product renames changed the userData path (AI Office → GenOffice → MutantcatOffice);
+// copy the most recent old profile in once so existing users keep their settings.
+if (!process.env.GENOFFICE_USER_DATA) {
+  migrateUserDataDir(join(app.getPath('appData'), app.isPackaged ? 'GenOffice' : 'GenOffice Dev'))
+  migrateUserDataDir(join(app.getPath('appData'), 'AI Office'))
 }
 
 // module build outputs: packaged builds carry them as extraResources
@@ -2518,6 +2524,8 @@ const tm = (key: Parameters<typeof tMain>[1], params?: Parameters<typeof tMain>[
 
 let shellWindow: BrowserWindow | null = null
 let tabManager: TabManager | null = null
+/** renderer watchdog: recovers white screens after sleep/lock and dead editors */
+let rendererWatchdog: RendererWatchdog | null = null
 
 /**
  * New file from a folder view: the click remembers the folder per kind, the
@@ -2744,7 +2752,7 @@ function createShellWindow(): void {
     height: 900,
     minWidth: 720,
     minHeight: 550,
-    title: 'GenOffice',
+    title: 'MutantcatOffice',
     // vibrancy: editor modules punch translucent regions (e.g. the slides
     // thumbnail pane) through to the desktop
     ...(process.platform === 'darwin'
@@ -2762,6 +2770,7 @@ function createShellWindow(): void {
       contextIsolation: true,
       nodeIntegration: false,
       sandbox: true,
+      backgroundThrottling: false,
     },
   })
   shellWindow = win
@@ -2797,9 +2806,11 @@ function createShellWindow(): void {
             ? tm('untitledMarkdown')
             : kind === 'html'
               ? tm('untitledHtml')
-              : tm('untitledSheet'),
+          : tm('untitledSheet'),
+    (wc, options) => rendererWatchdog?.watch(wc, options),
   )
   tabManager = manager
+  manager.watchShellWebContents()
 
   // pushRecent-triggered docs menu rebuilds must not clobber the active tab's
   // menu; a focused detached docs window owns the menu just like an active tab
@@ -3218,7 +3229,7 @@ function newDocTab(): void {
 
 /** MCP: open a blank docs tab and return its webContents id, for the visible-editor bridge */
 function openBlankDocsTabForMcp(): number {
-  if (!tabManager) throw new Error('GenOffice is not ready')
+  if (!tabManager) throw new Error('MutantcatOffice is not ready')
   const tabId = tabManager.openDocsTab(undefined, { newBlank: true })
   const view = tabManager.docsTabs().find((t) => t.id === tabId)
   if (!view) throw new Error('the new document tab could not be opened')
@@ -3235,7 +3246,7 @@ function openBlankDocsTabForMcp(): number {
  * marking is skipped, the file name is the agent's business.
  */
 async function openBlankSheetsTabForMcp(): Promise<number> {
-  if (!tabManager) throw new Error('GenOffice is not ready')
+  if (!tabManager) throw new Error('MutantcatOffice is not ready')
   const filePath = uniquePathIn(defaultSaveDir(), `${tm('untitledSheet')}.xlsx`)
   writeFileSync(filePath, await blankXlsxBuffer())
   const tabId = tabManager.openSheetsTab(filePath)
@@ -3306,7 +3317,7 @@ function abandonBlankTabForMcp(
 
 /** MCP: open a blank slides tab and return its webContents id, for the visible-deck bridge */
 function openBlankSlidesTabForMcp(): number {
-  if (!tabManager) throw new Error('GenOffice is not ready')
+  if (!tabManager) throw new Error('MutantcatOffice is not ready')
   const tabId = tabManager.openSlidesTab()
   const view = tabManager.slidesTabs().find((t) => t.id === tabId)
   if (!view) throw new Error('the new presentation tab could not be opened')
@@ -3401,7 +3412,7 @@ function statEntries(paths: string[]): RecentEntry[] {
 }
 
 function registerHomeIpc(): void {
-  // signed-in means GenOffice's own device-code login; the shared gsk CLI key
+  // signed-in means MutantcatOffice's own device-code login; the shared gsk CLI key
   // is only a silent fallback, deliberately not shown here to nudge users onto our key
   ipcMain.handle(HOME_CHANNELS.accountStatus, async () => {
     if (!loadGenofficeAuth()) return { loggedIn: false }
@@ -4146,7 +4157,11 @@ function detachTabToWindow(id: string): void {
   if (!tabManager) return
   const record = tabManager.detachTab(id)
   if (!record) return
-  const win = createDetachedEditorWindow({ ...record, applyMenuFor })
+  const win = createDetachedEditorWindow({
+    ...record,
+    applyMenuFor,
+    watchRenderer: (wc, options) => rendererWatchdog?.watch(wc, options),
+  })
   win.focus()
 }
 
@@ -5247,7 +5262,7 @@ app.whenReady().then(async () => {
     app.quit()
     return
   }
-  // another GenOffice-family app re-logging in rotates the shared key; the
+  // another MutantcatOffice-family app re-logging in rotates the shared key; the
   // home page re-reads its account status. A logout that leaves only the
   // gsk CLI fallback key is not a login
   stopAuthWatch = watchGskApiKey(() => {
@@ -5303,6 +5318,10 @@ app.whenReady().then(async () => {
   initAnalytics()
   analytics.track('app_launch')
   startSheetsCaptureServer()
+  rendererWatchdog = new RendererWatchdog({
+    onRecover: (wc, reason) =>
+      console.info(`[watchdog] recovering renderer ${wc.id} (${reason})`),
+  })
   // Register the docs renderer bridge listeners before the MCP server can take
   // a visible-editing request.
   installDocsBridge()
@@ -5445,6 +5464,8 @@ app.on('before-quit', () => {
 
 // after every window has closed, so the shell window's own 'closed' republish cannot revive the file
 app.on('will-quit', () => {
+  rendererWatchdog?.dispose()
+  rendererWatchdog = null
   fileIndexer?.stop()
   fileIndexStore?.close()
   stopAuthWatch?.()

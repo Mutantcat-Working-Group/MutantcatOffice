@@ -41,6 +41,18 @@ export {
 } from './default-save-dir'
 export { installNavigationGuard } from './navigation-guard'
 export {
+  WATCHDOG_PING_CHANNEL,
+  WATCHDOG_PONG_CHANNEL,
+  installWatchdogPong,
+  type WatchdogIpcRenderer,
+} from './watchdog'
+export {
+  RendererWatchdog,
+  type RendererWatchdogOptions,
+  type WatchdogRecoveryReason,
+  type WatchRendererOptions,
+} from './renderer-watchdog'
+export {
   DROP_OPEN_CHANNEL,
   droppableFilePaths,
   installDropOpenBridge,

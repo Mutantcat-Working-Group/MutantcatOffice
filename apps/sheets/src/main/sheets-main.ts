@@ -1451,7 +1451,7 @@ interface SheetsRuntimeConfig {
   rendererFile: string
   /** absolute path to the Rust xlsx-sidecar binary */
   sidecarPath?: string | undefined
-  /** Shell router used to open exported/AI-generated files in a new GenOffice tab. */
+  /** Shell router used to open exported/AI-generated files in a new MutantcatOffice tab. */
   openGeneratedPath?: (path: string) => boolean
   /** Host-owned cross-app document creator (the shell routes docx/pdf/md into Docs). */
   createDocument?: (request: SheetsAiHostDocumentRequest) => Promise<WorkbookCreateDocumentResult>
@@ -1508,7 +1508,10 @@ async function createStandaloneSheetsDocument(
   request: SheetsAiHostDocumentRequest,
 ): Promise<WorkbookCreateDocumentResult> {
   if (request.type === 'docx') {
-    return { ok: false, error: 'Creating DOCX files requires the GenOffice shell or Docs app.' }
+    return {
+      ok: false,
+      error: 'Creating DOCX files requires the MutantcatOffice shell or Docs app.',
+    }
   }
   const title = sanitizeGeneratedFileBase(request.title)
   try {
@@ -1951,7 +1954,7 @@ export async function createSheetsWindow(
     minWidth: 720,
     minHeight: 550,
     show: false,
-    title: 'GenOffice Sheets',
+    title: 'MutantcatOffice Sheets',
     // Traffic lights sit inside the toolbar row.
     ...(process.platform === 'darwin' ? { titleBarStyle: 'hiddenInset' as const } : {}),
     webPreferences: {
@@ -3258,7 +3261,7 @@ export function registerSheetsAiIpc(): void {
 
   // Node fetch (undici) direct connections get reset under VPN/tun setups; retry over Chromium's stack
   setRescueFetch((url, init) => net.fetch(url, init))
-  setAiUserAgent(`GenOffice/${app.getVersion()}`)
+  setAiUserAgent(`MutantcatOffice/${app.getVersion()}`)
 
   ipcMain.handle(IPC_CHANNELS.aiGetSettings, (event): AiSettings => {
     sessionFor(event)

@@ -123,8 +123,9 @@ describe('installCliLink', () => {
       return { ok: true, stdout: scripts.length === 1 ? 'linked\n' : 'present\n' }
     }
     const launcher =
-      "C:\\Users\\O'Brien\\AppData\\Local\\Programs\\GenOffice\\resources\\genoffice\\genoffice.cmd"
-    const dir = "C:\\Users\\O'Brien\\AppData\\Local\\Programs\\GenOffice\\resources\\genoffice"
+      "C:\\Users\\O'Brien\\AppData\\Local\\Programs\\MutantcatOffice\\resources\\genoffice\\genoffice.cmd"
+    const dir =
+      "C:\\Users\\O'Brien\\AppData\\Local\\Programs\\MutantcatOffice\\resources\\genoffice"
     const first = installCliLink({ launcher, platform: 'win32', runPowerShell: run })
     expect(first).toEqual({ status: 'linked', location: dir })
     expect(scripts[0]).toContain("$dir = 'C:\\Users\\O''Brien\\AppData")
@@ -146,14 +147,14 @@ describe('installCliLink', () => {
 
   it('inspects the Windows PATH read-only', () => {
     const scripts: string[] = []
-    const launcher = 'C:\\GenOffice\\resources\\genoffice\\genoffice.cmd'
+    const launcher = 'C:\\MutantcatOffice\\resources\\genoffice\\genoffice.cmd'
     const present = inspectCliLink({
       launcher,
       platform: 'win32',
       runPowerShell: (s) => (scripts.push(s), { ok: true, stdout: 'present\n' }),
     })
     expect(present.status).toBe('present')
-    expect(present.location).toBe('C:\\GenOffice\\resources\\genoffice')
+    expect(present.location).toBe('C:\\MutantcatOffice\\resources\\genoffice')
     expect(scripts[0]).not.toContain('SetValue')
     const missing = inspectCliLink({
       launcher,

@@ -13,7 +13,7 @@ export function genofficeUserDataDir(env: NodeJS.ProcessEnv): string {
       : process.platform === 'win32'
         ? env.APPDATA || join(homedir(), 'AppData', 'Roaming')
         : env.XDG_CONFIG_HOME || join(homedir(), '.config')
-  return join(base, 'GenOffice')
+  return join(base, 'MutantcatOffice')
 }
 
 export interface GuiOpenDocuments {
@@ -22,7 +22,7 @@ export interface GuiOpenDocuments {
 }
 
 /**
- * Files the running GenOffice shell has open, from the registry it publishes
+ * Files the running MutantcatOffice shell has open, from the registry it publishes
  * on every tab change (apps/shell/src/main/open-documents.ts). Null when no
  * shell is running: a registry whose pid is gone is a crash leftover.
  */
@@ -63,12 +63,12 @@ export function assertNotOpenInGui(abs: string, env: NodeJS.ProcessEnv): void {
   if (!open.paths.some((p) => realizedPath(p) === target)) return
   throw new CliError(
     EXIT.file,
-    `GenOffice has this file open: ${abs}`,
+    `MutantcatOffice has this file open: ${abs}`,
     { gui_pid: open.pid },
     {
       reason: 'file_open_in_gui',
       suggestion:
-        'close the tab in GenOffice first, or pass --force to write anyway (the editor may overwrite your change on its next save)',
+        'close the tab in MutantcatOffice first, or pass --force to write anyway (the editor may overwrite your change on its next save)',
     },
   )
 }

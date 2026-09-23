@@ -22,7 +22,7 @@ const DEFAULT_TILE_PX = 320
 export const renderCommand: CommandDef = {
   name: 'render',
   summary:
-    'One PNG per page of a document, as the GenOffice renderer lays it out: the picture an agent looks at to check a Word document, a workbook or a page it just made.',
+    'One PNG per page of a document, as the MutantcatOffice renderer lays it out: the picture an agent looks at to check a Word document, a workbook or a page it just made.',
   usage:
     'render <file> --out <dir> [--page n] [--scale n] [--el e_12[,e_13] [--pad px]] [--grid [--cols n] [--tile px]]',
   options: [

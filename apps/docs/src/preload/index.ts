@@ -15,6 +15,7 @@ import type {
 } from '../shared/ipc'
 import type { ProjectApi } from '@genoffice/project-store'
 import { installDropOpenBridge } from '@genoffice/electron-utils/drop-open'
+import { installWatchdogPong } from '@genoffice/electron-utils/watchdog'
 
 const api: DesktopApi = {
   getLanguage: () => ipcRenderer.invoke('app:get-language'),
@@ -227,3 +228,5 @@ contextBridge.exposeInMainWorld('projectApi', projectApi)
 
 // open documents dragged from the OS onto this tab as a new shell tab
 installDropOpenBridge()
+// heartbeat: lets the shell main process tell a hung renderer from a healthy one
+installWatchdogPong(ipcRenderer)

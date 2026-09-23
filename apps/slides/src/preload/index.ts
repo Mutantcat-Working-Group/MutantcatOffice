@@ -4,6 +4,7 @@ import type { IpcRendererEvent } from 'electron'
 import type { RenderSlide } from '@genoffice/pptx-render'
 import type { ProjectApi } from '@genoffice/project-store'
 import { installDropOpenBridge } from '@genoffice/electron-utils/drop-open'
+import { installWatchdogPong } from '@genoffice/electron-utils/watchdog'
 import type {
   AddChartOp,
   AddElementOp,
@@ -493,3 +494,4 @@ contextBridge.exposeInMainWorld('projectApi', projectApi)
 
 // open documents dragged from the OS onto this tab as a new shell tab
 installDropOpenBridge()
+installWatchdogPong(ipcRenderer)

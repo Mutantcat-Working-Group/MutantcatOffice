@@ -78,7 +78,7 @@ test.describe('sheets: filter criteria survive save and reopen', () => {
         wc?.send('menu:action', 'save')
       })
 
-      const saveDir = join(scratch, 'GenOffice')
+      const saveDir = join(scratch, 'MutantcatOffice')
       await expect(async () => {
         const files = (await readdir(saveDir)).filter((f) => f.endsWith('.xlsx'))
         expect(files).toHaveLength(1)

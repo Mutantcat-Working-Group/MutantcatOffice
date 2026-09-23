@@ -1,6 +1,6 @@
 # Designing a deck from a spec
 
-The same workflow the GenOffice app runs when it generates a presentation, written for an agent that does the thinking itself and lets the engine do the building. In the app every stage is a separate model call; here every stage is a separate file, and the CLI checks each file before the next stage may start. Work top-down; never start by placing elements.
+The same workflow the MutantcatOffice app runs when it generates a presentation, written for an agent that does the thinking itself and lets the engine do the building. In the app every stage is a separate model call; here every stage is a separate file, and the CLI checks each file before the next stage may start. Work top-down; never start by placing elements.
 
 Files of one deck, in a folder of their own (`deck/`):
 
@@ -16,7 +16,7 @@ Never put more than one page in a file, and never write a page before its outlin
 
 ## 0. Check what the machine can do
 
-Run `genoffice capabilities --json` once. It reads GenOffice's own settings and reports, without a network call, whether web search, image search, image generation and media analysis are configured (a Genspark login with cloud tools on, or a key the user entered in Settings). Only when a feature is configured may the deck use it; when nothing is configured, work from the material you have and use typography, color blocks and shapes instead of photos. Never ask the user to configure a key just for a deck.
+Run `genoffice capabilities --json` once. It reads MutantcatOffice's own settings and reports, without a network call, whether web search, image search, image generation and media analysis are configured (a Genspark login with cloud tools on, or a key the user entered in Settings). Only when a feature is configured may the deck use it; when nothing is configured, work from the material you have and use typography, color blocks and shapes instead of photos. Never ask the user to configure a key just for a deck.
 
 ## 1. Style sheet first (one per deck)
 
@@ -94,7 +94,7 @@ Canvas is 1280 × 720 px, origin top-left, integers only; nothing may cross the 
 ## 5. Build, look, audit, fix
 
 1. `genoffice create --type pptx --spec deck/pages --outline deck/outline.json --out deck/deck.pptx --json` (`--outline` may be left out when the file sits beside the folder). Page files are taken in name order; the build refuses to run while an outline page has no file or a page file disagrees with its entry. Read `detail.issues`, `detail.imageFailures`, `detail.outline.findings` and `detail.style.offPalette`: each names the page file.
-2. `genoffice slides render deck/deck.pptx --out deck/shots --json` and look at every PNG (needs GenOffice installed). Check overflow, collisions, contrast, crop, hierarchy, whitespace.
+2. `genoffice slides render deck/deck.pptx --out deck/shots --json` and look at every PNG (needs MutantcatOffice installed). Check overflow, collisions, contrast, crop, hierarchy, whitespace.
 3. `genoffice slides audit deck/deck.pptx --json` for the geometry findings the eye misses. Element ids in the findings are the ones `genoffice slides read` and `genoffice slides apply` use.
 4. Fix a page in its spec file and put it back with `genoffice slides replace deck/deck.pptx --slide <n> --spec deck/pages/NN.json --json` (slide n is page file n+1; the page is checked against outline entry n first); the other slides are untouched. Small nudges can also go through `genoffice slides apply` ops (`setTransform`, `setText`, `setTextStyle`, `setFill` …). At most two fix rounds; then report what remains.
 

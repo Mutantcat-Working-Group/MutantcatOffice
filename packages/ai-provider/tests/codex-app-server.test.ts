@@ -155,7 +155,7 @@ describe('Codex app-server bridge', () => {
     expect(prompt).toContain('8192 output tokens')
   })
 
-  it('parses text and JSON-encoded GenOffice tool arguments', () => {
+  it('parses text and JSON-encoded MutantcatOffice tool arguments', () => {
     expect(
       parseCodexAppServerTurn(
         JSON.stringify({

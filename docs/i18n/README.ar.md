@@ -2,12 +2,12 @@
   <a href="https://genoffice.ai/">
     <picture>
       <source srcset="../assets/readme/hero-dark.webp" media="(prefers-color-scheme: dark)">
-      <img src="../assets/readme/hero.webp" alt="GenOffice — حزمة المكتب المفتوحة المصدر المدعومة بالذكاء الاصطناعي: Docs و Sheets و Slides و PDF و Markdown و HTML مع لوحة ذكاء اصطناعي مدمجة" width="100%">
+      <img src="../assets/readme/hero.webp" alt="MutantcatOffice — حزمة المكتب المفتوحة المصدر المدعومة بالذكاء الاصطناعي: Docs و Sheets و Slides و PDF و Markdown و HTML مع لوحة ذكاء اصطناعي مدمجة" width="100%">
     </picture>
   </a>
 </p>
 
-<h1 align="center" dir="rtl">GenOffice</h1>
+<h1 align="center" dir="rtl">MutantcatOffice</h1>
 
 <p align="center" dir="rtl"><b>أول حزمة Office متكاملة المزايا ومفتوحة المصدر تعمل بالذكاء الاصطناعي في العالم.</b><br>
 ملفات Word و Excel و PowerPoint و PDF، يحرّرها أنت والذكاء الاصطناعي الخاص بك، وتُحفظ بالصيغ الأصلية نفسها.</p>
@@ -30,7 +30,7 @@
   <a href="../../PRIVACY.md"><b>الخصوصية</b></a>
 </p>
 
-GenOffice بديل مجاني ومفتوح المصدر لـ Microsoft Office على macOS و Windows
+MutantcatOffice بديل مجاني ومفتوح المصدر لـ Microsoft Office على macOS و Windows
 و Linux. يفتح البرنامج ويحفظ مباشرة ملفات `.docx` و `.xlsx` و `.pptx` الأصلية،
 ويحرّر ملفات PDF و Markdown و HTML، ويضع وكيل ذكاء اصطناعي إلى جانب كل مستند —
 لا كمربع محادثة مُلحق بشكل عرضي، بل كمحرّر يقرأ الملف، وينفّذ التغيير، ويوضّح
@@ -71,8 +71,8 @@ GenOffice بديل مجاني ومفتوح المصدر لـ Microsoft Office ع
 
 <table>
 <tr>
-<td width="50%"><img src="../assets/readme/docs-report.webp" alt="تطبيق GenOffice Docs يعرض صفحة تقرير سنوي بعمودين مع صورة غلاف بعرض الصفحة كاملة، وجدول مؤشرات أداء مظلّل، وترويسة وتذييل، بتكبير 80% مع لوحة الذكاء الاصطناعي مطوية"></td>
-<td width="50%"><img src="../assets/readme/docs-ai.webp" alt="GenOffice Docs: نظرة عامة عن الشركة مع صورة بانر؛ أعاد الذكاء الاصطناعي صياغة قسم النظرة العامة بإحكام وأضاف قسمًا جديدًا بنقاط، وتوفّر اللوحة تراجعًا بضغطة واحدة"></td>
+<td width="50%"><img src="../assets/readme/docs-report.webp" alt="تطبيق MutantcatOffice Docs يعرض صفحة تقرير سنوي بعمودين مع صورة غلاف بعرض الصفحة كاملة، وجدول مؤشرات أداء مظلّل، وترويسة وتذييل، بتكبير 80% مع لوحة الذكاء الاصطناعي مطوية"></td>
+<td width="50%"><img src="../assets/readme/docs-ai.webp" alt="MutantcatOffice Docs: نظرة عامة عن الشركة مع صورة بانر؛ أعاد الذكاء الاصطناعي صياغة قسم النظرة العامة بإحكام وأضاف قسمًا جديدًا بنقاط، وتوفّر اللوحة تراجعًا بضغطة واحدة"></td>
 </tr>
 <tr>
 <td dir="rtl"><b>يفتح الملف كما يعرضه Word تمامًا</b> — أقسام بعمودين، صور بعرض الصفحة كاملة، جداول مظلّلة، ترويسات وتذييلات، وتقسيم إلى صفحات بحسب مقاييس أسطر Word. الأنماط والتعليقات وتتبّع التغييرات والمعادلات والكتابة بالحبر تبقى سليمة دون تغيير عند الحفظ.</td>
@@ -84,8 +84,8 @@ GenOffice بديل مجاني ومفتوح المصدر لـ Microsoft Office ع
 
 <table>
 <tr>
-<td width="50%"><img src="../assets/readme/sheets-ai.webp" alt="GenOffice Sheets: أضاف الذكاء الاصطناعي ورقة ملخّص (Summary) تعرض الإيرادات بحسب المنطقة والفئة باستخدام صِيَغ SUMIF، إضافة إلى رسم بياني بالأعمدة، مع تقرير بـ 43 تغييرًا مُطبَّقًا وزر تراجع"></td>
-<td width="50%"><img src="../assets/readme/sheets-qa.webp" alt="GenOffice Sheets: عند سؤاله عن المنطقة الأعلى إيرادًا في الربع الثاني، يجيب الذكاء الاصطناعي بأوروبا مع تفصيل حسب الفئة، ويستشهد بالخلايا التي استخدمها كروابط، إلى جانب ورقة Orders"></td>
+<td width="50%"><img src="../assets/readme/sheets-ai.webp" alt="MutantcatOffice Sheets: أضاف الذكاء الاصطناعي ورقة ملخّص (Summary) تعرض الإيرادات بحسب المنطقة والفئة باستخدام صِيَغ SUMIF، إضافة إلى رسم بياني بالأعمدة، مع تقرير بـ 43 تغييرًا مُطبَّقًا وزر تراجع"></td>
+<td width="50%"><img src="../assets/readme/sheets-qa.webp" alt="MutantcatOffice Sheets: عند سؤاله عن المنطقة الأعلى إيرادًا في الربع الثاني، يجيب الذكاء الاصطناعي بأوروبا مع تفصيل حسب الفئة، ويستشهد بالخلايا التي استخدمها كروابط، إلى جانب ورقة Orders"></td>
 </tr>
 <tr>
 <td dir="rtl"><b>ابنِه</b> — من جملة واحدة، يضيف الوكيل ورقة ملخّص بصِيَغ <code>SUMIF</code> فعلية حسب المنطقة والفئة، ويُدرج رسمًا بيانيًا بالأعمدة، ويطبّق الـ43 تغييرًا كدفعة واحدة قابلة للتراجع.</td>
@@ -95,15 +95,15 @@ GenOffice بديل مجاني ومفتوح المصدر لـ Microsoft Office ع
 
 ### 3 · Slides — من توجيه (prompt) إلى عرض تقديمي `.pptx` كامل
 
-<img src="../assets/readme/slides-generate.webp" alt="لقطات متسارعة لـ GenOffice Slides وهو يُنشئ عرض المستثمرين Aurora Home: يخطط الذكاء الاصطناعي القصة في اللوحة، وتظهر الشرائح على القماش واحدة تلو الأخرى، وينتهي العرض المكتمل بطلب الإغلاق (closing ask)" width="100%">
+<img src="../assets/readme/slides-generate.webp" alt="لقطات متسارعة لـ MutantcatOffice Slides وهو يُنشئ عرض المستثمرين Aurora Home: يخطط الذكاء الاصطناعي القصة في اللوحة، وتظهر الشرائح على القماش واحدة تلو الأخرى، وينتهي العرض المكتمل بطلب الإغلاق (closing ask)" width="100%">
 
 <table>
 <tr>
-<td width="50%"><img src="../assets/readme/slides-cover.webp" alt="GenOffice Slides: شريحة الغلاف لعرض تقديمي لمستثمري Aurora Home من إنشاء الذكاء الاصطناعي على لوحة الرسم، مع التوجيه الأصلي المكوَّن من سطر واحد وملخّص الذكاء الاصطناعي لما بناه في اللوحة"></td>
-<td width="50%"><img src="../assets/readme/slides-ai.webp" alt="GenOffice Slides: الشريحة الختامية المصمَّمة لنفس العرض المكوَّن من 11 شريحة، مع شريط المصغّرات على اليسار ولوحة الذكاء الاصطناعي تلخّص السرد القصصي"></td>
+<td width="50%"><img src="../assets/readme/slides-cover.webp" alt="MutantcatOffice Slides: شريحة الغلاف لعرض تقديمي لمستثمري Aurora Home من إنشاء الذكاء الاصطناعي على لوحة الرسم، مع التوجيه الأصلي المكوَّن من سطر واحد وملخّص الذكاء الاصطناعي لما بناه في اللوحة"></td>
+<td width="50%"><img src="../assets/readme/slides-ai.webp" alt="MutantcatOffice Slides: الشريحة الختامية المصمَّمة لنفس العرض المكوَّن من 11 شريحة، مع شريط المصغّرات على اليسار ولوحة الذكاء الاصطناعي تلخّص السرد القصصي"></td>
 </tr>
 <tr>
-<td dir="rtl"><b>سطر واحد كمُدخل</b> — "أنشئ عرضًا تقديميًا من 10 شرائح لعرضه على المستثمرين لصالح Aurora Home…". يخطّط GenOffice للسرد القصصي، ويبحث عن الأرقام، ويُعِدّ مسودة كل شريحة على لوحة الرسم كملف <code>.pptx</code> فعلي.</td>
+<td dir="rtl"><b>سطر واحد كمُدخل</b> — "أنشئ عرضًا تقديميًا من 10 شرائح لعرضه على المستثمرين لصالح Aurora Home…". يخطّط MutantcatOffice للسرد القصصي، ويبحث عن الأرقام، ويُعِدّ مسودة كل شريحة على لوحة الرسم كملف <code>.pptx</code> فعلي.</td>
 <td dir="rtl"><b>عرض تقديمي جاهز كمُخرَج</b> — إحدى عشرة شريحة مصمَّمة بخطوط وصور متّسقة ودعوة ختامية لاتخاذ إجراء؛ استمر في التحرير عبر الشرائح الرئيسية والتخطيطات والأدلة الذكية والقصّ غير المدمِّر، أو اطلب من اللوحة إعادة التصميم أو الصياغة أو إعادة الترتيب.</td>
 </tr>
 </table>
@@ -112,8 +112,8 @@ GenOffice بديل مجاني ومفتوح المصدر لـ Microsoft Office ع
 
 <table>
 <tr>
-<td width="50%"><img src="../assets/readme/pdf-edit.webp" alt="GenOffice PDF: يحدّد وضع تحرير النص كل كتلة نصية في الصفحة للتحرير في مكانها، بينما تجيب لوحة الذكاء الاصطناعي عن سؤال حول التقرير مع استشهادات بأرقام الصفحات"></td>
-<td width="50%"><img src="../assets/readme/pdf-convert.webp" alt="تطبيق GenOffice Docs يعرض مستند Word محوَّلًا محليًا من ملف PDF الخاص بالمراجعة الفصلية لشركة Helios، مفتوحًا في تبويب ثانٍ إلى جانب ملف PDF الأصلي"></td>
+<td width="50%"><img src="../assets/readme/pdf-edit.webp" alt="MutantcatOffice PDF: يحدّد وضع تحرير النص كل كتلة نصية في الصفحة للتحرير في مكانها، بينما تجيب لوحة الذكاء الاصطناعي عن سؤال حول التقرير مع استشهادات بأرقام الصفحات"></td>
+<td width="50%"><img src="../assets/readme/pdf-convert.webp" alt="تطبيق MutantcatOffice Docs يعرض مستند Word محوَّلًا محليًا من ملف PDF الخاص بالمراجعة الفصلية لشركة Helios، مفتوحًا في تبويب ثانٍ إلى جانب ملف PDF الأصلي"></td>
 </tr>
 <tr>
 <td dir="rtl"><b>حرّر داخل الصفحة</b> — يحدّد وضع تحرير النص كل كتلة نصية لإعادة الكتابة في مكانها؛ ويُعاد كتابة تدفّق المحتوى عبر PDFium بالخطوط الأصلية نفسها، لا بتعليق تغطية فوق النص. اسأل الذكاء الاصطناعي عن تقرير طويل واحصل على إجابات مع استشهادات بأرقام الصفحات.</td>
@@ -128,11 +128,11 @@ GenOffice بديل مجاني ومفتوح المصدر لـ Microsoft Office ع
 الألوان، والخطوط، وتوجهات الأسلوب — ثم يبني ملف `.html` واحدًا مستقلًا بالكامل
 استنادًا إلى تلك العناصر (tokens).
 
-<img src="../assets/readme/html-restyle-motion.webp" alt="لقطات متسارعة لـ GenOffice HTML وهو يعيد تصميم صفحة الوصول الخاصة بـ Lumen: طلب Restyle واحد في اللوحة يحوّل صفحة Midnight Studio الداكنة إلى نسخة Solar Daybreak الدافئة، بينما يبقى كل قسم وكل المحتوى في مكانه" width="100%">
+<img src="../assets/readme/html-restyle-motion.webp" alt="لقطات متسارعة لـ MutantcatOffice HTML وهو يعيد تصميم صفحة الوصول الخاصة بـ Lumen: طلب Restyle واحد في اللوحة يحوّل صفحة Midnight Studio الداكنة إلى نسخة Solar Daybreak الدافئة، بينما يبقى كل قسم وكل المحتوى في مكانه" width="100%">
 
 <table>
 <tr>
-<td width="50%"><img src="../assets/readme/html-ai.webp" alt="GenOffice HTML: صفحة هبوط تم إنشاؤها لمصباح مكتبي يعمل بالطاقة الشمسية باتجاه Midnight Studio الداكن، معروضة في المعاينة المباشرة مع لوحة الذكاء الاصطناعي تلخّص الصفحة التي بنتها للتو"></td>
+<td width="50%"><img src="../assets/readme/html-ai.webp" alt="MutantcatOffice HTML: صفحة هبوط تم إنشاؤها لمصباح مكتبي يعمل بالطاقة الشمسية باتجاه Midnight Studio الداكن، معروضة في المعاينة المباشرة مع لوحة الذكاء الاصطناعي تلخّص الصفحة التي بنتها للتو"></td>
 <td width="50%"><img src="../assets/readme/html-restyle.webp" alt="نفس صفحة هبوط Lumen بعد إعادة تصميمها بواسطة الذكاء الاصطناعي إلى اتجاه Solar Daybreak الدافئ: خلفية بلون الورق، وعناوين بخط Serif، ولمسة برتقالية، مع الحفاظ على جميع الأقسام والنصوص"></td>
 </tr>
 <tr>
@@ -142,8 +142,8 @@ GenOffice بديل مجاني ومفتوح المصدر لـ Microsoft Office ع
 </table>
 <table>
 <tr>
-<td width="50%"><img src="../assets/readme/html-dashboard.webp" alt="GenOffice HTML: واجهة لوحة تحكم شخصية تم إنشاؤها لمصمِّم مستقل بأسلوب كتّاني دافئ، مع شريط جانبي أيسر، وترحيب بخط Serif، وأربع بطاقات مقاييس"></td>
-<td width="50%"><img src="../assets/readme/html-report.webp" alt="GenOffice HTML: تقرير بيانات عن سوق السيارات الكهربائية تم إنشاؤه بأسلوب الصحيفة الكبيرة (broadsheet)، مع ترويسة بخط Serif، ورقم عنوان رئيسي بقيمة 17.3 مليون، وصفّ إحصاءات"></td>
+<td width="50%"><img src="../assets/readme/html-dashboard.webp" alt="MutantcatOffice HTML: واجهة لوحة تحكم شخصية تم إنشاؤها لمصمِّم مستقل بأسلوب كتّاني دافئ، مع شريط جانبي أيسر، وترحيب بخط Serif، وأربع بطاقات مقاييس"></td>
+<td width="50%"><img src="../assets/readme/html-report.webp" alt="MutantcatOffice HTML: تقرير بيانات عن سوق السيارات الكهربائية تم إنشاؤه بأسلوب الصحيفة الكبيرة (broadsheet)، مع ترويسة بخط Serif، ورقم عنوان رئيسي بقيمة 17.3 مليون، وصفّ إحصاءات"></td>
 </tr>
 <tr>
 <td dir="rtl"><b>نماذج واجهات (UI mockups)</b> — تحوّل قالب البداية "لوحة التحكم الشخصية" شخصية افتراضية إلى تخطيط عملي: شريط جانبي، ترحيب، رسم Sparkline لساعات العمل القابلة للفوترة، وبطاقات فواتير ونسب استغلال، وكل ذلك HTML فعلي يمكنك تسليمه لمطوِّر.</td>
@@ -155,8 +155,8 @@ GenOffice بديل مجاني ومفتوح المصدر لـ Microsoft Office ع
 
 <table>
 <tr>
-<td width="50%"><img src="../assets/readme/markdown-ai.webp" alt="GenOffice Markdown: فقرة محدَّدة تعرض نافذة منبثقة Ask AI مع تعليمات مكتوبة وشرائح اقتراحات مثل Polish وMake more concise وExpand وFix grammar، إضافة إلى زرَّي Send now وAdd to queue"></td>
-<td width="50%"><img src="../assets/readme/markdown-render.webp" alt="تطبيق GenOffice Markdown يعرض مستند ملاحظات إطلاق يحتوي على جدول، ومخطط تدفّق Mermaid، وقائمة مهام، مع توجيهات البداية الخاصة بلوحة الذكاء الاصطناعي على اليسار"></td>
+<td width="50%"><img src="../assets/readme/markdown-ai.webp" alt="MutantcatOffice Markdown: فقرة محدَّدة تعرض نافذة منبثقة Ask AI مع تعليمات مكتوبة وشرائح اقتراحات مثل Polish وMake more concise وExpand وFix grammar، إضافة إلى زرَّي Send now وAdd to queue"></td>
+<td width="50%"><img src="../assets/readme/markdown-render.webp" alt="تطبيق MutantcatOffice Markdown يعرض مستند ملاحظات إطلاق يحتوي على جدول، ومخطط تدفّق Mermaid، وقائمة مهام، مع توجيهات البداية الخاصة بلوحة الذكاء الاصطناعي على اليسار"></td>
 </tr>
 <tr>
 <td dir="rtl"><b>اسأل الذكاء الاصطناعي عن نص محدَّد</b> — حدِّد أي فقرة فتظهر شريحة <b>Ask AI</b>: اكتب تعليمًا أو اختر اقتراحًا، وأرسله فورًا، أو أضِف عدة تعديلات مرتبطة بمواضع محدَّدة إلى قائمة انتظار ونفِّذها في مرة واحدة. نفس المدخل موجود في كل التطبيقات.</td>
@@ -164,23 +164,23 @@ GenOffice بديل مجاني ومفتوح المصدر لـ Microsoft Office ع
 </tr>
 </table>
 
-### 7 · CLI — وكيل البرمجة الخاص بك يقود GenOffice، على جهازك
+### 7 · CLI — وكيل البرمجة الخاص بك يقود MutantcatOffice، على جهازك
 
-يأتي GenOffice مع سطر أوامر `genoffice` ومهارة وكيل. ثبّت المهارة، وسيتمكّن
+يأتي MutantcatOffice مع سطر أوامر `genoffice` ومهارة وكيل. ثبّت المهارة، وسيتمكّن
 Claude Code أو Codex أو Cursor أو Gemini CLI أو GitHub Copilot أو OpenCode أو
 Windsurf من إنشاء ملفات Office حقيقية وتحويلها وقراءتها وتحريرها عبر المحرّكات
 نفسها التي تستخدمها التطبيقات، دون فتح أي نافذة.
 
-<img src="../assets/readme/cli-deck-in-app.webp" alt="GenOffice Slides يعرض عرضًا تقديميًا من ثماني شرائح عن المجموعة الشمسية بناه وكيل برمجة عبر سطر أوامر genoffice: شريحة الغلاف على لوحة الرسم، وثماني مصغّرات على اليسار، ولوحة الذكاء الاصطناعي مفتوحة" width="100%">
+<img src="../assets/readme/cli-deck-in-app.webp" alt="MutantcatOffice Slides يعرض عرضًا تقديميًا من ثماني شرائح عن المجموعة الشمسية بناه وكيل برمجة عبر سطر أوامر genoffice: شريحة الغلاف على لوحة الرسم، وثماني مصغّرات على اليسار، ولوحة الذكاء الاصطناعي مفتوحة" width="100%">
 
 <table>
 <tr>
 <td width="50%"><img src="../assets/readme/cli-slides-grid.webp" alt="الشرائح الثماني المُصيَّرة لعرض المجموعة الشمسية جنبًا إلى جنب: الغلاف، والجدول الزمني للاستكشاف، وأربعة أرقام رئيسية، ورسم بياني بالأعمدة لأقطار الكواكب، والعوالم الصخرية مقابل العمالقة، ورقم الشمس البارز 99.8%، وشبكة العمالقة الأربعة، والخلاصات"></td>
-<td width="50%"><img src="../assets/readme/cli-integrations.webp" alt="إعدادات GenOffice، صفحة Integrations: مهارة genoffice مثبَّتة في Claude Code، مع أزرار Install بجوار Codex وCursor"></td>
+<td width="50%"><img src="../assets/readme/cli-integrations.webp" alt="إعدادات MutantcatOffice، صفحة Integrations: مهارة genoffice مثبَّتة في Claude Code، مع أزرار Install بجوار Codex وCursor"></td>
 </tr>
 <tr>
 <td dir="rtl"><b>توجيه واحد إلى وكيلك</b> — "أنشئ عرضًا تقديميًا من ثماني شرائح عن المجموعة الشمسية." يقرأ الوكيل المهارة، ويكتب ورقة أنماط ومخططًا ومواصفة صفحة واحدة لكل شريحة، ويولّد الصورتين بواسطة <code>genoffice image</code>، ويترك <code>genoffice slides check</code> يرفض أي عنصر يتجاوز الحدود أو يتداخل قبل أن يجمّع <code>genoffice create</code> ملف <code>.pptx</code> ويُعيد <code>slides render</code> صورة PNG لكل شريحة لمعاينتها.</td>
-<td dir="rtl"><b>ثبّت مرة واحدة، من الإعدادات → التكاملات</b> — يسرد GenOffice وكلاء البرمجة الذين يجدهم على هذا الجهاز ويكتب المهارة في كل وكيل تختاره. أو نزّل المهارة كملف zip، أو شغّل <code>npx skills add genspark-ai/genoffice</code>. الأوامر وسير العمل الكامل في <a href="#command-line-and-agent-skill">سطر الأوامر ومهارة الوكيل</a>.</td>
+<td dir="rtl"><b>ثبّت مرة واحدة، من الإعدادات → التكاملات</b> — يسرد MutantcatOffice وكلاء البرمجة الذين يجدهم على هذا الجهاز ويكتب المهارة في كل وكيل تختاره. أو نزّل المهارة كملف zip، أو شغّل <code>npx skills add genspark-ai/genoffice</code>. الأوامر وسير العمل الكامل في <a href="#command-line-and-agent-skill">سطر الأوامر ومهارة الوكيل</a>.</td>
 </tr>
 </table>
 
@@ -192,12 +192,12 @@ Desktop وCursor وأي عميل MCP آخر تشغيل `genoffice mcp` بأنف�
 العمليات كموارد (resources). كما يتيح خادم HTTP ثانٍ داخل التطبيق للوكيل
 بناء مستند Word في تبويب محرِّر مرئي بينما تشاهد.
 
-<img src="../assets/readme/mcp-deck-motion.webp" alt="لقطات متسارعة لـ Claude Code وهو يبني عرضًا استثماريًا من ثماني شرائح عن الطاقة المتجدّدة عبر خادم MCP الخاص بـ genoffice: يبحث عن الرسوم البيانية والصور، ويتحقق من كل صورة مرشّحة عبر media، وdeck_start يكتب ورقة الأنماط والمخطط، وdeck_page يضيف صفحة واحدة مُتحقَّقة في كل مرة، وdeck_build يجمّع ملف .pptx، وslides_render يعيد صورة كل شريحة؛ ثم يُفتح العرض النهائي في GenOffice Slides" width="100%">
+<img src="../assets/readme/mcp-deck-motion.webp" alt="لقطات متسارعة لـ Claude Code وهو يبني عرضًا استثماريًا من ثماني شرائح عن الطاقة المتجدّدة عبر خادم MCP الخاص بـ genoffice: يبحث عن الرسوم البيانية والصور، ويتحقق من كل صورة مرشّحة عبر media، وdeck_start يكتب ورقة الأنماط والمخطط، وdeck_page يضيف صفحة واحدة مُتحقَّقة في كل مرة، وdeck_build يجمّع ملف .pptx، وslides_render يعيد صورة كل شريحة؛ ثم يُفتح العرض النهائي في MutantcatOffice Slides" width="100%">
 
 <table>
 <tr>
-<td width="50%"><img src="../assets/readme/mcp-deck-in-app.webp" alt="GenOffice Slides يعرض عرض Renewable Energy 2026 من ثماني شرائح الذي بناه Claude Code عبر خادم MCP الخاص بـ genoffice: شريحة الغلاف مع صورة فوتوغرافية لمزرعة رياح على لوحة الرسم وثماني مصغّرات على اليسار"></td>
-<td width="50%"><img src="../assets/readme/mcp-integrations.webp" alt="إعدادات GenOffice، صفحة Integrations، جزء MCP: أمر claude mcp add من سطر واحد لـ Claude Code، وكتلة JSON لـ Cursor وClaude Desktop وعملاء MCP الآخرين، وخيار خادم HTTP المحلي أسفل ذلك"></td>
+<td width="50%"><img src="../assets/readme/mcp-deck-in-app.webp" alt="MutantcatOffice Slides يعرض عرض Renewable Energy 2026 من ثماني شرائح الذي بناه Claude Code عبر خادم MCP الخاص بـ genoffice: شريحة الغلاف مع صورة فوتوغرافية لمزرعة رياح على لوحة الرسم وثماني مصغّرات على اليسار"></td>
+<td width="50%"><img src="../assets/readme/mcp-integrations.webp" alt="إعدادات MutantcatOffice، صفحة Integrations، جزء MCP: أمر claude mcp add من سطر واحد لـ Claude Code، وكتلة JSON لـ Cursor وClaude Desktop وعملاء MCP الآخرين، وخيار خادم HTTP المحلي أسفل ذلك"></td>
 </tr>
 <tr>
 <td dir="rtl"><b>توجيه واحد، 38 استدعاءً للأدوات، بلا طرفية</b> — "ابنِ عرضًا استثماريًا من ثماني شرائح عن الطاقة المتجدّدة في 2026، بصورة حقيقية على الغلاف وحيثما تفيد صورة." يسحب الوكيل الرسوم البيانية والصور عبر <code>search</code>، ويسأل <code>media</code> عمّا إذا كانت كل صورة مرشّحة صورة فوتوغرافية حقيقية، ثم يستدعي <code>deck_start</code> بورقة أنماط ومخطط، ثم <code>deck_page</code> لكل شريحة؛ تُفحص كل صفحة مقابل المخطط والباليت قبل الاحتفاظ بها، ويجمّع <code>deck_build</code> ملف <code>.pptx</code>، ويبحث <code>slides_audit</code> عن التجاوزات، ويعيد <code>slides_render</code> صورة PNG لكل شريحة كمحتوى صوري يمكن للنموذج النظر إليه، ويُصلح <code>deck_replace</code> الصفحات الثلاث التي لم تعجبه.</td>
@@ -205,7 +205,7 @@ Desktop وCursor وأي عميل MCP آخر تشغيل `genoffice mcp` بأنف�
 </tr>
 </table>
 
-## لماذا GenOffice
+## لماذا MutantcatOffice
 
 - **مفتوح المصدر**، برخصة Apache-2.0، ويُطوَّر علنًا على GitHub.
 - **لك لتشغيله.** تطبيقات أصلية لأنظمة macOS و Windows و Linux؛ تبقى الملفات
@@ -252,7 +252,7 @@ Grok أو Qwen أو MiniMax أو أي نقطة نهاية للصور متواف�
 كل ما تستطيع التطبيقات فعله بملف، يستطيع سطر أوامر `genoffice` فعله من
 الطرفية: فحص ملفات Word وExcel وPowerPoint وPDF وMarkdown وHTML وتحويلها
 وإنشاؤها وقراءتها وتحريرها على المحرّكات نفسها، دون واجهة رسومية. يُثبَّت مع
-GenOffice، ولا يحتاج إلى بيئة تشغيل خاصة به، ولا يرسل أي مستند إلى أي مكان.
+MutantcatOffice، ولا يحتاج إلى بيئة تشغيل خاصة به، ولا يرسل أي مستند إلى أي مكان.
 وبالاقتران مع **مهارة الوكيل** المرفقة، يحوّل وكيل البرمجة إلى عامل مستندات
 يُنتج ملفات Office حقيقية بدلًا من تقريبات بصيغة Markdown.
 
@@ -262,11 +262,11 @@ GenOffice، ولا يحتاج إلى بيئة تشغيل خاصة به، ولا 
 
 ### تثبيت المهارة
 
-| الطريقة                                | ما يحدث                                                                                                                                            |
-| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **الإعدادات → التكاملات** في التطبيق   | يسرد الوكلاء الموجودين على هذا الجهاز؛ وبنقرة واحدة يكتب المهارة في كل وكيل تختاره. ويظهر زر **Update** عندما يصدر إصدار من GenOffice بمهارة أحدث. |
-| **التنزيل كملف zip** من الصفحة نفسها   | التنسيق الذي يقبله claude.ai وتطبيقات Claude لسطح المكتب والمساعدون الآخرون كمهارة مرفوعة.                                                         |
-| `npx skills add genspark-ai/genoffice` | يثبّت من هذا المستودع في أي وكيل متوافق مع المهارات.                                                                                               |
+| الطريقة                                | ما يحدث                                                                                                                                                  |
+| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **الإعدادات → التكاملات** في التطبيق   | يسرد الوكلاء الموجودين على هذا الجهاز؛ وبنقرة واحدة يكتب المهارة في كل وكيل تختاره. ويظهر زر **Update** عندما يصدر إصدار من MutantcatOffice بمهارة أحدث. |
+| **التنزيل كملف zip** من الصفحة نفسها   | التنسيق الذي يقبله claude.ai وتطبيقات Claude لسطح المكتب والمساعدون الآخرون كمهارة مرفوعة.                                                               |
+| `npx skills add genspark-ai/genoffice` | يثبّت من هذا المستودع في أي وكيل متوافق مع المهارات.                                                                                                     |
 
 ثم ابدأ محادثة جديدة واطلب مستندًا. تعلّم المهارة الوكيل متى يلجأ إلى
 `genoffice`، وكيف يقرأ الملف قبل تحريره، وكيف يتحقّق من عمله بنفسه.
@@ -296,7 +296,7 @@ genoffice open sales.xlsx                          # hand the result to the edit
 كل مرحلة قبل أن تبدأ التالية:
 
 ```bash
-genoffice capabilities --json                        # which cloud tools GenOffice has configured
+genoffice capabilities --json                        # which cloud tools MutantcatOffice has configured
 genoffice guide slides design                        # the deck workflow and layout library
 genoffice image "the eight planets in a row …" --aspect 16:9 --out deck/assets/cover.jpg
 genoffice slides check deck/outline.json --json      # 8 pages, no findings
@@ -310,7 +310,7 @@ genoffice open deck/solar-system.pptx
 ```
 
 لا يحدث أي استدعاء لنموذج داخل `genoffice`: الوكيل هو من يفكّر، وسطر الأوامر
-هو من يبني ويتحقّق، وتُفتح النتيجة في GenOffice أو PowerPoint كملف `.pptx` عادي.
+هو من يبني ويتحقّق، وتُفتح النتيجة في MutantcatOffice أو PowerPoint كملف `.pptx` عادي.
 
 <a id="mcp-server"></a>
 
@@ -321,10 +321,10 @@ genoffice open deck/solar-system.pptx
 طريقتان للدخول، وكلتاهما موضَّحتان بمقتطفات جاهزة للنسخ في **الإعدادات →
 التكاملات → MCP**:
 
-| الطريقة                            | ما هي                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **A · `genoffice mcp`** (موصى بها) | خادم stdio يشغّله المساعد بنفسه؛ لا حاجة لفتح GenOffice. أداة واحدة لكل أمر (`info`، `convert`، `create_docx`، `create_xlsx`، `create_pptx`، `create_pdf`، `docs_read` / `docs_apply` / `docs_check`، `sheet_*`، `slides_*`، `render`، `guide`، `search`، `image`، `media`، `open`) بالإضافة إلى تدفّق العرض المرحلي `deck_start` → `deck_page` → `deck_build` → `deck_replace`. تُمرَّر العمليات والمواصفات وMarkdown مباشرة ضمن الطلب، لذا يعمل حتى العميل بلا نظام ملفات. |
-| **B · خادم HTTP محلي**             | يعمل داخل تطبيق GenOffice على `http://127.0.0.1:3093/mcp` (Streamable HTTP، مع دعم SSE القديم). تُشغِّل أدواته تبويب محرِّر Word المرئي: `create_session`، `insert_content`، `replace_blocks`، `apply_ops`، `read_document`، `save_session`، وتشاهد المستند وهو يتشكّل. مُعطَّل افتراضيًا؛ فعِّله من لوحة الإعدادات نفسها.                                                                                                                                                   |
+| الطريقة                            | ما هي                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **A · `genoffice mcp`** (موصى بها) | خادم stdio يشغّله المساعد بنفسه؛ لا حاجة لفتح MutantcatOffice. أداة واحدة لكل أمر (`info`، `convert`، `create_docx`، `create_xlsx`، `create_pptx`، `create_pdf`، `docs_read` / `docs_apply` / `docs_check`، `sheet_*`، `slides_*`، `render`، `guide`، `search`، `image`، `media`، `open`) بالإضافة إلى تدفّق العرض المرحلي `deck_start` → `deck_page` → `deck_build` → `deck_replace`. تُمرَّر العمليات والمواصفات وMarkdown مباشرة ضمن الطلب، لذا يعمل حتى العميل بلا نظام ملفات. |
+| **B · خادم HTTP محلي**             | يعمل داخل تطبيق MutantcatOffice على `http://127.0.0.1:3093/mcp` (Streamable HTTP، مع دعم SSE القديم). تُشغِّل أدواته تبويب محرِّر Word المرئي: `create_session`، `insert_content`، `replace_blocks`، `apply_ops`، `read_document`، `save_session`، وتشاهد المستند وهو يتشكّل. مُعطَّل افتراضيًا؛ فعِّله من لوحة الإعدادات نفسها.                                                                                                                                                   |
 
 ```bash
 # Claude Code
@@ -337,12 +337,12 @@ claude mcp add --transport stdio genoffice -- genoffice mcp
 ```
 
 `genoffice` هنا هو سطر الأوامر المرفق داخل التطبيق (على macOS في
-`/Applications/GenOffice.app/Contents/Resources/cli/genoffice`؛ تعرض لوحة
+`/Applications/MutantcatOffice.app/Contents/Resources/cli/genoffice`؛ تعرض لوحة
 الإعدادات المسار الدقيق لتثبيتك). يحمل الخادم تعليمات سير عمله الخاصة
 ويعرض مراجع العمليات كموارد `genoffice://guide/*`، لذا لا حاجة لأي مهارة؛
 يمكن للمهارة وخادم MCP التعايش معًا، ويختار المساعد أحدهما. الميزات
 السحابية (`search`، `image`، `media`) لا تزال تمرّ عبر المزوِّد المُعدّ في
-GenOffice؛ أما كل شيء آخر فيعمل محليًا، ويحصر `GENOFFICE_ALLOWED_ROOTS` كل
+MutantcatOffice؛ أما كل شيء آخر فيعمل محليًا، ويحصر `GENOFFICE_ALLOWED_ROOTS` كل
 أداة ضمن المجلدات التي تحدّدها.
 
 عرض الطاقة المتجدّدة في العرض التوضيحي أعلاه هو ما يبدو عليه توجيه واحد في
@@ -366,7 +366,7 @@ deck_replace(dir, n, page) ×3 · slides_render(file, out)
 ثمانية وثلاثون استدعاءً، في نحو ثلاث عشرة دقيقة، دون أن يلمس المساعد أي طرفية:
 الرسوم البيانية والصور وكل الأدلة والفحوصات والعروض المصيَّرة انتقلت كنتائج
 لاستدعاءات أدوات MCP. غادر الجهاز فقط `search` و`media`، إلى المزوّد المهيَّأ
-في GenOffice.
+في MutantcatOffice.
 
 <a id="download"></a>
 
@@ -388,7 +388,7 @@ deck_replace(dir, n, page) ×3 · slides_render(file, out)
 <details>
 <summary><b>التثبيت على Linux</b></summary>
 
-يتم تثبيت حزمة deb باستخدام apt — فيسحب التبعيات المطلوبة ويضيف GenOffice إلى
+يتم تثبيت حزمة deb باستخدام apt — فيسحب التبعيات المطلوبة ويضيف MutantcatOffice إلى
 قائمة التطبيقات:
 
 ```bash
@@ -407,8 +407,8 @@ sudo zypper install ./genoffice-<version>.x86_64.rpm  # openSUSE
 ثم اجعل الملف قابلاً للتنفيذ، وشغِّله:
 
 ```bash
-chmod +x GenOffice-<version>.AppImage
-./GenOffice-<version>.AppImage
+chmod +x MutantcatOffice-<version>.AppImage
+./MutantcatOffice-<version>.AppImage
 ```
 
 </details>
@@ -430,9 +430,6 @@ save      ─► dirty blocks → OOXML fragments (referencing existing styles o
           ─► repack the zip; every other entry is copied byte-for-byte
 ```
 
-الجولة التفصيلية حزمة بحزمة (محرِّكات docx/pptx، و`pdf2docx`، و`html2docx`،
-ونواة الوكيل ومزوِّدوه) موجودة في [CONTRIBUTING.md](../../CONTRIBUTING.md#engine-packages).
-
 ## التطوير
 
 ```bash
@@ -449,42 +446,40 @@ npm run dist:linux   # package Linux AppImage + deb + rpm
 
 يحتاج تطبيق Sheets بالإضافة إلى ذلك إلى سلسلة أدوات Rust لعمليته المساعدة
 الخاصة بـ xlsx (يجب أن يكون `cargo` متاحًا في PATH)؛ ويقوم أمر
-`npm run build -w @genoffice/sheets` بتجميعه تلقائيًا. راجع
-[CONTRIBUTING.md](../../CONTRIBUTING.md) لمعرفة الفحوصات التي يجب أن يمر بها
-كل تغيير وكيفية دمج طلبات السحب (pull requests).
+`npm run build -w @genoffice/sheets` بتجميعه تلقائيًا.
 
 ## المجتمع
 
-GenOffice قيد تطوير نشط، وملاحظاتك هي ما يشكِّل مستقبله.
+MutantcatOffice قيد تطوير نشط، وملاحظاتك هي ما يشكِّل مستقبله.
 
 - **أبلغ عن خطأ أو اطلب ميزة جديدة** عبر
   [GitHub Issues](https://github.com/genspark-ai/genoffice/issues).
-- **انضم إلى محادثة مجموعة GenOffice** على
+- **انضم إلى محادثة مجموعة MutantcatOffice** على
   [GenTeam](https://genoffice.ai/join) للتواصل مع الفريق والمستخدمين الآخرين.
-- **أضِف نجمة (Star) للمستودع** إذا كان GenOffice مفيدًا لك — فهذه أفضل طريقة
+- **أضِف نجمة (Star) للمستودع** إذا كان MutantcatOffice مفيدًا لك — فهذه أفضل طريقة
   لدعم المشروع.
 
 ## الأسئلة الشائعة
 
 <details>
-<summary><b>هل GenOffice مجاني؟</b></summary>
+<summary><b>هل MutantcatOffice مجاني؟</b></summary>
 
-نعم. GenOffice مجاني ومفتوح المصدر بموجب ترخيص Apache-2.0 — لا نسخة تجريبية
+نعم. MutantcatOffice مجاني ومفتوح المصدر بموجب ترخيص Apache-2.0 — لا نسخة تجريبية
 ولا باقة مدفوعة للتطبيقات نفسها.
 
 </details>
 
 <details>
-<summary><b>هل يمكن لـ GenOffice فتح ملفات Microsoft Word و Excel و PowerPoint؟</b></summary>
+<summary><b>هل يمكن لـ MutantcatOffice فتح ملفات Microsoft Word و Excel و PowerPoint؟</b></summary>
 
-نعم. يفتح GenOffice ملفات `.docx` و `.xlsx` و `.pptx` الأصلية ويحفظها.
+نعم. يفتح MutantcatOffice ملفات `.docx` و `.xlsx` و `.pptx` الأصلية ويحفظها.
 والحفظ يحافظ على البايتات: تُكتب الأجزاء التي لم تلمسها من الملف كما هي
 حرفيًا بايتًا ببايت، فتستمر المستندات في العمل في Microsoft Office.
 
 </details>
 
 <details>
-<summary><b>هل يعمل GenOffice دون اتصال بالإنترنت؟</b></summary>
+<summary><b>هل يعمل MutantcatOffice دون اتصال بالإنترنت؟</b></summary>
 
 تحرير المستندات محلي بالكامل — لا تغادر الملفات جهازك أبدًا عند الفتح أو
 التحرير أو الحفظ أو التحويل. تحتاج ميزات الذكاء الاصطناعي (الوكلاء، والبحث،
@@ -494,7 +489,7 @@ GenOffice قيد تطوير نشط، وملاحظاتك هي ما يشكِّل �
 </details>
 
 <details>
-<summary><b>هل يمكن لـ GenOffice تحرير ملفات PDF؟</b></summary>
+<summary><b>هل يمكن لـ MutantcatOffice تحرير ملفات PDF؟</b></summary>
 
 نعم — تحرير حقيقي لنص وصور PDF يعيد كتابة تدفّق محتوى الصفحة مع الحفاظ على
 الخطوط الأصلية، وليس بتعليقات تغطية فوق النص.
@@ -502,7 +497,7 @@ GenOffice قيد تطوير نشط، وملاحظاتك هي ما يشكِّل �
 </details>
 
 <details>
-<summary><b>هل يمكن لـ GenOffice تحويل PDF إلى Word أو Excel أو PowerPoint؟</b></summary>
+<summary><b>هل يمكن لـ MutantcatOffice تحويل PDF إلى Word أو Excel أو PowerPoint؟</b></summary>
 
 نعم — بالكامل على الجهاز: استخراج على مستوى الحروف عبر PDFium إلى جانب تحليل
 للتخطيط يعتمد على الأشكال الهندسية، دون أي خدمة سحابية أو رفع للملفات. وتشمل
@@ -515,7 +510,7 @@ macOS و Windows، فتُحوَّل إلى نص قابل للتحرير بدلً
 <summary><b>هل يمكنني استخدام نموذج ذكاء اصطناعي أو مفتاح API خاص بي؟</b></summary>
 
 نعم. إلى جانب تسجيل الدخول بواسطة Genspark الذي لا يتطلب أي مفتاح، يدعم
-GenOffice استخدام مفتاحك الخاص مع Claude وOpenAI وGemini وDeepSeek وKimi
+MutantcatOffice استخدام مفتاحك الخاص مع Claude وOpenAI وGemini وDeepSeek وKimi
 وGLM وQwen وDoubao وMiniMax وGrok وMistral وOpenRouter وRequesty وOpenCode Zen/Go،
 إضافة إلى أي نقطة نهاية متوافقة مع OpenAI — بما في ذلك خوادم النماذج المحلية.
 ولكل من البحث وتوليد الصور وتحليل الصور والفيديو مفاتيحه الخاصة تحت
@@ -524,7 +519,7 @@ Settings → AI Media & Search.
 </details>
 
 <details>
-<summary><b>هل يمكن لـ GenOffice تحويل HTML إلى Word؟</b></summary>
+<summary><b>هل يمكن لـ MutantcatOffice تحويل HTML إلى Word؟</b></summary>
 
 نعم — يُنتج خيار Export as Word في تطبيق HTML ملف `.docx` أصليًا قابلًا
 للتحرير، بالكامل على الجهاز. تُعرَض الصفحة داخل محرك Chromium المدمج وتُحوَّل
@@ -535,9 +530,9 @@ Settings → AI Media & Search.
 </details>
 
 <details>
-<summary><b>هل يمكنني تشغيل GenOffice من Claude Code أو Codex أو Cursor أو من سكربت؟</b></summary>
+<summary><b>هل يمكنني تشغيل MutantcatOffice من Claude Code أو Codex أو Cursor أو من سكربت؟</b></summary>
 
-نعم. يثبّت GenOffice سطر أوامر `genoffice` يشغّل المحرّكات نفسها دون واجهة
+نعم. يثبّت MutantcatOffice سطر أوامر `genoffice` يشغّل المحرّكات نفسها دون واجهة
 رسومية: افحص المستندات وحوّلها وأنشئها واقرأها وحرّرها من الطرفية أو من
 سكربت، مع مخرجات `--json` للبرامج. وتعلّم مهارة الوكيل المرفقة Claude Code
 وCodex وCursor وGemini CLI وGitHub Copilot وOpenCode وWindsurf استخدامه؛ ثبّتها
@@ -547,12 +542,12 @@ Settings → AI Media & Search.
 </details>
 
 <details>
-<summary><b>هل يجمع GenOffice أي بيانات؟</b></summary>
+<summary><b>هل يجمع MutantcatOffice أي بيانات؟</b></summary>
 
 ترسل الإصدارات الرسمية المعبَّأة بيانات استخدام محدودة بشكل افتراضي، ويمكنك
 تعطيل هذا الإرسال في أي وقت من Settings → General. لا تُرسَل عبر هذه البيانات
 أبدًا محتويات المستندات، أو أسماء الملفات، أو مساراتها، أو هوية الحساب، أو
-عناوين البريد الإلكتروني. راجع [GenOffice Privacy](../../PRIVACY.md)
+عناوين البريد الإلكتروني. راجع [MutantcatOffice Privacy](../../PRIVACY.md)
 للاطلاع على الإفصاح الكامل عن الأحداث والبيانات المُجمَّعة.
 
 </details>
@@ -565,7 +560,7 @@ Settings → AI Media & Search.
 
 ## شكر وتقدير
 
-ما كان لـ GenOffice أن يكون ممكنًا لولا هذه المشاريع المفتوحة المصدر:
+ما كان لـ MutantcatOffice أن يكون ممكنًا لولا هذه المشاريع المفتوحة المصدر:
 
 - [Electron](https://www.electronjs.org/) — بيئة تشغيل سطح المكتب لكل التطبيقات.
 - [Univer](https://github.com/dream-num/univer) (Apache-2.0) — نواة واجهة جدول
@@ -609,10 +604,10 @@ MIT/Apache-2.0/BSD-3-Clause/OFL.
 
 ## الترخيص
 
-يخضع GenOffice لترخيص [Apache License 2.0](../../LICENSE)، مع استثناء واحد:
+يخضع MutantcatOffice لترخيص [Apache License 2.0](../../LICENSE)، مع استثناء واحد:
 دليل `ee/` محجوز لوحدات المؤسسات (enterprise) المستقبلية ويخضع لـ
-[GenOffice Enterprise License](../../ee/LICENSE).
+[MutantcatOffice Enterprise License](../../ee/LICENSE).
 
-اسما وشعارا GenOffice و Genspark هما علامتان تجاريتان مملوكتان لشركة
+اسما وشعارا MutantcatOffice و Genspark هما علامتان تجاريتان مملوكتان لشركة
 Mainfunc, Inc. لا يمنح ترخيص Apache-2.0 إذنًا باستخدامهما (راجع البند 6)؛
 ويجب أن تستخدم النسخ المتفرعة (forks) هويتها البصرية الخاصة.

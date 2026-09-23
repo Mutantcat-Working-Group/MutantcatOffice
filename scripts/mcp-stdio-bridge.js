@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
 /**
- * GenOffice MCP stdio bridge.
+ * MutantcatOffice MCP stdio bridge.
  *
  * MCP clients that only speak stdio (Claude Desktop, Cursor) can't reach the
- * GenOffice localhost server directly. This script bridges stdin/stdout
+ * MutantcatOffice localhost server directly. This script bridges stdin/stdout
  * JSON-RPC to the running app's legacy SSE transport (/sse + /messages).
  *
- * The GenOffice app must be running with the MCP server enabled
+ * The MutantcatOffice app must be running with the MCP server enabled
  * (Settings > MCP Settings).
  *
  * Usage:
@@ -283,10 +283,10 @@ async function main() {
   log(`bridging stdio to ${baseUrl}`)
   try {
     const health = await httpRequest('GET', '/health')
-    if (health.status === 200) log('GenOffice MCP server is reachable')
-    else log('warning: unexpected /health response; is GenOffice running?')
+    if (health.status === 200) log('MutantcatOffice MCP server is reachable')
+    else log('warning: unexpected /health response; is MutantcatOffice running?')
   } catch {
-    log('warning: cannot reach GenOffice. Start the app and enable Settings > MCP Settings.')
+    log('warning: cannot reach MutantcatOffice. Start the app and enable Settings > MCP Settings.')
   }
 
   try {

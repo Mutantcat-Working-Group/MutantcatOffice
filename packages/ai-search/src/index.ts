@@ -171,7 +171,7 @@ async function parallelWebSearch(
           .join('\n'),
       })
     }
-    // v1 search has no result-count parameter; apply GenOffice's limit locally.
+    // v1 search has no result-count parameter; apply MutantcatOffice's limit locally.
     const limited = results.slice(0, maxResults)
     return limited.length ? { results: limited, method: 'parallel' } : null
   } catch {

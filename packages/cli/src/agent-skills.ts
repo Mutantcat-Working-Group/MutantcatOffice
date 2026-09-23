@@ -24,7 +24,7 @@ import JSZip from 'jszip'
 
 export const SKILL_NAME = 'genoffice'
 
-/** app-settings.json key under which every install this machine's GenOffice wrote is remembered */
+/** app-settings.json key under which every install this machine's MutantcatOffice wrote is remembered */
 export const LEDGER_KEY = 'agentSkillInstalls'
 
 export type AgentId =

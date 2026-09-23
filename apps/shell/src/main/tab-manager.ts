@@ -2,6 +2,7 @@ import { basename } from 'node:path'
 import { realpathSync } from 'node:fs'
 import { BrowserWindow } from 'electron'
 import type { Rectangle, WebContents, WebContentsView } from 'electron'
+import type { WatchRendererOptions } from '@genoffice/electron-utils/renderer-watchdog'
 
 import {
   createDocsView,
@@ -70,7 +71,7 @@ const HOME_ID = 'home'
  */
 export class TabManager {
   private readonly tabs: TabRecord[] = [
-    { id: HOME_ID, kind: 'home', view: null, title: 'GenOffice' },
+    { id: HOME_ID, kind: 'home', view: null, title: 'MutantcatOffice' },
   ]
   private activeId: string = HOME_ID
   private nextId = 1
@@ -94,6 +95,8 @@ export class TabManager {
     private readonly applyMenuFor: (kind: TabKind) => void,
     /** localized placeholder title for a tab that has no file yet */
     private readonly untitledTitleFor?: (kind: TabKind) => string,
+    /** optional renderer-watchdog hook: callers feed every new webContents in */
+    private readonly watchRenderer?: (wc: WebContents, options?: WatchRendererOptions) => void,
   ) {
     // Layout once synchronously for macOS/Windows (bounds are already correct),
     // then once more on the next tick. On Linux/X11, `resize` fires before the
@@ -113,6 +116,7 @@ export class TabManager {
       this.spareSheetsTimer = null
       if (this.spareSheetsView || this.shellWindow.isDestroyed()) return
       const view = createSheetsView({ includeAiHandlers: false })
+      this.watchRenderer?.(view.webContents)
       // registering the session made the spare the menu-action target
       const active = this.tabs.find((t) => t.id === this.activeId)
       setActiveSheetsWebContents(
@@ -253,6 +257,7 @@ export class TabManager {
     options?: { newBlank?: boolean; aiContent?: AiDocContent },
   ): string {
     const view = createDocsView(openPath)
+    this.watchRenderer?.(view.webContents)
     const id = `t${this.nextId++}`
     if (options?.newBlank) markDocsNewBlank(view.webContents.id)
     if (options?.aiContent) queueDocsAiContent(view.webContents.id, options.aiContent)
@@ -263,7 +268,7 @@ export class TabManager {
       id,
       kind: 'docs',
       view,
-      title: openPath ? basename(openPath) : this.untitled('docs', 'GenOffice Docs'),
+      title: openPath ? basename(openPath) : this.untitled('docs', 'MutantcatOffice Docs'),
       filePath: openPath,
     })
     this.activateTab(id)
@@ -274,6 +279,7 @@ export class TabManager {
     if (options?.newBlank) setSheetsNewBlank()
     const spare = this.takeSpareSheetsView()
     const view = spare ?? createSheetsView({ includeAiHandlers: false })
+    this.watchRenderer?.(view.webContents)
     // bind the path to this tab's webContents: a multi-select Open creates
     // several sheets tabs in one loop, so a single global path would be
     // overwritten before the earlier tabs consume it
@@ -301,6 +307,9 @@ export class TabManager {
 
   openSlidesTab(openPath?: string): string {
     const view = createSlidesView(openPath)
+    // slides already owns its unresponsive freeze dialog; the watchdog still
+    // recovers crashes, ping timeouts, and the post-sleep white screen
+    this.watchRenderer?.(view.webContents, { unresponsiveReloadMs: null })
     const id = `t${this.nextId++}`
     this.shellWindow.contentView.addChildView(view)
     view.setVisible(false)
@@ -318,6 +327,7 @@ export class TabManager {
 
   openPdfTab(openPath: string): string {
     const view = createPdfView(openPath)
+    this.watchRenderer?.(view.webContents)
     const id = `t${this.nextId++}`
     this.shellWindow.contentView.addChildView(view)
     view.setVisible(false)
@@ -338,6 +348,7 @@ export class TabManager {
 
   openMarkdownTab(openPath?: string): string {
     const view = createMarkdownView(openPath)
+    this.watchRenderer?.(view.webContents)
     const id = `t${this.nextId++}`
     this.shellWindow.contentView.addChildView(view)
     view.setVisible(false)
@@ -355,6 +366,7 @@ export class TabManager {
 
   openHtmlTab(openPath?: string): string {
     const view = createHtmlView(openPath)
+    this.watchRenderer?.(view.webContents)
     const id = `t${this.nextId++}`
     this.shellWindow.contentView.addChildView(view)
     view.setVisible(false)
@@ -373,6 +385,7 @@ export class TabManager {
   /** Present → New tab: a chrome-free html tab showing the owner tab's live preview */
   openHtmlPresentTab(owner: WebContents, title: string): string {
     const view = createHtmlPresentView(owner, title)
+    this.watchRenderer?.(view.webContents)
     const id = `t${this.nextId++}`
     this.shellWindow.contentView.addChildView(view)
     view.setVisible(false)
@@ -413,6 +426,12 @@ export class TabManager {
     if (!target) return
     if (target.view) target.view.webContents.focus()
     else this.shellWindow.webContents.focus()
+  }
+
+  /** Watch the shell window's own webContents (Home) with the same heartbeat. */
+  watchShellWebContents(): void {
+    if (this.shellWindow.isDestroyed()) return
+    this.watchRenderer?.(this.shellWindow.webContents)
   }
 
   /** Re-point the process-global active-editor targets and the app menu at this

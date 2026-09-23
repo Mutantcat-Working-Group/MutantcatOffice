@@ -56,7 +56,7 @@ export const createCommand: CommandDef = {
       name: 'from',
       value: 'file',
       description:
-        'xlsx: a .csv, or a .json holding a 2-D array of cell values or { "sheets": [{ "name", "rows" }] }; strings starting with "=" are formulas. docx: a .md file, or a .html file holding a restricted-HTML fragment (see `genoffice guide docs`). pdf: any .md/.html/.docx/.xlsx/.pptx file, printed by the GenOffice renderer',
+        'xlsx: a .csv, or a .json holding a 2-D array of cell values or { "sheets": [{ "name", "rows" }] }; strings starting with "=" are formulas. docx: a .md file, or a .html file holding a restricted-HTML fragment (see `genoffice guide docs`). pdf: any .md/.html/.docx/.xlsx/.pptx file, printed by the MutantcatOffice renderer',
     },
     {
       name: 'header',

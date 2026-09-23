@@ -64,8 +64,8 @@ function baseStatus(): IntegrationsStatus {
       status: 'missing',
       location: '/usr/local/bin/genoffice',
       manual:
-        'sudo ln -sf /Applications/GenOffice.app/Contents/Resources/cli/genoffice /usr/local/bin/genoffice',
-      launcherDir: '/Applications/GenOffice.app/Contents/Resources/cli',
+        'sudo ln -sf /Applications/MutantcatOffice.app/Contents/Resources/cli/genoffice /usr/local/bin/genoffice',
+      launcherDir: '/Applications/MutantcatOffice.app/Contents/Resources/cli',
       ephemeral: false,
       version: '0.4.0',
     },
@@ -151,7 +151,7 @@ describe('Settings → Integrations', () => {
     expect(rows[2]!.textContent).toContain('Installed 2.1.0 (not by this app)')
     expect(rows[2]!.querySelectorAll('button')).toHaveLength(0)
     // CLI block: launcher path, PATH state in plain words, the manual command as copyable code
-    expect(host.textContent).toContain('/Applications/GenOffice.app/Contents/Resources/cli')
+    expect(host.textContent).toContain('/Applications/MutantcatOffice.app/Contents/Resources/cli')
     expect(host.textContent).toContain("not on your terminal's PATH")
     expect(host.querySelector('.set-intg-cli code')?.textContent).toContain('sudo ln -sf')
     expect(host.textContent).toContain('skill 2.1.0')
@@ -164,12 +164,12 @@ describe('Settings → Integrations', () => {
     // MCP block: the launcher itself while genoffice is not on the PATH, as a command and as JSON
     const mcp = [...host.querySelectorAll('.set-intg-mcp code')].map((c) => c.textContent)
     expect(mcp[0]).toBe(
-      'claude mcp add --transport stdio genoffice -- /Applications/GenOffice.app/Contents/Resources/cli/genoffice mcp',
+      'claude mcp add --transport stdio genoffice -- /Applications/MutantcatOffice.app/Contents/Resources/cli/genoffice mcp',
     )
     expect(JSON.parse(mcp[1]!)).toEqual({
       mcpServers: {
         genoffice: {
-          command: '/Applications/GenOffice.app/Contents/Resources/cli/genoffice',
+          command: '/Applications/MutantcatOffice.app/Contents/Resources/cli/genoffice',
           args: ['mcp'],
         },
       },
@@ -181,12 +181,12 @@ describe('Settings → Integrations', () => {
     expect(
       mcpLaunch({
         status: 'present',
-        launcherDir: '/Applications/GenOffice.app/Contents/Resources/cli',
+        launcherDir: '/Applications/MutantcatOffice.app/Contents/Resources/cli',
       }),
     ).toEqual({ command: 'genoffice', args: ['mcp'] })
-    const winDir = 'C:\\Users\\Jane Doe\\AppData\\Local\\Programs\\GenOffice\\resources\\cli'
+    const winDir = 'C:\\Users\\Jane Doe\\AppData\\Local\\Programs\\MutantcatOffice\\resources\\cli'
     const win = {
-      command: `${winDir}\\..\\..\\GenOffice.exe`,
+      command: `${winDir}\\..\\..\\MutantcatOffice.exe`,
       args: [`${winDir}\\genoffice.cjs`, 'mcp'],
       env: { ELECTRON_RUN_AS_NODE: '1' },
     }

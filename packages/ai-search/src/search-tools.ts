@@ -48,7 +48,7 @@ export async function testSearchProvider(
     parallelKey: provider === 'parallel' ? apiKey : '',
     prefer: provider,
   }
-  const r = await webSearch('GenOffice', 1, options)
+  const r = await webSearch('MutantcatOffice', 1, options)
   if (r.method === provider) return { ok: true }
   return {
     ok: false,
