@@ -597,6 +597,11 @@ const config = {
   nsis: {
     oneClick: false,
     allowToChangeInstallationDirectory: true,
+    // The release workflow runs x64 and arm64 as two matrix jobs that both
+    // upload their installer into one Release. The default name
+    // ("<productName> Setup <version>.exe") carries no arch, so whichever job
+    // uploaded last would --clobber the other and ship a single-arch release.
+    artifactName: 'MutantcatOffice-Setup-${version}-${arch}.exe',
   },
   beforePack: async (context) => {
     assertModuleTreesPresent()
