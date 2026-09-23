@@ -20,9 +20,9 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: 'Tag to publish (with v prefix), e.g. v1.0.20260920'
+        description: 'Tag to publish (with v prefix), e.g. v1.0.20260923'
         required: false
-        default: 'v1.0.20260920'
+        default: 'v1.0.20260923'
         type: string
 
 concurrency:

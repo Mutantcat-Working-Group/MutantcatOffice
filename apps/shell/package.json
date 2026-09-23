@@ -1,7 +1,7 @@
 {
   "name": "@genoffice/shell",
   "productName": "MutantcatOffice",
-  "version": "1.0.20260920",
+  "version": "1.0.20260923",
   "license": "Apache-2.0",
   "homepage": "https://github.com/genspark-ai/genoffice",
   "private": true,
