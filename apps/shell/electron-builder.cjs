@@ -74,8 +74,30 @@ if (winArm64 && !process.env.ELECTRON_BUILDER_7Z_FILTER) {
   process.env.ELECTRON_BUILDER_7Z_FILTER = 'BCJ'
 }
 const winArch = winArm64 ? 'arm64' : 'x64'
-const winSidecarTarget = winArm64 ? 'aarch64-pc-windows-msvc' : 'x86_64-pc-windows-gnu'
+// Both Windows passes build with the MSVC ABI: the in-tree Cargo config
+// already pins a statically linked MSVC CRT for the msvc targets, and the
+// GitHub Windows runners ship the MSVC toolchain. The GNU target was a
+// cross-compile convenience on Linux hosts; on Windows runners msvc is the
+// native toolchain and needs no extra MinGW install.
+const winSidecarTarget = winArm64 ? 'aarch64-pc-windows-msvc' : 'x86_64-pc-windows-msvc'
 const WIN_SIDECAR = `../sheets/native/xlsx-engine/target/${winSidecarTarget}/release/xlsx-sidecar.exe`
+
+// GENOFFICE_MAC_ADHOC=1 — sign every macOS artifact with ad-hoc identity
+// ("-") so CI can publish installers without Apple Developer credentials.
+// electron-builder supports `identity: "-"` for the .app; the dmg itself is
+// signed afterwards by build/notarize-dmg.js, which switches to ad-hoc mode
+// when this flag is set. Ad-hoc signing is not notarization: first launch can
+// still show Gatekeeper's developer-unverified warning.
+const macAdHoc = process.env.GENOFFICE_MAC_ADHOC === '1'
+
+// GENOFFICE_LINUX_ARCH=x64|arm64 — package Linux installers for the requested
+// architecture. The xlsx-sidecar must be built on a host of the same arch (or
+// cross-built to the matching cargo target); the release workflow runs one
+// electron-builder pass per arch on a native runner.
+const linuxArch = process.env.GENOFFICE_LINUX_ARCH || 'x64'
+if (linuxArch !== 'x64' && linuxArch !== 'arm64') {
+  throw new Error(`GENOFFICE_LINUX_ARCH must be "x64" or "arm64", got "${linuxArch}"`)
+}
 
 // The gsk CLI tree below is copied verbatim from node_modules, and the
 // nested commander path depends on npm's current hoisting layout — fail the
@@ -450,9 +472,12 @@ const config = {
     category: 'public.app-category.productivity',
     hardenedRuntime: true,
     gatekeeperAssess: false,
-    entitlements: 'build/entitlements.mac.plist',
-    entitlementsInherit: 'build/entitlements.mac.plist',
-    notarize: true,
+    entitlements: macAdHoc ? 'build/entitlements.mac.adhoc.plist' : 'build/entitlements.mac.plist',
+    entitlementsInherit: macAdHoc
+      ? 'build/entitlements.mac.adhoc.plist'
+      : 'build/entitlements.mac.plist',
+    notarize: !macAdHoc,
+    ...(macAdHoc ? { identity: '-' } : {}),
     extraResources: [
       {
         from: '../sheets/native/xlsx-engine/target/release/xlsx-sidecar',
@@ -481,10 +506,10 @@ const config = {
   },
   // Unlike win (which cross-compiles the sidecar to an explicit target
   // triple), linux takes it from cargo's host-native target/release/ — the
-  // same source mac uses. So no `arch` is pinned here: electron-builder
-  // defaults to the build host's architecture, which is the only one the
-  // sidecar was actually built for. Packaging arm64 on an x64 host, or the
-  // reverse, needs a matching `cargo build --target` first.
+  // same source mac uses. The release workflow runs one pass per
+  // GENOFFICE_LINUX_ARCH on a native runner, so the sidecar arch always
+  // matches the package. Packaging arm64 on an x64 host still needs a
+  // matching `cargo build --target` first.
   linux: {
     // AppImage (self-contained, any distro) + deb (apt install, pulls in the
     // GTK/NSS runtime deps) + rpm (dnf/zypper install on Fedora / RHEL /
@@ -493,9 +518,9 @@ const config = {
     // README download links and the already-published linux-v0.5.149 release
     // use them.
     target: [
-      { target: 'AppImage', arch: ['x64'] },
-      { target: 'deb', arch: ['x64'] },
-      { target: 'rpm', arch: ['x64'] },
+      { target: 'AppImage', arch: [linuxArch] },
+      { target: 'deb', arch: [linuxArch] },
+      { target: 'rpm', arch: [linuxArch] },
     ],
     // deb control metadata; values match the manually published 0.5.149 deb
     // so apt sees the new packages as the same lineage. Homepage comes from
@@ -531,6 +556,11 @@ const config = {
       },
     ],
   },
+  // arm64 AppImage gets an arch-suffixed name so the two architectures can
+  // coexist in one GitHub Release; x64 keeps the historical default name.
+  ...(linuxArch === 'arm64'
+    ? { appImage: { artifactName: 'mutantcatoffice-${version}-${arch}.AppImage' } }
+    : {}),
   // Same "@genoffice/shell" problem as executableName above: the default deb
   // artifact name derives from package.json "name", and the scope's "/" makes
   // fpm treat "@genoffice" as a directory. Spell the published name out

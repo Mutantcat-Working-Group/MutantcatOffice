@@ -303,10 +303,10 @@ through the [MCP server](#mcp-server), Claude Desktop and every MCP client.
 
 ### Install the skill
 
-| How                                    | What happens                                                                                                                                                                   |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Settings → Integrations** in the app | Lists the agents found on this computer; one click writes the skill into each one you choose. An **Update** button appears when a MutantcatOffice release ships a newer skill. |
-| **Download as zip** on the same page   | The layout claude.ai, the Claude desktop apps and other assistants accept as an uploaded skill.                                                                                |
+| How                                                      | What happens                                                                                                                                                                   |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Settings → Integrations** in the app                   | Lists the agents found on this computer; one click writes the skill into each one you choose. An **Update** button appears when a MutantcatOffice release ships a newer skill. |
+| **Download as zip** on the same page                     | The layout claude.ai, the Claude desktop apps and other assistants accept as an uploaded skill.                                                                                |
 | `npx skills add Mutantcat-Working-Group/MutantcatOffice` | Installs from this repository into any skills-compatible agent.                                                                                                                |
 
 Then start a new chat and ask for a document. The skill teaches the agent when
@@ -431,8 +431,8 @@ the provider configured in MutantcatOffice.
 
 ## Download
 
-| Platform                             | Requirements                                          | Download                                                                                  |
-| ------------------------------------ | ----------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Platform                             | Requirements                                          | Download                                                                                                    |
+| ------------------------------------ | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | **macOS** — Apple Silicon (arm64)    | macOS 11+                                             | [Latest `.dmg` (arm64)](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)         |
 | **macOS** — Intel (x64)              | macOS 11+                                             | [Latest `.dmg` (x64)](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)           |
 | **Windows** (x64, most PCs)          | Windows 10+, Intel/AMD                                | [Latest `-x64.exe` installer](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)   |
@@ -440,8 +440,9 @@ the provider configured in MutantcatOffice.
 | **Linux** — Debian / Ubuntu          | x86_64, glibc 2.34+ (Ubuntu 22.04 or newer)           | [Latest `.deb`](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)                 |
 | **Linux** — Fedora / RHEL / openSUSE | x86_64, glibc 2.34+ (Fedora 35+, RHEL 9+, Leap 15.6+) | [Latest `.rpm`](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)                 |
 | **Linux** — other distributions      | x86_64, glibc 2.34+, FUSE 2                           | [Latest `.AppImage`](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)            |
+| **Linux** — ARM64 (arm64)            | glibc 2.34+, FUSE 2                                   | [Latest `.AppImage` (arm64)](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)    |
 
-All builds come from `main`; the macOS and Windows installers are signed.
+All builds come from the version tags published to [Releases](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases). The macOS dmgs are ad-hoc signed (not notarized), so Gatekeeper may still show a developer-unverified warning; Windows and Linux installers are unsigned unless signing credentials are configured in CI.
 Older versions are on the [Releases](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases) page.
 
 <details>

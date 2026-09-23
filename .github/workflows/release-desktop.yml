@@ -1,0 +1,233 @@
+name: Release Desktop
+
+# Builds the MutantcatOffice desktop installers and uploads them to the GitHub
+# Release for the version tag. Pushing a tag (v1.0.20260920 style) triggers the
+# pipeline; workflow_dispatch republishes a tag manually.
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to publish (with v prefix), e.g. v1.0.20260920'
+        required: false
+        default: 'v1.0.20260920'
+        type: string
+
+concurrency:
+  group: release-desktop-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+env:
+  RELEASE_TAG: ${{ github.event_name == 'push' && github.ref_name || inputs.tag }}
+  GH_TOKEN: ${{ github.token }}
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ env.RELEASE_TAG }}
+
+      - name: Validate tag matches app version
+        run: |
+          expected="${RELEASE_TAG#v}"
+          actual="$(node -p "require('./apps/shell/package.json').version")"
+          if [ "$actual" != "$expected" ]; then
+            echo "::error::apps/shell version is $actual but tag expects $expected"
+            exit 1
+          fi
+
+      - name: Ensure release exists
+        run: |
+          if ! gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release create "$RELEASE_TAG" \
+              --title "MutantcatOffice ${RELEASE_TAG#v}" \
+              --generate-notes || true
+          fi
+
+  mac:
+    needs: create-release
+    runs-on: macos-latest
+    timeout-minutes: 120
+    env:
+      GENOFFICE_MAC_X64: '1'
+      GENOFFICE_MAC_ADHOC: '1'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ env.RELEASE_TAG }}
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@4cda84d5c5c54efe2404f9d843567869ab1699d4 # stable branch, 2026-07
+        with:
+          toolchain: stable
+
+      - name: Add Apple Rust targets
+        run: rustup target add x86_64-apple-darwin aarch64-apple-darwin
+
+      - name: Cache cargo (xlsx-sidecar)
+        uses: Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
+        with:
+          workspaces: apps/sheets/native/xlsx-engine
+
+      - name: Cache electron binaries
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/electron
+          key: electron-bin-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: electron-bin-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build installers
+        run: npm run dist:mac
+
+      - name: Upload macOS artifacts
+        shell: bash
+        run: |
+          cd apps/shell/release
+          gh release upload "$RELEASE_TAG" ./*.dmg ./*.zip --clobber
+
+  win:
+    needs: create-release
+    runs-on: windows-latest
+    timeout-minutes: 120
+    strategy:
+      matrix:
+        include:
+          - name: x64
+            arm64: ''
+            sidecar_target: x86_64-pc-windows-msvc
+            build_dir: release
+          - name: arm64
+            arm64: '1'
+            sidecar_target: aarch64-pc-windows-msvc
+            build_dir: release-arm64
+    env:
+      GENOFFICE_WIN_ARM64: ${{ matrix.arm64 }}
+      BUILD_DIR: ${{ matrix.build_dir }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ env.RELEASE_TAG }}
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@4cda84d5c5c54efe2404f9d843567869ab1699d4 # stable branch, 2026-07
+        with:
+          toolchain: stable
+
+      - name: Add Windows Rust targets
+        run: rustup target add x86_64-pc-windows-msvc aarch64-pc-windows-msvc
+
+      - name: Cache cargo (xlsx-sidecar)
+        uses: Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
+        with:
+          workspaces: apps/sheets/native/xlsx-engine
+
+      - name: Cache electron binaries
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/electron
+          key: electron-bin-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: electron-bin-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build installers
+        shell: bash
+        run: |
+          npm run notices
+          npm run build:all
+          npm run native:build -w @genoffice/sheets -- --target "$SIDECAR_TARGET"
+          npm run dist:win -w @genoffice/shell
+        env:
+          SIDECAR_TARGET: ${{ matrix.sidecar_target }}
+
+      - name: Upload Windows installer
+        shell: bash
+        run: |
+          cd "apps/shell/$BUILD_DIR"
+          gh release upload "$RELEASE_TAG" ./*.exe --clobber
+
+  linux:
+    needs: create-release
+    strategy:
+      matrix:
+        include:
+          - arch: x64
+            runner: ubuntu-latest
+          - arch: arm64
+            runner: ubuntu-24.04-arm
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 120
+    env:
+      GENOFFICE_LINUX_ARCH: ${{ matrix.arch }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ env.RELEASE_TAG }}
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@4cda84d5c5c54efe2404f9d843567869ab1699d4 # stable branch, 2026-07
+        with:
+          toolchain: stable
+
+      - name: Cache cargo (xlsx-sidecar)
+        uses: Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
+        with:
+          workspaces: apps/sheets/native/xlsx-engine
+
+      - name: Cache electron binaries
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/electron
+          key: electron-bin-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: electron-bin-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install rpmbuild
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends rpm
+
+      - name: Build installers
+        run: npm run dist:linux
+
+      - name: Upload Linux artifacts
+        shell: bash
+        run: |
+          cd apps/shell/release
+          gh release upload "$RELEASE_TAG" ./*.AppImage ./*.deb ./*.rpm --clobber

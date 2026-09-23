@@ -1,5 +1,13 @@
-// electron-builder afterAllArtifactBuild: notarize + staple the dmg itself
-// (the .app inside was already notarized before the dmg was built).
+// electron-builder afterAllArtifactBuild: finish the dmg after electron-builder
+// produces it. Two modes:
+//
+//   1. GENOFFICE_MAC_ADHOC=1 — sign the dmg with the ad-hoc identity ("-"),
+//      which electron-builder's dmg step deliberately does not do (it only
+//      picks real certificate identities). This is the GitHub Release CI
+//      path: it publishes without Apple Developer credentials.
+//
+//   2. Default — notarize + staple the dmg itself (the .app inside was
+//      already notarized before the dmg was built).
 //
 // Credentials, in priority order:
 //   1. APPLE_KEYCHAIN_PROFILE                    — local builds (dist:mac)
@@ -11,6 +19,12 @@ const { execFileSync } = require('child_process')
 
 exports.default = function (result) {
   if (process.platform !== 'darwin') return []
+  if (process.env.GENOFFICE_MAC_ADHOC === '1') {
+    for (const file of result.artifactPaths.filter((p) => p.endsWith('.dmg'))) {
+      execFileSync('codesign', ['--force', '--sign', '-', file], { stdio: 'inherit' })
+    }
+    return []
+  }
   const { APPLE_KEYCHAIN_PROFILE, APPLE_ID, APPLE_APP_SPECIFIC_PASSWORD, APPLE_TEAM_ID } =
     process.env
   let credArgs
