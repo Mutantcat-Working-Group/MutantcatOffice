@@ -649,6 +649,13 @@ if (winSignMode) {
   }
 }
 
+// Release uploads belong to the workflow (`gh release upload`), never to
+// electron-builder: with `publish` left undefined it infers a GitHub publisher
+// from GH_TOKEN on tag/CI builds and then dies on "Cannot detect repository by
+// .git/config", because this monorepo package carries no `repository` field.
+// An explicit null short-circuits publisher resolution at the target, platform,
+// and top-level checks, so the generic feed below still writes app-update.yml
+// without ever attempting an upload.
 if (updateUrl) {
   config.publish = [
     {
@@ -657,6 +664,8 @@ if (updateUrl) {
       channel: 'latest',
     },
   ]
+} else {
+  config.publish = null
 }
 
 // CI's "-c.extraMetadata.version=..." CLI override deep-merges with this block,
