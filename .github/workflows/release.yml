@@ -1,8 +1,18 @@
-name: Release Desktop
+name: Release
 
-# Builds the MutantcatOffice desktop installers and uploads them to the GitHub
-# Release for the version tag. Pushing a tag (v1.0.20260920 style) triggers the
-# pipeline; workflow_dispatch republishes a tag manually.
+# Builds every MutantcatOffice release artifact for a version tag
+# (v1.0.YYYYMMDD) and publishes it to the GitHub Release:
+#
+#   - Windows NSIS installers (x64 + arm64)
+#   - macOS DMG + zip (arm64, and x64 when GENOFFICE_MAC_X64 is set; CI sets
+#     it, and the DMGs are ad-hoc signed so no Apple credentials are needed)
+#   - Linux AppImage/deb/rpm (x64 + arm64)
+#   - standalone genoffice CLI tarballs (x64 + arm64)
+#   - Docker image tarballs for the CLI (amd64 + arm64)
+#   - checksums.txt / checksums-md5.txt / checksums-sha1.txt
+#
+# Pushing a tag triggers the pipeline; workflow_dispatch republishes an
+# existing tag manually.
 
 on:
   push:
@@ -16,7 +26,7 @@ on:
         type: string
 
 concurrency:
-  group: release-desktop-${{ github.ref }}
+  group: release-${{ github.ref }}
   cancel-in-progress: false
 
 permissions:
@@ -35,12 +45,13 @@ jobs:
         with:
           ref: ${{ env.RELEASE_TAG }}
 
-      - name: Validate tag matches app version
+      - name: Validate tag matches app and CLI versions
         run: |
           expected="${RELEASE_TAG#v}"
-          actual="$(node -p "require('./apps/shell/package.json').version")"
-          if [ "$actual" != "$expected" ]; then
-            echo "::error::apps/shell version is $actual but tag expects $expected"
+          app="$(node -p "require('./apps/shell/package.json').version")"
+          cli="$(node -p "require('./packages/cli/package.json').version")"
+          if [ "$app" != "$expected" ] || [ "$cli" != "$expected" ]; then
+            echo "::error::apps/shell=$app packages/cli=$cli but tag expects $expected"
             exit 1
           fi
 
@@ -231,3 +242,125 @@ jobs:
         run: |
           cd apps/shell/release
           gh release upload "$RELEASE_TAG" ./*.AppImage ./*.deb ./*.rpm --clobber
+
+  cli-tar:
+    needs: create-release
+    strategy:
+      matrix:
+        include:
+          - arch: x64
+            runner: ubuntu-latest
+          - arch: arm64
+            runner: ubuntu-24.04-arm
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ env.RELEASE_TAG }}
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@4cda84d5c5c54efe2404f9d843567869ab1699d4 # stable branch, 2026-07
+        with:
+          toolchain: stable
+
+      - name: Cache cargo (xlsx-sidecar)
+        uses: Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
+        with:
+          workspaces: apps/sheets/native/xlsx-engine
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build CLI bundle and sidecar
+        run: |
+          npm run build -w @genoffice/cli
+          npm run native:build -w @genoffice/sheets
+
+      - name: Package tar
+        run: node scripts/package-cli.mjs ${{ matrix.arch }}
+
+      - name: Upload tar
+        shell: bash
+        run: |
+          version="$(node -p "require('./packages/cli/package.json').version")"
+          gh release upload "$RELEASE_TAG" "release/mutantcatoffice-cli-${version}-${{ matrix.arch }}.tar.gz" --clobber
+
+  docker:
+    needs: create-release
+    strategy:
+      matrix:
+        include:
+          - arch: amd64
+            runner: ubuntu-latest
+          - arch: arm64
+            runner: ubuntu-24.04-arm
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ env.RELEASE_TAG }}
+
+      - name: Resolve version
+        id: version
+        run: echo "value=$(node -p "require('./packages/cli/package.json').version")" >> "$GITHUB_OUTPUT"
+
+      - name: Build image
+        run: docker build -t mutantcatoffice-cli:${{ steps.version.outputs.value }} .
+
+      - name: Export image tar
+        run: |
+          mkdir -p release
+          docker save mutantcatoffice-cli:${{ steps.version.outputs.value }} | \
+            gzip > "release/mutantcatoffice-cli-${{ steps.version.outputs.value }}-docker-${{ matrix.arch }}.tar.gz"
+
+      - name: Upload image tar
+        shell: bash
+        run: gh release upload "$RELEASE_TAG" "release/mutantcatoffice-cli-${{ steps.version.outputs.value }}-docker-${{ matrix.arch }}.tar.gz" --clobber
+
+  checksums:
+    needs: [mac, win, linux, cli-tar, docker]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ env.RELEASE_TAG }}
+
+      - name: Download release assets
+        run: |
+          mkdir -p dist
+          gh release download "$RELEASE_TAG" --pattern '*' --dir dist
+
+      - name: Generate checksums
+        run: |
+          : > dist/checksums.txt
+          : > dist/checksums-md5.txt
+          : > dist/checksums-sha1.txt
+          count=0
+          while IFS= read -r -d '' asset; do
+            case "$(basename "$asset")" in
+              checksums.txt|checksums-md5.txt|checksums-sha1.txt) continue ;;
+            esac
+            md5sum "$asset" | sed 's#  dist/#  #' >> dist/checksums-md5.txt
+            sha1sum "$asset" | sed 's#  dist/#  #' >> dist/checksums-sha1.txt
+            sha256sum "$asset" | sed 's#  dist/#  #' >> dist/checksums.txt
+            count=$((count + 1))
+          done < <(find dist -maxdepth 1 -type f -print0)
+          if [ "$count" -eq 0 ]; then
+            echo "::error::no release assets found to checksum"
+            exit 1
+          fi
+
+      - name: Upload checksums
+        run: gh release upload "$RELEASE_TAG" dist/checksums.txt dist/checksums-md5.txt dist/checksums-sha1.txt --clobber
