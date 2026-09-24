@@ -89,7 +89,7 @@ function stubMetricsCanvas(ascent: number, descent: number) {
 function mountBlankFace() {
   const style = document.createElement('style')
   style.textContent =
-    "@font-face { font-family: 'GenOffice PUA Blank'; src: url('./GenOfficePUABlank.woff2') format('woff2'); }"
+    "@font-face { font-family: 'MutantcatOffice PUA Blank'; src: url('./MutantcatOfficePUABlank.woff2') format('woff2'); }"
   document.head.appendChild(style)
 }
 
@@ -98,12 +98,12 @@ describe('docStyleCss grid strut face', () => {
     stubMetricsCanvas(1143, 286)
     mountBlankFace()
     const css = docStyleCss(parsedWith(GRID_SECT, 'ＭＳ 明朝'))
-    expect(css).toContain("@font-face { font-family:'GenOffice Grid Strut'")
+    expect(css).toContain("@font-face { font-family:'MutantcatOffice Grid Strut'")
     expect(css).toContain('ascent-override:114.3%')
     expect(css).toContain('descent-override:28.6%')
-    expect(css).toContain('GenOfficePUABlank.woff2')
+    expect(css).toContain('MutantcatOfficePUABlank.woff2')
     expect(css).toContain(
-      ".doc-page .doc-grid-strut { font-family:'GenOffice Grid Strut',var(--doc-grid-strut-tail,serif) }",
+      ".doc-page .doc-grid-strut { font-family:'MutantcatOffice Grid Strut',var(--doc-grid-strut-tail,serif) }",
     )
     expect(css).toContain('--doc-grid-strut-tail:')
   })

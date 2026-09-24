@@ -26,8 +26,8 @@ describe('word count CJK rule', () => {
   })
 
   it('half-width digits/latin embedded in CJK are words, full-width punctuation is a char', () => {
-    expect(countWords('第1章：GenOffice 使用指南')).toBe(9)
-    // 7 asian chars (incl. the fullwidth colon) + "1" and "GenOffice" as 2 words
+    expect(countWords('第1章：MutantcatOffice 使用指南')).toBe(9)
+    // 7 asian chars (incl. the fullwidth colon) + "1" and "MutantcatOffice" as 2 words
   })
 
   it('counts space-delimited non-Latin scripts as words', () => {

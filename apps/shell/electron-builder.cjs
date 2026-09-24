@@ -110,7 +110,6 @@ if (linuxArch !== 'x64' && linuxArch !== 'arm64') {
 // installer would silently ship without the Chromium license.
 for (const rel of [
   '../../node_modules/@mutantcatoffice/cli',
-  '../../node_modules/@mutantcatoffice/cli/node_modules/commander',
   '../../node_modules/ws',
   '../../node_modules/electron/dist/LICENSES.chromium.html',
   '../../node_modules/@embedpdf/pdfium/dist/pdfium.wasm',
@@ -326,11 +325,11 @@ const config = {
       to: 'cli/mutantcatoffice.cjs',
     },
     {
-      from: '../../packages/cli/bin/genoffice',
+      from: '../../packages/cli/bin/mutantcatoffice',
       to: 'cli/mutantcatoffice',
     },
     {
-      from: '../../packages/cli/bin/genoffice.cmd',
+      from: '../../packages/cli/bin/mutantcatoffice.cmd',
       to: 'cli/mutantcatoffice.cmd',
     },
     // the CLI's version (Settings → Integrations shows it) and the agent skill

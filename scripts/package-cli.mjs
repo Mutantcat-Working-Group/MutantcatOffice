@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-// Packages the genoffice CLI (packages/cli) into a self-contained tar.gz for
+// Packages the MutantcatOffice CLI (packages/cli) into a self-contained tar.gz for
 // GitHub Releases. The tar mirrors the packaged app's Resources/ layout so
 // src/resources.ts finds the runtime assets without code changes:
 //
 //   mutantcatoffice-cli-<version>-<arch>.tar.gz
-//   ├── cli/{genoffice,genoffice.cmd,mutantcatoffice.cjs,package.json,node_modules,skills}
+//   ├── cli/{mutantcatoffice,mutantcatoffice.cmd,mutantcatoffice.cjs,package.json,node_modules,skills}
 //   ├── wasm/{pdfium.wasm,hb-subset.wasm}
 //   └── native/xlsx-sidecar
 //
@@ -54,9 +54,9 @@ mkdirSync(join(stage, 'wasm'), { recursive: true })
 mkdirSync(join(stage, 'native'), { recursive: true })
 
 const cliStage = join(stage, 'cli')
-cpSync(join(cliDir, 'bin/genoffice'), join(cliStage, 'mutantcatoffice'))
+cpSync(join(cliDir, 'bin/mutantcatoffice'), join(cliStage, 'mutantcatoffice'))
 chmodSync(join(cliStage, 'mutantcatoffice'), 0o755)
-cpSync(join(cliDir, 'bin/genoffice.cmd'), join(cliStage, 'mutantcatoffice.cmd'))
+cpSync(join(cliDir, 'bin/mutantcatoffice.cmd'), join(cliStage, 'mutantcatoffice.cmd'))
 cpSync(join(cliDir, 'dist/mutantcatoffice.cjs'), join(cliStage, 'mutantcatoffice.cjs'))
 cpSync(join(cliDir, 'dist/node_modules'), join(cliStage, 'node_modules'), { recursive: true })
 cpSync(join(cliDir, 'package.json'), join(cliStage, 'package.json'))

@@ -310,12 +310,12 @@ describe('findReplace', () => {
 
   it('matchCase: sensitive by default, insensitive when false', () => {
     const editor = createEditor(fixtureDoc())
-    const strict = executeOps(editor, [{ op: 'findReplace', find: 'codex', replace: 'X' }])
+    const strict = executeOps(editor, [{ op: 'findReplace', find: 'mutantcat', replace: 'X' }])
     expect(strict.results[0].changed).toBe(0)
     expect(editor.state.doc.child(1).textContent).toContain('Mutantcat')
 
     const loose = executeOps(editor, [
-      { op: 'findReplace', find: 'codex', replace: 'X', matchCase: false },
+      { op: 'findReplace', find: 'Mutantcat', replace: 'X', matchCase: false },
     ])
     expect(loose.results[0].detail).toBe('Replaced 2 occurrence(s)')
     expect(editor.state.doc.child(1).textContent).toBe('X intro,X is great')
@@ -739,8 +739,8 @@ describe('partial selection (character-precise scope)', () => {
 
   it('updateTextStyle with scope selection styles only the selected characters', () => {
     const editor = createEditor(fixtureDoc())
-    // 'is great' = offsets 24..32 of the block text
-    editor.commands.setTextSelection({ from: BLOCK1_CONTENT + 24, to: BLOCK1_CONTENT + 32 })
+    // 'is great' = offsets 26..34 of the block text
+    editor.commands.setTextSelection({ from: BLOCK1_CONTENT + 26, to: BLOCK1_CONTENT + 34 })
     const outcome = executeOps(editor, [
       { op: 'setFont', target: { scope: 'selection' }, color: 'FF0000' },
     ])
@@ -760,8 +760,8 @@ describe('partial selection (character-precise scope)', () => {
 
   it('boolean marks on a partial selection split the run at the selection edges', () => {
     const editor = createEditor(fixtureDoc())
-    // 'intro' = offsets 9..14
-    editor.commands.setTextSelection({ from: BLOCK1_CONTENT + 9, to: BLOCK1_CONTENT + 14 })
+    // 'intro' = offsets 10..15
+    editor.commands.setTextSelection({ from: BLOCK1_CONTENT + 10, to: BLOCK1_CONTENT + 15 })
     executeOps(editor, [{ op: 'setFont', target: { scope: 'selection' }, bold: true }])
     const block = editor.state.doc.child(1)
     expect(block.childCount).toBe(4)
@@ -786,7 +786,7 @@ describe('partial selection (character-precise scope)', () => {
 
   it('paragraph-level commands ignore the character clip and format the whole block', () => {
     const editor = createEditor(fixtureDoc())
-    editor.commands.setTextSelection({ from: BLOCK1_CONTENT + 24, to: BLOCK1_CONTENT + 32 })
+    editor.commands.setTextSelection({ from: BLOCK1_CONTENT + 26, to: BLOCK1_CONTENT + 34 })
     const outcome = executeOps(editor, [
       { op: 'setParagraphFormat', target: { scope: 'selection' }, align: 'right' },
     ])
@@ -806,8 +806,8 @@ describe('partial selection (character-precise scope)', () => {
       selection: {
         startIndex: 1,
         endIndex: 1,
-        from: BLOCK1_CONTENT + 24,
-        to: BLOCK1_CONTENT + 32,
+        from: BLOCK1_CONTENT + 26,
+        to: BLOCK1_CONTENT + 34,
       },
     })
     expect(styleOfText(editor, 1, 'is great')).toMatchObject({ color: 'FF0000' })
@@ -826,8 +826,8 @@ describe('partial selection (character-precise scope)', () => {
 
   it('replaceAllText scoped to a partial selection skips matches outside the selected span', () => {
     const editor = createEditor(fixtureDoc())
-    // select the second run 'Mutantcat is great' (offsets 15..32)
-    editor.commands.setTextSelection({ from: BLOCK1_CONTENT + 15, to: BLOCK1_CONTENT + 32 })
+    // select the second run 'Mutantcat is great' (offsets 16..32)
+    editor.commands.setTextSelection({ from: BLOCK1_CONTENT + 16, to: BLOCK1_CONTENT + 32 })
     const outcome = executeOps(editor, [
       { op: 'findReplace', find: 'Mutantcat', replace: 'Acme', target: { scope: 'selection' } },
     ])
@@ -837,7 +837,7 @@ describe('partial selection (character-precise scope)', () => {
 
   it('updateMatchedTextStyle scoped to a partial selection styles only matches inside the span', () => {
     const editor = createEditor(fixtureDoc())
-    editor.commands.setTextSelection({ from: BLOCK1_CONTENT + 15, to: BLOCK1_CONTENT + 32 })
+    editor.commands.setTextSelection({ from: BLOCK1_CONTENT + 16, to: BLOCK1_CONTENT + 32 })
     executeOps(editor, [
       { op: 'setMatchedFont', text: 'Mutantcat', target: { scope: 'selection' }, italic: true },
     ])

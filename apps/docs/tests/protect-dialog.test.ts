@@ -7,6 +7,15 @@ import { createRoot, type Root } from 'react-dom/client'
 import { hashProtectionPassword, verifyProtectionPassword } from '@mutantcatoffice/docx-engine'
 import { ProtectDialog, type ProtectDialogResult } from '../src/renderer/components/ProtectDialog'
 
+vi.mock('@mutantcatoffice/docx-engine', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@mutantcatoffice/docx-engine')>()
+  return {
+    ...actual,
+    hashProtectionPassword: (password: string, spinCount?: number) =>
+      actual.hashProtectionPassword(password, spinCount ?? 1000),
+  }
+})
+
 type Props = Parameters<typeof ProtectDialog>[0]
 
 const DEFAULTS: Omit<Props, 'onApply' | 'onCancel'> = {
