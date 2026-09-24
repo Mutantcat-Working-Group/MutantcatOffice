@@ -257,8 +257,9 @@ export function activeMediaConfig(
   settings: Pick<AiSettings, 'media'>,
   capability: MediaCapability,
 ): { provider: AiMediaProviderId; config: AiMediaProviderConfig } | null {
+  if (!settings.media) return null
   const provider = activeMediaProvider(settings, capability)
-  const config = settings.media!.providers[provider]
+  const config = settings.media.providers[provider]
   const meta = getMediaProviderMeta(provider)
   if (!meta || !mediaConfigUsable(meta, config)) return null
   return { provider, config }
