@@ -1,9 +1,8 @@
 /**
- * Search utilities (main process) — gsk (Genspark CLI) first, then Serper Google API,
- * then Tavily and Parallel, with DuckDuckGo as the keyless last resort. Runs in the main process
- * (Node fetch / child process) to avoid renderer CORS; the Serper key reuses SERPER_API_KEY,
+ * Search utilities (main process) — Serper Google API, then Tavily and Parallel,
+ * with DuckDuckGo as the keyless last resort. Runs in the main process
+ * (Node fetch) to avoid renderer CORS; the Serper key reuses SERPER_API_KEY,
  * the Tavily key reuses TAVILY_API_KEY and Parallel uses PARALLEL_API_KEY.
- * For gsk auth see ./gsk.ts (`gsk login` or GSK_API_KEY).
  */
 
 import {
@@ -13,12 +12,10 @@ import {
   type ImageSearchResult,
   type WebSearchResult,
 } from './shared'
-import { gskImageSearch, gskWebSearch, hasGskAuth } from './gsk'
 import { parallelMcpSearch } from './parallel-mcp'
 
 export type { ImageSearchResult, WebSearchResult } from './shared'
-export * from './gsk'
-export * from './genoffice-auth'
+export { setSearchProxyUrl, searchProxyUrl } from './shared'
 export * from './media-tools'
 export * from './search-tools'
 
@@ -29,11 +26,9 @@ const PARALLEL_KEY = () => process.env.PARALLEL_API_KEY ?? ''
 /**
  * Backend selection for one search. Keys default to the SERPER_API_KEY /
  * TAVILY_API_KEY / PARALLEL_API_KEY env vars; settings-driven callers (search-tools.ts) pass the
- * user's key and turn gsk off so the chosen backend runs first.
+ * user's key so the chosen backend runs first.
  */
 export interface SearchOptions {
-  /** false = skip the Genspark backend (cloud tools off, or a BYOK search provider is active) */
-  useGsk?: boolean
   serperKey?: string
   tavilyKey?: string
   parallelKey?: string
@@ -42,9 +37,8 @@ export interface SearchOptions {
 }
 
 function normalizeOptions(opts: boolean | SearchOptions | undefined): Required<SearchOptions> {
-  const o = typeof opts === 'boolean' ? { useGsk: opts } : (opts ?? {})
+  const o = typeof opts === 'boolean' ? {} : (opts ?? {})
   return {
-    useGsk: o.useGsk ?? true,
     serperKey: o.serperKey ?? SERPER_KEY(),
     tavilyKey: o.tavilyKey ?? TAVILY_KEY(),
     parallelKey: o.parallelKey ?? PARALLEL_KEY(),
@@ -204,16 +198,6 @@ export async function webSearch(
 ): Promise<WebSearchResponse> {
   const o = normalizeOptions(options)
   const { query: q, max } = normalizeSearchArgs(query, maxResults, 6)
-  // useGsk=false: the user turned Genspark cloud tools off or picked their own
-  // search key — skip straight to the keyed/free backends
-  if (o.useGsk && hasGskAuth()) {
-    try {
-      const r = await gskWebSearch(q, max)
-      if (r.results.length) return { ...r, method: 'gsk' }
-    } catch {
-      /* fall back to Serper/Tavily/Parallel/DuckDuckGo */
-    }
-  }
   const keyed = {
     serper: () => serperWebSearch(o.serperKey, q, max),
     tavily: () => tavilyWebSearch(o.tavilyKey, q, max),
@@ -248,14 +232,6 @@ export async function imageSearch(
 }> {
   const o = normalizeOptions(options)
   const { query: q, max } = normalizeSearchArgs(query, maxResults, 8)
-  if (o.useGsk && hasGskAuth()) {
-    try {
-      const images = await gskImageSearch(q, max)
-      if (images.length) return { images, method: 'gsk' }
-    } catch {
-      /* fall back to Serper/DuckDuckGo */
-    }
-  }
   // Tavily and Parallel have no image endpoint; Serper is the only keyed image backend
   const key = o.serperKey
   if (key) {

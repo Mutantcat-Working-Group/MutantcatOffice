@@ -1,6 +1,6 @@
 /* Per-app accent (word-blue family) + docs-only tokens.
  * Chrome tokens (surface/text/border/…, AI panel --color-*) come from
- * @genoffice/ui/tokens.css; nothing here may shadow those names. */
+ * @mutantcatoffice/ui/tokens.css; nothing here may shadow those names. */
 :root {
   --word-blue: #185abd;
   --word-blue-dark: #124a9e;
@@ -588,15 +588,15 @@ html.genoffice-popover-open .ribbon-tabs {
   box-shadow: var(--docs-shadow-badge);
 }
 
-/* Genspark brand logo (Ribbon AI button and AI panel title) */
-.genspark-badge {
+/* Mutantcat brand logo (Ribbon AI button and AI panel title) */
+.mutantcat-badge {
   display: block;
   width: 22px;
   height: 22px;
   border-radius: 50%;
 }
 
-.ai-panel-title .genspark-badge {
+.ai-panel-title .mutantcat-badge {
   width: 18px;
   height: 18px;
 }
@@ -626,8 +626,7 @@ html.genoffice-popover-open .ribbon-tabs {
   overflow-y: hidden;
 }
 
-/* Slim visible scrollbar so mouse users can reach overflowed groups
-   (genspark-ai/genoffice#55 precedent from the sheets ribbon). */
+/* Slim visible scrollbar so mouse users can reach overflowed groups. */
 .ribbon-body::-webkit-scrollbar {
   height: 5px;
 }
@@ -778,7 +777,7 @@ html.genoffice-popover-open .ribbon-tabs {
   background: var(--active-bg);
 }
 
-/* The Genspark AI entry keeps a black label even while the panel is open. */
+/* The Mutantcat AI entry keeps a black label even while the panel is open. */
 .rb-big.ai-entry.active {
   color: var(--text);
 }
@@ -1190,7 +1189,7 @@ html.genoffice-popover-open .ribbon-tabs {
   background: var(--hover);
 }
 
-/* Anchor positioning for the shared Word-style color panel (@genoffice/ui
+/* Anchor positioning for the shared Word-style color panel (@mutantcatoffice/ui
    .gcp-palette draws the chrome; this only places it under its trigger). */
 .docs-color-pop {
   position: fixed;
@@ -1225,7 +1224,7 @@ html.genoffice-popover-open .ribbon-tabs {
 }
 
 /* line spacing dropdown */
-/* Home-tab Genspark AI entry: black circular "+" badge with a dropdown caret,
+/* Home-tab Mutantcat AI entry: black circular "+" badge with a dropdown caret,
    brand label below (mirrors the sheets Home ribbon). */
 /* AI feature buttons next to the entry: purple glyphs, label below */
 .ai-feature-icon {
@@ -7898,7 +7897,7 @@ body.docs-crop-active
 .ai-attachments {
   display: flex;
   gap: 8px;
-  /* single row inside the prompt box, above the textarea (Genspark composer style):
+  /* single row inside the prompt box, above the textarea (Mutantcat composer style):
      extra images run past the box edge and scroll horizontally.
      scroll (not auto) + zero bottom padding: the always-present 4px scrollbar lane
      doubles as the bottom padding, so overflowing never grows the strip and
@@ -8006,7 +8005,7 @@ body.docs-crop-active
   background: var(--bg-content);
 }
 
-/* the type icon sits in its own bordered white tile, like the Genspark card */
+/* the type icon sits in its own bordered white tile, like the Mutantcat card */
 .ai-attachment-card-icon {
   display: flex;
   flex-shrink: 0;
@@ -8330,7 +8329,7 @@ body.docs-crop-active
   background: var(--surface);
 }
 
-/* Genspark DS modal footer buttons: secondary = bg-subtle, primary = black (#232425) */
+/* Mutantcat DS modal footer buttons: secondary = bg-subtle, primary = black (#232425) */
 .modal-actions button {
   display: inline-flex;
   align-items: center;
@@ -8464,7 +8463,7 @@ body.docs-crop-active
   margin-top: 18px;
 }
 
-/* ---- Genspark DS form dialogs (password prompts + Protect Document) ---- */
+/* ---- Mutantcat DS form dialogs (password prompts + Protect Document) ---- */
 
 .modal.gs-form {
   padding: 24px;
@@ -8600,7 +8599,7 @@ body.docs-crop-active
   border-color: var(--word-blue);
 }
 
-/* Shared dropdown (@genoffice/ui gs-dd) app sizing: modal dialogs keep the old
+/* Shared dropdown (@mutantcatoffice/ui gs-dd) app sizing: modal dialogs keep the old
    `.modal select` footprint; ribbon/table/page-number rows scope their own
    width/height below */
 .modal .gs-dd {
@@ -8666,7 +8665,7 @@ body.docs-crop-active
 }
 
 /* checkbox / radio rows: the native input is visually replaced by the .ctl
-   box (18px, black checked state per the Genspark DS palette) */
+   box (18px, black checked state per the Mutantcat DS palette) */
 .protect-dialog label.protect-check {
   position: relative;
   display: flex;

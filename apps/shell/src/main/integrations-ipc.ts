@@ -13,8 +13,8 @@ import {
   uninstallSkill,
   type BundledSkill,
   type SkillLedger,
-} from '@genoffice/cli/agent-skills'
-import { inspectCliLink } from '@genoffice/cli/install'
+} from '@mutantcatoffice/cli/agent-skills'
+import { inspectCliLink } from '@mutantcatoffice/cli/install'
 import { readAppSettings, writeAppSetting } from './app-settings'
 import { isEphemeralInstall } from './cli-link'
 import {

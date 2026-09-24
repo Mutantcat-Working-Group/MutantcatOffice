@@ -1,21 +1,19 @@
 import {
-  activeMediaProvider,
   activeSearchProvider,
-  cloudToolsEnabled,
+  activeMediaProvider,
   imageGenerationAvailable,
   mediaAnalysisAvailable,
-} from '@genoffice/ai-provider'
-import { hasGskAuth, readAiSettingsFile } from '@genoffice/ai-search'
+} from '@mutantcatoffice/ai-provider'
+import { readAiSettingsFile, readStoredAiSettingsFile } from '@mutantcatoffice/ai-search'
 import { aiSettingsPath, prepareCloud } from '../cloud'
 import type { CommandDef } from '../registry'
 import { appLaunch } from '../resources'
 
 /**
  * What the cloud commands can do on this machine, decided from MutantcatOffice's
- * own settings without a network call: a Genspark login with cloud tools on,
- * a BYOK key, or explicitly selected free Parallel search. Unkeyed fallbacks (DuckDuckGo)
- * do not count as configured. Agents check this once before planning work
- * that needs photos or web facts.
+ * own settings without a network call: a BYOK key, or explicitly selected free
+ * Parallel search. Unkeyed fallbacks (DuckDuckGo) do not count as configured.
+ * Agents check this once before planning work that needs photos or web facts.
  */
 export const capabilitiesCommand: CommandDef = {
   name: 'capabilities',
@@ -24,24 +22,27 @@ export const capabilitiesCommand: CommandDef = {
   usage: 'capabilities',
   async run(_args, ctx) {
     await prepareCloud(ctx.env)
-    const settings = readAiSettingsFile(aiSettingsPath(ctx.env))
-    const gsk = hasGskAuth() && cloudToolsEnabled(settings)
+    const path = aiSettingsPath(ctx.env)
+    const stored = readStoredAiSettingsFile(path)
+    const settings = readAiSettingsFile(path)
     const searchProvider = activeSearchProvider(settings)
-    const gskSearch = gsk && searchProvider === 'genspark'
-    const customSearch = searchProvider !== 'genspark'
-    const search = gskSearch || customSearch
-    const imageSearch = gskSearch || searchProvider === 'serper'
-    const imageGeneration = imageGenerationAvailable(settings, hasGskAuth())
-    const mediaAnalysis = mediaAnalysisAvailable(settings, hasGskAuth())
-    const via = (byok: string | null | undefined) => (byok ? byok : gsk ? 'genspark' : null)
+    // Parallel is free but only counts once the user explicitly picked it in
+    // the settings file; a missing search block falls back to it unconfigured.
+    const configuredSearch =
+      stored.search && stored.search.provider === searchProvider ? searchProvider : null
+    const search = configuredSearch !== null
+    const imageSearch = configuredSearch === 'serper'
+    const imageGeneration = imageGenerationAvailable(settings)
+    const mediaAnalysis = mediaAnalysisAvailable(settings)
+    const via = (byok: string | null | undefined) => byok
     const detail = {
       search: {
         available: search,
-        via: customSearch ? searchProvider : gskSearch ? 'genspark' : null,
+        via: searchProvider,
       },
       image_search: {
         available: imageSearch,
-        via: searchProvider === 'serper' ? 'serper' : gskSearch ? 'genspark' : null,
+        via: configuredSearch === 'serper' ? 'serper' : null,
       },
       image_generation: {
         available: imageGeneration,

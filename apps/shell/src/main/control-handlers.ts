@@ -6,7 +6,7 @@ import type {
   ControlTarget,
   RendererControlReply,
   RendererControlRequest,
-} from '@genoffice/cli/control-protocol'
+} from '@mutantcatoffice/cli/control-protocol'
 import type { TabKind } from '../shared/tabs-api'
 
 export interface ControlHost {

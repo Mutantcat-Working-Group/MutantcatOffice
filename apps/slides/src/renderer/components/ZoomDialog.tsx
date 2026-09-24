@@ -4,7 +4,7 @@
  * something is picked. Section mode shows each section's first slide.
  */
 import React, { useState } from 'react'
-import type { RenderSlide } from '@genoffice/pptx-render'
+import type { RenderSlide } from '@mutantcatoffice/pptx-render'
 import type { SectionInfo } from '../../shared/ipc'
 import { useEscOverlay } from '../esc-overlay'
 import { useI18n } from '../i18n/locale'

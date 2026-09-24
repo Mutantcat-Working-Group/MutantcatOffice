@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { imageDpiFromBytes } from '@genoffice/pptx-render'
+import { imageDpiFromBytes } from '@mutantcatoffice/pptx-render'
 import { pictureFrame } from '../src/main/picture-frame'
 
 const PT = 12700

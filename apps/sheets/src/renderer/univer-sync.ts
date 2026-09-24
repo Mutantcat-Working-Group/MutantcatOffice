@@ -51,24 +51,27 @@ import type {
   StyleColorInput,
   SetDataValidationOperation,
   SetHyperlinkOperation,
-} from '@genoffice/xlsx-gateway/domain/workbook-dsl'
+} from '@mutantcatoffice/xlsx-gateway/domain/workbook-dsl'
 import {
   columnIndex,
   columnLabel,
   parseAddress,
   parseRange,
   rangeCellCount,
-} from '@genoffice/xlsx-gateway/domain/cell-address'
-import { splitSheetRef, type CellBounds } from '@genoffice/xlsx-gateway/domain/chart-visual'
-import { InMemoryWorkbookAdapter } from '@genoffice/xlsx-gateway/domain/in-memory-workbook'
-import { normalizeStyleColor, resolveStyleColor } from '@genoffice/xlsx-gateway/domain/style-color'
-import { WORST_FIRST_ICON_SETS } from '@genoffice/xlsx-gateway/gateway/xlsx-cf'
+} from '@mutantcatoffice/xlsx-gateway/domain/cell-address'
+import { splitSheetRef, type CellBounds } from '@mutantcatoffice/xlsx-gateway/domain/chart-visual'
+import { InMemoryWorkbookAdapter } from '@mutantcatoffice/xlsx-gateway/domain/in-memory-workbook'
+import {
+  normalizeStyleColor,
+  resolveStyleColor,
+} from '@mutantcatoffice/xlsx-gateway/domain/style-color'
+import { WORST_FIRST_ICON_SETS } from '@mutantcatoffice/xlsx-gateway/gateway/xlsx-cf'
 import type {
   CellFormatState,
   CellScalar,
   CellState,
   WorkbookSnapshot,
-} from '@genoffice/xlsx-gateway/domain/workbook.types'
+} from '@mutantcatoffice/xlsx-gateway/domain/workbook.types'
 import type {
   WorkbookCellStyle,
   WorkbookCfState,
@@ -118,7 +121,10 @@ import {
 import { isPlainArithmeticFormula } from './formula-cached-fallback'
 import { degradeQuadraticFormulaCells } from './formula-cost'
 import { extractFunctionNames } from './formula-functions'
-import { DEFAULT_SHORT_DATE, setSystemShortDate } from '@genoffice/xlsx-gateway/shared/short-date'
+import {
+  DEFAULT_SHORT_DATE,
+  setSystemShortDate,
+} from '@mutantcatoffice/xlsx-gateway/shared/short-date'
 import { getWorkbookMdw, setWorkbookMdw } from './app-constants'
 import { excelRowPitchPx } from './autofit-line-pitch'
 import {

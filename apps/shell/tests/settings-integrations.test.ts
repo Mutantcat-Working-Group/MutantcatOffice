@@ -160,7 +160,7 @@ describe('Settings → Integrations', () => {
     expect(host.textContent).toContain('Pick any one of these three ways')
     // the same three prompts appear under both the CLI and the MCP part
     expect(host.querySelectorAll('.set-intg-example')).toHaveLength(6)
-    expect(host.textContent).toContain('npx skills add genspark-ai/genoffice')
+    expect(host.textContent).toContain('npx skills add codex-ai/genoffice')
     // MCP block: the launcher itself while genoffice is not on the PATH, as a command and as JSON
     const mcp = [...host.querySelectorAll('.set-intg-mcp code')].map((c) => c.textContent)
     expect(mcp[0]).toBe(
@@ -187,7 +187,7 @@ describe('Settings → Integrations', () => {
     const winDir = 'C:\\Users\\Jane Doe\\AppData\\Local\\Programs\\MutantcatOffice\\resources\\cli'
     const win = {
       command: `${winDir}\\..\\..\\MutantcatOffice.exe`,
-      args: [`${winDir}\\genoffice.cjs`, 'mcp'],
+      args: [`${winDir}\\mutantcatoffice.cjs`, 'mcp'],
       env: { ELECTRON_RUN_AS_NODE: '1' },
     }
     expect(mcpLaunch({ status: 'missing', launcherDir: winDir })).toEqual(win)

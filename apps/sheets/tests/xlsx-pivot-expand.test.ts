@@ -10,10 +10,10 @@ import {
   PivotExpandError,
   createBufferEntrySource,
   planCellEditsToXlsx,
-} from '@genoffice/xlsx-gateway/gateway/xlsx-gateway'
-import type { PivotRefreshUpdate } from '@genoffice/xlsx-gateway/gateway/xlsx-gateway'
-import { parsePivotDefinition } from '@genoffice/xlsx-gateway/gateway/xlsx-pivot'
-import { recomputePivotData } from '@genoffice/xlsx-gateway/domain/pivot-engine'
+} from '@mutantcatoffice/xlsx-gateway/gateway/xlsx-gateway'
+import type { PivotRefreshUpdate } from '@mutantcatoffice/xlsx-gateway/gateway/xlsx-gateway'
+import { parsePivotDefinition } from '@mutantcatoffice/xlsx-gateway/gateway/xlsx-pivot'
+import { recomputePivotData } from '@mutantcatoffice/xlsx-gateway/domain/pivot-engine'
 
 // ─── Minimal workbook fixture with one pivot table ───────────────────────────
 

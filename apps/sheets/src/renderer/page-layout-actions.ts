@@ -5,12 +5,12 @@
  * per-sheet print settings; nothing renders in the grid (Univer has no
  * page-layout view), everything lands in the saved file.
  */
-import { isMetafileMime, metafileToDataUrl } from '@genoffice/docx-engine/metafile'
+import { isMetafileMime, metafileToDataUrl } from '@mutantcatoffice/docx-engine/metafile'
 import type { WorkbookExportPdfRequest } from '../shared/desktop-api'
-import type { WorkbookOperation } from '@genoffice/xlsx-gateway/domain/workbook-dsl'
-import type { ApplyOutcome } from '@genoffice/xlsx-gateway/domain/workbook.types'
+import type { WorkbookOperation } from '@mutantcatoffice/xlsx-gateway/domain/workbook-dsl'
+import type { ApplyOutcome } from '@mutantcatoffice/xlsx-gateway/domain/workbook.types'
 
-import { columnLabel } from '@genoffice/xlsx-gateway/domain/cell-address'
+import { columnLabel } from '@mutantcatoffice/xlsx-gateway/domain/cell-address'
 import {
   isSheetRemoved,
   journalSize,

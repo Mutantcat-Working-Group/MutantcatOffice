@@ -3,8 +3,8 @@ import { describe, expect, it } from 'vitest'
 import {
   createBufferEntrySource,
   planCellEditsToXlsx,
-} from '@genoffice/xlsx-gateway/gateway/xlsx-gateway'
-import type { SheetNoteState } from '@genoffice/xlsx-gateway/gateway/xlsx-gateway'
+} from '@mutantcatoffice/xlsx-gateway/gateway/xlsx-gateway'
+import type { SheetNoteState } from '@mutantcatoffice/xlsx-gateway/gateway/xlsx-gateway'
 import { buildEditFixture } from './fixture-builder'
 
 async function planNotes(noteStates: SheetNoteState[]) {

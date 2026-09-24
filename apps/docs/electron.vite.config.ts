@@ -6,27 +6,31 @@ import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
 // node_modules is a symlink into the main checkout, so bare specifiers would
 // silently bundle the other checkout's (possibly stale) code.
 const localAlias = {
-  '@genoffice/docx-engine/lazy-media': resolve(
+  '@mutantcatoffice/docx-engine/lazy-media': resolve(
     __dirname,
     '../../packages/docx-engine/src/lazy-media.ts',
   ),
-  '@genoffice/docx-engine/zip-splice': resolve(
+  '@mutantcatoffice/docx-engine/zip-splice': resolve(
     __dirname,
     '../../packages/docx-engine/src/zip-splice.ts',
   ),
-  '@genoffice/docx-engine': resolve(__dirname, '../../packages/docx-engine/src/index.ts'),
+  '@mutantcatoffice/docx-engine': resolve(__dirname, '../../packages/docx-engine/src/index.ts'),
 }
 
 export default defineConfig({
   // Main and preload use only electron + node builtins; bundle everything so
   // the packaged app doesn't rely on node_modules at runtime.
-  // @genoffice/* deps ship as raw TS source with extensionless imports, so they
+  // @mutantcatoffice/* deps ship as raw TS source with extensionless imports, so they
   // must be bundled — externalizing them yields ERR_MODULE_NOT_FOUND under Node
   // (same setup as apps/slides).
   main: {
     plugins: [
       externalizeDepsPlugin({
-        exclude: ['@genoffice/docx-engine', '@genoffice/electron-utils', '@genoffice/font-metrics'],
+        exclude: [
+          '@mutantcatoffice/docx-engine',
+          '@mutantcatoffice/electron-utils',
+          '@mutantcatoffice/font-metrics',
+        ],
       }),
     ],
     resolve: { alias: localAlias },
@@ -34,7 +38,7 @@ export default defineConfig({
   preload: {
     // Sandboxed preload scripts cannot require arbitrary npm packages at
     // runtime, so the drop-open bridge must be bundled, not externalized.
-    plugins: [externalizeDepsPlugin({ exclude: ['@genoffice/electron-utils'] })],
+    plugins: [externalizeDepsPlugin({ exclude: ['@mutantcatoffice/electron-utils'] })],
   },
   renderer: {
     plugins: [react()],

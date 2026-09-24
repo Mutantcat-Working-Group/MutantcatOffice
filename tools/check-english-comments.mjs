@@ -22,11 +22,19 @@ const root = spawnSync('git', ['rev-parse', '--show-toplevel'], { encoding: 'utf
 
 const violations = []
 for (const file of git.stdout.trim().split('\n')) {
+  // The repo README follows the CloudStep-style Chinese format by design.
+  if (file === 'README.md') continue
   const isCode = /\.(ts|tsx|mjs|cjs|js)$/.test(file)
   const isDoc =
     /\.(md|html?)$/.test(file) && !file.includes('/ai/prompts/') && !file.includes('/i18n/')
   if (!isCode && !isDoc) continue
-  const lines = readFileSync(join(root, file), 'utf8').split('\n')
+  let lines
+  try {
+    lines = readFileSync(join(root, file), 'utf8').split('\n')
+  } catch (err) {
+    if (err.code === 'ENOENT') continue // tracked file deleted in this change
+    throw err
+  }
   lines.forEach((line, index) => {
     const text = isDoc
       ? line

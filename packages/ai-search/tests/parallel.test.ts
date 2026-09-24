@@ -2,7 +2,7 @@ import { mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { defaultAiSettings } from '@genoffice/ai-provider'
+import { defaultAiSettings } from '@mutantcatoffice/ai-provider'
 import { imageSearch, webSearch } from '../src/index'
 import { searchOptionsFromSettings, testSearchProvider, webSearchTool } from '../src/search-tools'
 
@@ -42,7 +42,6 @@ describe('Parallel search', () => {
     vi.stubGlobal('fetch', fetch)
     expect(
       await webSearch('office tools', 1, {
-        useGsk: false,
         parallelKey: 'saved-key',
         prefer: 'parallel',
       }),
@@ -97,7 +96,6 @@ describe('Parallel search', () => {
         }),
       )
       const r = await webSearch('office', 1, {
-        useGsk: false,
         parallelKey: 'key',
         prefer: 'parallel',
       })

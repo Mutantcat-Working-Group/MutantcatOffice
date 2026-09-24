@@ -13,10 +13,10 @@
 Arquivos do Word, Excel, PowerPoint e PDF, editados por você e sua IA, salvos de volta nos formatos reais.</p>
 
 <p align="center">
-  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/genspark-ai/genoffice" alt="Licença: Apache-2.0"></a>
-  <a href="https://github.com/genspark-ai/genoffice/releases/latest"><img src="https://img.shields.io/github/v/release/genspark-ai/genoffice" alt="Versão mais recente"></a>
-  <a href="https://github.com/genspark-ai/genoffice/releases"><img src="https://img.shields.io/github/downloads/genspark-ai/genoffice/total" alt="Downloads"></a>
-  <a href="https://github.com/genspark-ai/genoffice/stargazers"><img src="https://img.shields.io/github/stars/genspark-ai/genoffice?style=flat" alt="Estrelas no GitHub"></a>
+  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/Mutantcat-Working-Group/MutantcatOffice" alt="Licença: Apache-2.0"></a>
+  <a href="https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest"><img src="https://img.shields.io/github/v/release/Mutantcat-Working-Group/MutantcatOffice" alt="Versão mais recente"></a>
+  <a href="https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases"><img src="https://img.shields.io/github/downloads/Mutantcat-Working-Group/MutantcatOffice/total" alt="Downloads"></a>
+  <a href="https://github.com/Mutantcat-Working-Group/MutantcatOffice/stargazers"><img src="https://img.shields.io/github/stars/Mutantcat-Working-Group/MutantcatOffice?style=flat" alt="Estrelas no GitHub"></a>
 </p>
 
 <p align="center"><a href="../../README.md">English</a> · <a href="README.es.md">Español</a> · <b>Português (Brasil)</b> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.zh-TW.md">繁體中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ja.md">日本語</a> · <a href="README.ar.md">العربية</a> · <a href="README.ru.md">Русский</a> · <a href="README.it.md">Italiano</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.pl.md">Polski</a> · <a href="README.cs.md">Čeština</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.ms.md">Bahasa Melayu</a> · <a href="README.th.md">ไทย</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.he.md">עברית</a></p>
@@ -47,7 +47,7 @@ lê o arquivo, faz a alteração e mostra exatamente o que foi tocado.
   convertidos na sua máquina. PDF → Word / Excel / PowerPoint, Markdown →
   Word e HTML → Word rodam localmente. Somente as chamadas de IA saem da
   máquina, para o provedor que você escolher.
-- **Suas chaves, ou nenhuma.** Faça login com o Genspark e pule as chaves, ou
+- **Suas chaves, ou nenhuma.** Faça login com o Mutantcat AI e pule as chaves, ou
   use sua própria chave para Claude, OpenAI, Gemini, DeepSeek, Kimi, GLM,
   Qwen, Doubao, MiniMax, Grok, Mistral, OpenRouter, Requesty, ou qualquer endpoint
   compatível com OpenAI, incluindo servidores locais.
@@ -57,9 +57,9 @@ lê o arquivo, faz a alteração e mostra exatamente o que foi tocado.
   converter, ler e editar arquivos reais do Office na sua máquina sem abrir
   uma janela.
 
-**Baixe:** [macOS](https://github.com/genspark-ai/genoffice/releases/latest) (Apple Silicon e Intel) ·
-[Windows](https://github.com/genspark-ai/genoffice/releases/latest) (x64 e Arm) ·
-[Linux](https://github.com/genspark-ai/genoffice/releases/latest) (deb, rpm, AppImage) —
+**Baixe:** [macOS](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest) (Apple Silicon e Intel) ·
+[Windows](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest) (x64 e Arm) ·
+[Linux](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest) (deb, rpm, AppImage) —
 detalhes e requisitos em [Download](#download).
 
 ## Demo
@@ -181,7 +181,7 @@ Office com os mesmos mecanismos dos aplicativos, sem abrir uma janela.
 </tr>
 <tr>
 <td><b>Um prompt para o seu agente</b> — "Crie uma apresentação de oito slides sobre o Sistema Solar." O agente lê o skill, escreve uma folha de estilos, um esboço e uma especificação de página por slide, gera as duas fotos com <code>genoffice image</code> e deixa o <code>genoffice slides check</code> rejeitar qualquer coisa que transborde ou se sobreponha antes que o <code>genoffice create</code> monte o <code>.pptx</code> e o <code>slides render</code> devolva um PNG por slide para conferir.</td>
-<td><b>Instale uma vez, em Configurações → Integrações</b> — o MutantcatOffice lista os agentes de programação que encontra neste computador e grava o skill em cada um que você escolher. Ou baixe o skill como zip, ou execute <code>npx skills add genspark-ai/genoffice</code>. Os comandos e o fluxo de trabalho completo estão em <a href="#command-line-and-agent-skill">Linha de comando e skill de agente</a>.</td>
+<td><b>Instale uma vez, em Configurações → Integrações</b> — o MutantcatOffice lista os agentes de programação que encontra neste computador e grava o skill em cada um que você escolher. Ou baixe o skill como zip, ou execute <code>npx skills add Mutantcat-Working-Group/MutantcatOffice</code>. Os comandos e o fluxo de trabalho completo estão em <a href="#command-line-and-agent-skill">Linha de comando e skill de agente</a>.</td>
 </tr>
 </table>
 
@@ -220,7 +220,7 @@ observa.
 - **Uma IA que edita o próprio documento.** Alterações rastreadas no Docs,
   fórmulas e gráficos ao vivo no Sheets, slides desenhados diretamente no
   canvas, cada interação da IA gera um snapshot que você pode desfazer.
-- **Seu modelo, sua chave.** Entre com o Genspark ou traga uma chave para
+- **Seu modelo, sua chave.** Entre com o Mutantcat AI ou traga uma chave para
   Claude, OpenAI, Gemini, DeepSeek e outros, com servidores locais e qualquer
   endpoint compatível com OpenAI incluídos.
 - **PDF feito como deve ser.** Edite o texto dentro da página e converta PDF
@@ -235,8 +235,8 @@ observa.
 
 ## Backends de IA
 
-**Faça login com o Genspark** e não há nada para configurar: as chamadas de
-modelo passam pelo proxy do Genspark (famílias Claude, GPT e Gemini) e os
+**Faça login com o Mutantcat AI** e não há nada para configurar: as chamadas de
+modelo passam pelo proxy do Mutantcat AI (famílias Claude, GPT e Gemini) e os
 agentes ganham busca na web e de imagens, geração de imagens e análise de
 imagem/áudio/vídeo.
 
@@ -273,11 +273,11 @@ cliente MCP.
 
 ### Instalar o skill
 
-| Como                                   | O que acontece                                                                                                                                                                                    |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Configurações → Integrações** no app | Lista os agentes encontrados neste computador; um clique grava o skill em cada um que você escolher. Um botão **Atualizar** aparece quando uma versão do MutantcatOffice traz um skill mais novo. |
-| **Baixar como zip** na mesma página    | O formato que o claude.ai, os aplicativos desktop do Claude e outros assistentes aceitam como skill enviado.                                                                                      |
-| `npx skills add genspark-ai/genoffice` | Instala a partir deste repositório em qualquer agente compatível com skills.                                                                                                                      |
+| Como                                                     | O que acontece                                                                                                                                                                                    |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Configurações → Integrações** no app                   | Lista os agentes encontrados neste computador; um clique grava o skill em cada um que você escolher. Um botão **Atualizar** aparece quando uma versão do MutantcatOffice traz um skill mais novo. |
+| **Baixar como zip** na mesma página                      | O formato que o claude.ai, os aplicativos desktop do Claude e outros assistentes aceitam como skill enviado.                                                                                      |
+| `npx skills add Mutantcat-Working-Group/MutantcatOffice` | Instala a partir deste repositório em qualquer agente compatível com skills.                                                                                                                      |
 
 Depois, abra um novo chat e peça um documento. O skill ensina ao agente
 quando recorrer ao `genoffice`, como ler um arquivo antes de editá-lo e como
@@ -390,19 +390,19 @@ MutantcatOffice.
 
 ## Download
 
-| Plataforma                           | Requisitos                                            | Download                                                                                         |
-| ------------------------------------ | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| **macOS** — Apple Silicon (arm64)    | macOS 11+                                             | [`.dmg` mais recente (arm64)](https://github.com/genspark-ai/genoffice/releases/latest)          |
-| **macOS** — Intel (x64)              | macOS 11+                                             | [`.dmg` mais recente (x64)](https://github.com/genspark-ai/genoffice/releases/latest)            |
-| **Windows** (x64, maioria dos PCs)   | Windows 10+, Intel/AMD                                | [Instalador `-x64.exe` mais recente](https://github.com/genspark-ai/genoffice/releases/latest)   |
-| **Windows** no Arm (ARM64)           | Windows 11 no Arm (Snapdragon X e similares)          | [Instalador `-arm64.exe` mais recente](https://github.com/genspark-ai/genoffice/releases/latest) |
-| **Linux** — Debian / Ubuntu          | x86_64, glibc 2.34+ (Ubuntu 22.04 ou mais recente)    | [`.deb` mais recente](https://github.com/genspark-ai/genoffice/releases/latest)                  |
-| **Linux** — Fedora / RHEL / openSUSE | x86_64, glibc 2.34+ (Fedora 35+, RHEL 9+, Leap 15.6+) | [`.rpm` mais recente](https://github.com/genspark-ai/genoffice/releases/latest)                  |
-| **Linux** — outras distribuições     | x86_64, glibc 2.34+, FUSE 2                           | [`.AppImage` mais recente](https://github.com/genspark-ai/genoffice/releases/latest)             |
+| Plataforma                           | Requisitos                                            | Download                                                                                                           |
+| ------------------------------------ | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **macOS** — Apple Silicon (arm64)    | macOS 11+                                             | [`.dmg` mais recente (arm64)](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)          |
+| **macOS** — Intel (x64)              | macOS 11+                                             | [`.dmg` mais recente (x64)](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)            |
+| **Windows** (x64, maioria dos PCs)   | Windows 10+, Intel/AMD                                | [Instalador `-x64.exe` mais recente](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)   |
+| **Windows** no Arm (ARM64)           | Windows 11 no Arm (Snapdragon X e similares)          | [Instalador `-arm64.exe` mais recente](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest) |
+| **Linux** — Debian / Ubuntu          | x86_64, glibc 2.34+ (Ubuntu 22.04 ou mais recente)    | [`.deb` mais recente](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)                  |
+| **Linux** — Fedora / RHEL / openSUSE | x86_64, glibc 2.34+ (Fedora 35+, RHEL 9+, Leap 15.6+) | [`.rpm` mais recente](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)                  |
+| **Linux** — outras distribuições     | x86_64, glibc 2.34+, FUSE 2                           | [`.AppImage` mais recente](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)             |
 
 Todas as builds vêm da `main`; os instaladores de macOS e Windows são
 assinados. Versões mais antigas estão na página de
-[Releases](https://github.com/genspark-ai/genoffice/releases).
+[Releases](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases).
 
 <details>
 <summary><b>Instalando no Linux</b></summary>
@@ -464,7 +464,7 @@ npm run dist:linux   # package Linux AppImage + deb + rpm
 ```
 
 O aplicativo sheets também precisa de um toolchain Rust para seu sidecar
-xlsx (`cargo` no PATH); `npm run build -w @genoffice/sheets` compila isso
+xlsx (`cargo` no PATH); `npm run build -w @mutantcatoffice/sheets` compila isso
 automaticamente.
 
 ## Comunidade
@@ -472,7 +472,7 @@ automaticamente.
 O MutantcatOffice está em desenvolvimento ativo e o seu feedback ajuda a moldá-lo.
 
 - **Relate um bug ou peça um recurso** em
-  [GitHub Issues](https://github.com/genspark-ai/genoffice/issues).
+  [GitHub Issues](https://github.com/Mutantcat-Working-Group/MutantcatOffice/issues).
 - **Participe do grupo de chat do MutantcatOffice** no
   [GenTeam](https://genoffice.ai/join) para falar com a equipe e outros usuários.
 - **Dê uma estrela no repositório** se o MutantcatOffice for útil para você — é a
@@ -504,7 +504,7 @@ Microsoft Office.
 A edição de documentos é totalmente local — os arquivos nunca saem da sua
 máquina para serem abertos, editados, salvos ou convertidos. Os recursos de
 IA (agentes, busca, ferramentas de imagem) precisam de conexão de rede, com
-login no Genspark ou sua própria chave de API de modelo.
+login no Mutantcat AI ou sua própria chave de API de modelo.
 
 </details>
 
@@ -531,7 +531,7 @@ imagem da página.
 <details>
 <summary><b>Posso usar meu próprio modelo de IA ou chave de API?</b></summary>
 
-Sim. Além do login sem chave pelo Genspark, o MutantcatOffice permite trazer sua
+Sim. Além do login sem chave pelo Mutantcat AI, o MutantcatOffice permite trazer sua
 própria chave para Claude, OpenAI, Gemini, DeepSeek, Kimi, GLM, Qwen,
 Doubao, MiniMax, Grok, Mistral, OpenRouter, Requesty e OpenCode Zen/Go, além de
 qualquer endpoint compatível com OpenAI — incluindo servidores de modelo
@@ -636,6 +636,6 @@ O MutantcatOffice é licenciado sob a [Apache License 2.0](../../LICENSE), com u
 exceção: o diretório `ee/` é reservado para futuros módulos empresariais e
 é coberto pela [MutantcatOffice Enterprise License](../../ee/LICENSE).
 
-Os nomes e logotipos MutantcatOffice e Genspark são marcas registradas da
+Os nomes e logotipos MutantcatOffice e Mutantcat AI são marcas registradas da
 Mainfunc, Inc. A licença Apache-2.0 não concede permissão para usá-los (veja
 a seção 6); forks devem usar sua própria marca.

@@ -1,12 +1,12 @@
 import { randomBytes } from 'node:crypto'
 import { extname } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { generateImageTool } from '@genoffice/ai-search'
+import { generateImageTool } from '@mutantcatoffice/ai-search'
 import {
   MAX_REMOTE_IMAGE_BYTES,
   fetchRemoteImage,
   readBodyCapped,
-} from '@genoffice/electron-utils/remote-image'
+} from '@mutantcatoffice/electron-utils/remote-image'
 import { flagBool, flagString } from '../args'
 import { aiSettingsPath, prepareCloud } from '../cloud'
 import { resolveInput, resolveOutput, writeOutput } from '../fs'
@@ -39,13 +39,21 @@ export const imageCommand: CommandDef = {
       value: 'ratio',
       description: '1:1 | 4:3 | 16:9 | 9:16 | 3:4 | 2:3 | 3:2 | auto',
     },
-    { name: 'size', value: 'size', description: 'auto | 0.5k | 1k | 2k | 3k | 4k (Genspark only)' },
+    {
+      name: 'size',
+      value: 'size',
+      description: 'auto | 0.5k | 1k | 2k | 3k | 4k (Mutantcat AI only)',
+    },
     {
       name: 'ref',
       value: 'images',
       description: 'reference or edit-target images (paths or URLs), comma-separated',
     },
-    { name: 'model', value: 'name', description: 'Genspark model override (e.g. fal-bria-rmbg)' },
+    {
+      name: 'model',
+      value: 'name',
+      description: 'Mutantcat AI model override (e.g. fal-bria-rmbg)',
+    },
     { name: 'force', description: 'overwrite an existing output file' },
   ],
   async run(args, ctx) {
@@ -140,7 +148,7 @@ export function siblingExtensions(outExt: string): string[] {
     .map(([, exts]) => exts[0]!)
 }
 
-/** Genspark returns an https URL, BYOK providers a file:// in the app's generated-image store; fetchRemoteImage serves both. */
+/** Mutantcat AI returns an https URL, BYOK providers a file:// in the app's generated-image store; fetchRemoteImage serves both. */
 async function loadImage(url: string): Promise<{ bytes: Uint8Array; mime: string }> {
   const response = await fetchRemoteImage(url)
   if (!response?.ok) throw new CliError(EXIT.app, `could not download the generated image: ${url}`)

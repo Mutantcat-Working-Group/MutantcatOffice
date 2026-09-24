@@ -1,4 +1,4 @@
-import type { TableRenderNode } from '@genoffice/pptx-render'
+import type { TableRenderNode } from '@mutantcatoffice/pptx-render'
 
 export function tableLocalPointFromStage(
   stagePoint: { x: number; y: number },

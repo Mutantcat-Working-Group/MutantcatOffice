@@ -174,8 +174,8 @@ jobs:
         run: |
           npm run notices
           npm run build:all
-          npm run native:build -w @genoffice/sheets -- --target "$SIDECAR_TARGET"
-          npm run dist:win -w @genoffice/shell
+          npm run native:build -w @mutantcatoffice/sheets -- --target "$SIDECAR_TARGET"
+          npm run dist:win -w @mutantcatoffice/shell
         env:
           SIDECAR_TARGET: ${{ matrix.sidecar_target }}
 
@@ -282,8 +282,8 @@ jobs:
 
       - name: Build CLI bundle and sidecar
         run: |
-          npm run build -w @genoffice/cli
-          npm run native:build -w @genoffice/sheets
+          npm run build -w @mutantcatoffice/cli
+          npm run native:build -w @mutantcatoffice/sheets
 
       - name: Package tar
         run: node scripts/package-cli.mjs ${{ matrix.arch }}

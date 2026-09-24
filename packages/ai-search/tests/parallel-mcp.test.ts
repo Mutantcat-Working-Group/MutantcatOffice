@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { defaultAiSettings } from '@genoffice/ai-provider'
+import { defaultAiSettings } from '@mutantcatoffice/ai-provider'
 import { webSearch } from '../src/index'
 import { searchOptionsFromSettings, testSearchProvider } from '../src/search-tools'
 
@@ -66,7 +66,6 @@ describe('Parallel free Search MCP', () => {
   it.each([false, true])('searches anonymously and maps results (SSE: %s)', async (sse) => {
     const { requests } = mockServer({ content: [], structuredContent: payload }, sse)
     const r = await webSearch('office tools', 1, {
-      useGsk: false,
       prefer: 'parallel',
       parallelKey: '',
     })
@@ -102,7 +101,6 @@ describe('Parallel free Search MCP', () => {
     settings.search!.provider = 'parallel'
     const { requests } = mockServer({ content: [], structuredContent: payload })
     expect(searchOptionsFromSettings(settings)).toMatchObject({
-      useGsk: false,
       prefer: 'parallel',
       parallelKey: '',
     })

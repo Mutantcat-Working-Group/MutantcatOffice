@@ -139,7 +139,7 @@ export const ru = {
     'Область стилей: просмотр всех стилей, создание и обновление стилей по выделенному фрагменту',
   ribbonMoreStyles: 'Другие стили',
   ribbonGroupStyles: 'Стили',
-  ribbonAiAssistant: 'Genspark',
+  ribbonAiAssistant: 'Mutantcat AI',
   ribbonAiAssistantTip: 'Открыть помощника ИИ',
   ribbonRemoveTableStyleTip: 'Удалить стиль таблицы',
   ribbonNoStyle: 'Без стиля',

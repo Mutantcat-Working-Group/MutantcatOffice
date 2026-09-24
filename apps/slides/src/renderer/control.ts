@@ -1,4 +1,4 @@
-import type { RenderNode, RenderSlide } from '@genoffice/pptx-render'
+import type { RenderNode, RenderSlide } from '@mutantcatoffice/pptx-render'
 
 /** Request/reply the shell relays from `genoffice open --slide/--el` and `genoffice selection`. */
 export type ControlRequest =

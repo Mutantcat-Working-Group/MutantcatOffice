@@ -13,10 +13,10 @@
 ملفات Word و Excel و PowerPoint و PDF، يحرّرها أنت والذكاء الاصطناعي الخاص بك، وتُحفظ بالصيغ الأصلية نفسها.</p>
 
 <p align="center">
-  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/genspark-ai/genoffice" alt="الترخيص: Apache-2.0"></a>
-  <a href="https://github.com/genspark-ai/genoffice/releases/latest"><img src="https://img.shields.io/github/v/release/genspark-ai/genoffice" alt="أحدث إصدار"></a>
-  <a href="https://github.com/genspark-ai/genoffice/releases"><img src="https://img.shields.io/github/downloads/genspark-ai/genoffice/total" alt="عدد التنزيلات"></a>
-  <a href="https://github.com/genspark-ai/genoffice/stargazers"><img src="https://img.shields.io/github/stars/genspark-ai/genoffice?style=flat" alt="نجوم GitHub"></a>
+  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/Mutantcat-Working-Group/MutantcatOffice" alt="الترخيص: Apache-2.0"></a>
+  <a href="https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest"><img src="https://img.shields.io/github/v/release/Mutantcat-Working-Group/MutantcatOffice" alt="أحدث إصدار"></a>
+  <a href="https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases"><img src="https://img.shields.io/github/downloads/Mutantcat-Working-Group/MutantcatOffice/total" alt="عدد التنزيلات"></a>
+  <a href="https://github.com/Mutantcat-Working-Group/MutantcatOffice/stargazers"><img src="https://img.shields.io/github/stars/Mutantcat-Working-Group/MutantcatOffice?style=flat" alt="نجوم GitHub"></a>
 </p>
 
 <p align="center"><a href="../../README.md">English</a> · <a href="README.es.md">Español</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.zh-TW.md">繁體中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ja.md">日本語</a> · <b>العربية</b> · <a href="README.ru.md">Русский</a> · <a href="README.it.md">Italiano</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.pl.md">Polski</a> · <a href="README.cs.md">Čeština</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.ms.md">Bahasa Melayu</a> · <a href="README.th.md">ไทย</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.he.md">עברית</a></p>
@@ -47,7 +47,7 @@ MutantcatOffice بديل مجاني ومفتوح المصدر لـ Microsoft Off
   جميع عمليات التحويل — PDF إلى Word / Excel / PowerPoint، وMarkdown إلى Word،
   وHTML إلى Word — تعمل على الجهاز نفسه. لا يغادر جهازك شيء سوى طلبات الذكاء
   الاصطناعي، وتُرسَل فقط إلى مزوّد الخدمة الذي تختاره.
-- **مفاتيحك أو بلا مفاتيح.** سجّل الدخول بواسطة Genspark لتجنّب إدارة المفاتيح،
+- **مفاتيحك أو بلا مفاتيح.** سجّل الدخول بواسطة Mutantcat AI لتجنّب إدارة المفاتيح،
   أو استخدم مفتاحك الخاص مع Claude أو OpenAI أو Gemini أو DeepSeek أو Kimi أو
   GLM أو Qwen أو Doubao أو MiniMax أو Grok أو Mistral أو OpenRouter أو Requesty، أو أي
   نقطة نهاية متوافقة مع OpenAI، بما في ذلك الخوادم المحلية.
@@ -56,9 +56,9 @@ MutantcatOffice بديل مجاني ومفتوح المصدر لـ Microsoft Off
   وWindsurf، ليتمكّن وكيل البرمجة من إنشاء ملفات Office حقيقية وتحويلها
   وقراءتها وتحريرها على جهازك دون فتح أي نافذة.
 
-**الحصول عليه:** [macOS](https://github.com/genspark-ai/genoffice/releases/latest) (Apple Silicon و Intel) ·
-[Windows](https://github.com/genspark-ai/genoffice/releases/latest) (x64 و Arm) ·
-[Linux](https://github.com/genspark-ai/genoffice/releases/latest) (deb، rpm، AppImage) —
+**الحصول عليه:** [macOS](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest) (Apple Silicon و Intel) ·
+[Windows](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest) (x64 و Arm) ·
+[Linux](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest) (deb، rpm، AppImage) —
 التفاصيل والمتطلبات في [التنزيل](#download).
 
 ## العرض التوضيحي
@@ -180,7 +180,7 @@ Windsurf من إنشاء ملفات Office حقيقية وتحويلها وقر�
 </tr>
 <tr>
 <td dir="rtl"><b>توجيه واحد إلى وكيلك</b> — "أنشئ عرضًا تقديميًا من ثماني شرائح عن المجموعة الشمسية." يقرأ الوكيل المهارة، ويكتب ورقة أنماط ومخططًا ومواصفة صفحة واحدة لكل شريحة، ويولّد الصورتين بواسطة <code>genoffice image</code>، ويترك <code>genoffice slides check</code> يرفض أي عنصر يتجاوز الحدود أو يتداخل قبل أن يجمّع <code>genoffice create</code> ملف <code>.pptx</code> ويُعيد <code>slides render</code> صورة PNG لكل شريحة لمعاينتها.</td>
-<td dir="rtl"><b>ثبّت مرة واحدة، من الإعدادات → التكاملات</b> — يسرد MutantcatOffice وكلاء البرمجة الذين يجدهم على هذا الجهاز ويكتب المهارة في كل وكيل تختاره. أو نزّل المهارة كملف zip، أو شغّل <code>npx skills add genspark-ai/genoffice</code>. الأوامر وسير العمل الكامل في <a href="#command-line-and-agent-skill">سطر الأوامر ومهارة الوكيل</a>.</td>
+<td dir="rtl"><b>ثبّت مرة واحدة، من الإعدادات → التكاملات</b> — يسرد MutantcatOffice وكلاء البرمجة الذين يجدهم على هذا الجهاز ويكتب المهارة في كل وكيل تختاره. أو نزّل المهارة كملف zip، أو شغّل <code>npx skills add Mutantcat-Working-Group/MutantcatOffice</code>. الأوامر وسير العمل الكامل في <a href="#command-line-and-agent-skill">سطر الأوامر ومهارة الوكيل</a>.</td>
 </tr>
 </table>
 
@@ -215,7 +215,7 @@ Desktop وCursor وأي عميل MCP آخر تشغيل `genoffice mcp` بأنف�
 - **ذكاء اصطناعي يحرِّر المستند نفسه.** تتبّع التغييرات في Docs، وصِيَغ ورسوم
   بيانية حيّة في Sheets، وشرائح تُرسم مباشرة على لوحة الرسم، وكل جولة AI هي لقطة
   يمكنك التراجع إليها.
-- **نموذجك، مفتاحك.** سجّل الدخول عبر Genspark، أو استخدم مفتاحك الخاص مع
+- **نموذجك، مفتاحك.** سجّل الدخول عبر Mutantcat AI، أو استخدم مفتاحك الخاص مع
   Claude أو OpenAI أو Gemini أو DeepSeek وغيرها، مع دعم الخوادم المحلية وأي نقطة
   نهاية متوافقة مع OpenAI.
 - **PDF يُعالَج كما ينبغي.** حرِّر النص داخل الصفحة مباشرة، وحوِّل PDF إلى Word
@@ -228,8 +228,8 @@ Desktop وCursor وأي عميل MCP آخر تشغيل `genoffice mcp` بأنف�
 
 ## خلفيات الذكاء الاصطناعي
 
-**سجّل الدخول بواسطة Genspark** فلا تحتاج إلى أي إعداد: تُوجَّه طلبات النماذج
-عبر بروكسي Genspark (عائلات Claude و GPT و Gemini)، ويحصل الوكلاء على البحث
+**سجّل الدخول بواسطة Mutantcat AI** فلا تحتاج إلى أي إعداد: تُوجَّه طلبات النماذج
+عبر بروكسي Mutantcat AI (عائلات Claude و GPT و Gemini)، ويحصل الوكلاء على البحث
 عبر الويب والصور، وتوليد الصور، وتحليل الصور والصوت والفيديو.
 
 **أو استخدم مفتاحك الخاص.** تسرد صفحة Settings → AI مزوِّدين مثل Claude
@@ -262,11 +262,11 @@ MutantcatOffice، ولا يحتاج إلى بيئة تشغيل خاصة به، �
 
 ### تثبيت المهارة
 
-| الطريقة                                | ما يحدث                                                                                                                                                  |
-| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **الإعدادات → التكاملات** في التطبيق   | يسرد الوكلاء الموجودين على هذا الجهاز؛ وبنقرة واحدة يكتب المهارة في كل وكيل تختاره. ويظهر زر **Update** عندما يصدر إصدار من MutantcatOffice بمهارة أحدث. |
-| **التنزيل كملف zip** من الصفحة نفسها   | التنسيق الذي يقبله claude.ai وتطبيقات Claude لسطح المكتب والمساعدون الآخرون كمهارة مرفوعة.                                                               |
-| `npx skills add genspark-ai/genoffice` | يثبّت من هذا المستودع في أي وكيل متوافق مع المهارات.                                                                                                     |
+| الطريقة                                                  | ما يحدث                                                                                                                                                  |
+| -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **الإعدادات → التكاملات** في التطبيق                     | يسرد الوكلاء الموجودين على هذا الجهاز؛ وبنقرة واحدة يكتب المهارة في كل وكيل تختاره. ويظهر زر **Update** عندما يصدر إصدار من MutantcatOffice بمهارة أحدث. |
+| **التنزيل كملف zip** من الصفحة نفسها                     | التنسيق الذي يقبله claude.ai وتطبيقات Claude لسطح المكتب والمساعدون الآخرون كمهارة مرفوعة.                                                               |
+| `npx skills add Mutantcat-Working-Group/MutantcatOffice` | يثبّت من هذا المستودع في أي وكيل متوافق مع المهارات.                                                                                                     |
 
 ثم ابدأ محادثة جديدة واطلب مستندًا. تعلّم المهارة الوكيل متى يلجأ إلى
 `genoffice`، وكيف يقرأ الملف قبل تحريره، وكيف يتحقّق من عمله بنفسه.
@@ -372,18 +372,18 @@ deck_replace(dir, n, page) ×3 · slides_render(file, out)
 
 ## التنزيل
 
-| المنصة                               | المتطلبات                                             | التنزيل                                                                              |
-| ------------------------------------ | ----------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| **macOS** — شريحة Apple (arm64)      | macOS 11+                                             | [أحدث نسخة `.dmg` (arm64)](https://github.com/genspark-ai/genoffice/releases/latest) |
-| **macOS** — Intel (x64)              | macOS 11+                                             | [أحدث نسخة `.dmg` (x64)](https://github.com/genspark-ai/genoffice/releases/latest)   |
-| **Windows** (x64، لمعظم الأجهزة)     | Windows 10+، معالجات Intel/AMD                        | [أحدث مثبِّت `-x64.exe`](https://github.com/genspark-ai/genoffice/releases/latest)   |
-| **Windows** على Arm (ARM64)          | Windows 11 على Arm (معالج Snapdragon X وما شابهه)     | [أحدث مثبِّت `-arm64.exe`](https://github.com/genspark-ai/genoffice/releases/latest) |
-| **Linux** — Debian / Ubuntu          | x86_64، glibc 2.34+ (Ubuntu 22.04 أو أحدث)            | [أحدث نسخة `.deb`](https://github.com/genspark-ai/genoffice/releases/latest)         |
-| **Linux** — Fedora / RHEL / openSUSE | x86_64، glibc 2.34+ (Fedora 35+، RHEL 9+، Leap 15.6+) | [أحدث نسخة `.rpm`](https://github.com/genspark-ai/genoffice/releases/latest)         |
-| **Linux** — توزيعات أخرى             | x86_64، glibc 2.34+، وFUSE 2                          | [أحدث نسخة `.AppImage`](https://github.com/genspark-ai/genoffice/releases/latest)    |
+| المنصة                               | المتطلبات                                             | التنزيل                                                                                                |
+| ------------------------------------ | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **macOS** — شريحة Apple (arm64)      | macOS 11+                                             | [أحدث نسخة `.dmg` (arm64)](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest) |
+| **macOS** — Intel (x64)              | macOS 11+                                             | [أحدث نسخة `.dmg` (x64)](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)   |
+| **Windows** (x64، لمعظم الأجهزة)     | Windows 10+، معالجات Intel/AMD                        | [أحدث مثبِّت `-x64.exe`](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)   |
+| **Windows** على Arm (ARM64)          | Windows 11 على Arm (معالج Snapdragon X وما شابهه)     | [أحدث مثبِّت `-arm64.exe`](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest) |
+| **Linux** — Debian / Ubuntu          | x86_64، glibc 2.34+ (Ubuntu 22.04 أو أحدث)            | [أحدث نسخة `.deb`](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)         |
+| **Linux** — Fedora / RHEL / openSUSE | x86_64، glibc 2.34+ (Fedora 35+، RHEL 9+، Leap 15.6+) | [أحدث نسخة `.rpm`](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)         |
+| **Linux** — توزيعات أخرى             | x86_64، glibc 2.34+، وFUSE 2                          | [أحدث نسخة `.AppImage`](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)    |
 
 جميع الإصدارات مبنية من الفرع `main`؛ ومثبِّتات macOS و Windows موقَّعة رقميًا.
-الإصدارات الأقدم متوفرة في صفحة [Releases](https://github.com/genspark-ai/genoffice/releases).
+الإصدارات الأقدم متوفرة في صفحة [Releases](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases).
 
 <details>
 <summary><b>التثبيت على Linux</b></summary>
@@ -446,14 +446,14 @@ npm run dist:linux   # package Linux AppImage + deb + rpm
 
 يحتاج تطبيق Sheets بالإضافة إلى ذلك إلى سلسلة أدوات Rust لعمليته المساعدة
 الخاصة بـ xlsx (يجب أن يكون `cargo` متاحًا في PATH)؛ ويقوم أمر
-`npm run build -w @genoffice/sheets` بتجميعه تلقائيًا.
+`npm run build -w @mutantcatoffice/sheets` بتجميعه تلقائيًا.
 
 ## المجتمع
 
 MutantcatOffice قيد تطوير نشط، وملاحظاتك هي ما يشكِّل مستقبله.
 
 - **أبلغ عن خطأ أو اطلب ميزة جديدة** عبر
-  [GitHub Issues](https://github.com/genspark-ai/genoffice/issues).
+  [GitHub Issues](https://github.com/Mutantcat-Working-Group/MutantcatOffice/issues).
 - **انضم إلى محادثة مجموعة MutantcatOffice** على
   [GenTeam](https://genoffice.ai/join) للتواصل مع الفريق والمستخدمين الآخرين.
 - **أضِف نجمة (Star) للمستودع** إذا كان MutantcatOffice مفيدًا لك — فهذه أفضل طريقة
@@ -483,7 +483,7 @@ MutantcatOffice قيد تطوير نشط، وملاحظاتك هي ما يشكِ
 
 تحرير المستندات محلي بالكامل — لا تغادر الملفات جهازك أبدًا عند الفتح أو
 التحرير أو الحفظ أو التحويل. تحتاج ميزات الذكاء الاصطناعي (الوكلاء، والبحث،
-وأدوات الصور) إلى اتصال بالشبكة، سواء عبر تسجيل الدخول بواسطة Genspark أو
+وأدوات الصور) إلى اتصال بالشبكة، سواء عبر تسجيل الدخول بواسطة Mutantcat AI أو
 باستخدام مفتاح API لنموذجك الخاص.
 
 </details>
@@ -509,7 +509,7 @@ macOS و Windows، فتُحوَّل إلى نص قابل للتحرير بدلً
 <details>
 <summary><b>هل يمكنني استخدام نموذج ذكاء اصطناعي أو مفتاح API خاص بي؟</b></summary>
 
-نعم. إلى جانب تسجيل الدخول بواسطة Genspark الذي لا يتطلب أي مفتاح، يدعم
+نعم. إلى جانب تسجيل الدخول بواسطة Mutantcat AI الذي لا يتطلب أي مفتاح، يدعم
 MutantcatOffice استخدام مفتاحك الخاص مع Claude وOpenAI وGemini وDeepSeek وKimi
 وGLM وQwen وDoubao وMiniMax وGrok وMistral وOpenRouter وRequesty وOpenCode Zen/Go،
 إضافة إلى أي نقطة نهاية متوافقة مع OpenAI — بما في ذلك خوادم النماذج المحلية.
@@ -608,6 +608,6 @@ MIT/Apache-2.0/BSD-3-Clause/OFL.
 دليل `ee/` محجوز لوحدات المؤسسات (enterprise) المستقبلية ويخضع لـ
 [MutantcatOffice Enterprise License](../../ee/LICENSE).
 
-اسما وشعارا MutantcatOffice و Genspark هما علامتان تجاريتان مملوكتان لشركة
+اسما وشعارا MutantcatOffice و Mutantcat AI هما علامتان تجاريتان مملوكتان لشركة
 Mainfunc, Inc. لا يمنح ترخيص Apache-2.0 إذنًا باستخدامهما (راجع البند 6)؛
 ويجب أن تستخدم النسخ المتفرعة (forks) هويتها البصرية الخاصة.

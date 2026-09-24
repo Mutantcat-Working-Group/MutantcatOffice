@@ -32,7 +32,7 @@ import type {
   ChartRenderNode,
   PictureRenderNode,
   GroupRenderNode,
-} from '@genoffice/pptx-render'
+} from '@mutantcatoffice/pptx-render'
 import { boxPivotProps, fillToKonva, isConnectorNode, isEditableText } from './konva-adapter'
 import { tableCellAtPoint, tableCellOverlayBox, tableLocalPointFromStage } from './table-hit'
 import { EDGE_GRIP_PX, isPromptPlaceholder, textHitAtPoint } from './text-hit-area'

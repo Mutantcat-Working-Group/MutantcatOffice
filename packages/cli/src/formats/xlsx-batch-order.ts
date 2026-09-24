@@ -1,12 +1,12 @@
-import type { RangeBounds } from '@genoffice/xlsx-gateway/domain/cell-address'
+import type { RangeBounds } from '@mutantcatoffice/xlsx-gateway/domain/cell-address'
 import {
   shiftIndex,
   shiftSpecForOp,
   type ShiftSpec,
-} from '@genoffice/xlsx-gateway/domain/formula-shift'
-import { InMemoryWorkbookAdapter } from '@genoffice/xlsx-gateway/domain/in-memory-workbook'
-import type { StructuralOperation } from '@genoffice/xlsx-gateway/domain/workbook-dsl'
-import type { WorkbookSnapshot } from '@genoffice/xlsx-gateway/domain/workbook.types'
+} from '@mutantcatoffice/xlsx-gateway/domain/formula-shift'
+import { InMemoryWorkbookAdapter } from '@mutantcatoffice/xlsx-gateway/domain/in-memory-workbook'
+import type { StructuralOperation } from '@mutantcatoffice/xlsx-gateway/domain/workbook-dsl'
+import type { WorkbookSnapshot } from '@mutantcatoffice/xlsx-gateway/domain/workbook.types'
 import { CliError, EXIT, type ErrorHints } from '../result'
 
 export type BatchOp = Record<string, unknown> & { op: string; __index?: number }

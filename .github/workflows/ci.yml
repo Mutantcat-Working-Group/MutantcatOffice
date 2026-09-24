@@ -132,7 +132,9 @@ jobs:
         run: npm run typecheck
 
       - name: Regenerate test fixtures
-        run: npm run fixtures
+        run: |
+          npm run fixtures
+          npm run fixtures -w @mutantcatoffice/sheets
 
       # Generation is byte-deterministic (zip entry mtimes are pinned in
       # tests/helpers/build-docx.ts); a diff here means the generator and the
@@ -154,8 +156,8 @@ jobs:
       # leave every untouched package entry byte-identical (fails closed otherwise).
       - name: Sheets compatibility gate
         run: |
-          npm run fixtures -w @genoffice/sheets
-          npm run compat -w @genoffice/sheets
+          npm run fixtures -w @mutantcatoffice/sheets
+          npm run compat -w @mutantcatoffice/sheets
 
   e2e:
     # 22.04, not -latest: 24.04's AppArmor hardening blocks Electron renderer
@@ -201,7 +203,7 @@ jobs:
         run: npm run build:all
 
       - name: Generate sheets fixtures
-        run: npm run fixtures -w @genoffice/sheets
+        run: npm run fixtures -w @mutantcatoffice/sheets
 
       # Newer Ubuntu kernels ship an AppArmor policy that blocks unprivileged
       # user namespaces, which kills the Chromium zygote even with --no-sandbox

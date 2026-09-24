@@ -1,5 +1,5 @@
-import { createIpcTransport, type AgentTransport } from '@genoffice/agent-core'
-import type { AiSettings } from '@genoffice/ai-provider'
+import { createIpcTransport, type AgentTransport } from '@mutantcatoffice/agent-core'
+import type { AiSettings } from '@mutantcatoffice/ai-provider'
 import { t } from '../i18n/locale'
 
 /** The shared IPC transport wired to the html preload bridge (window.htmlApi). */
@@ -11,7 +11,6 @@ export function createElectronTransport(getSettings: () => AiSettings): AgentTra
     getSettings,
     unknownErrorText: () => t('aiUnknownError'),
     timeoutErrorText: () => t('aiTimeoutError'),
-    creditsErrorText: () => t('aiCreditsExhausted'),
     networkErrorText: () => t('aiNetworkError'),
     overloadedErrorText: () => t('aiOverloadedError'),
   })

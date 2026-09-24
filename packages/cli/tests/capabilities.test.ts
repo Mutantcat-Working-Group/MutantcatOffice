@@ -1,23 +1,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import * as aiSearch from '@genoffice/ai-search'
+import { describe, expect, it } from 'vitest'
 import { run, tempDir } from './helpers'
-
-// hasGskAuth reads process.env, not the command context: isolate the login state per test
-const saved: Record<string, string | undefined> = {}
-beforeEach(() => {
-  for (const k of ['GENOFFICE_AUTH_DIR', 'AI_SEARCH_DISABLE_GSK']) saved[k] = process.env[k]
-  process.env.GENOFFICE_AUTH_DIR = join(tempDir(), 'no-auth')
-  process.env.AI_SEARCH_DISABLE_GSK = '1'
-})
-afterEach(() => {
-  vi.restoreAllMocks()
-  for (const [k, v] of Object.entries(saved)) {
-    if (v === undefined) delete process.env[k]
-    else process.env[k] = v
-  }
-})
 
 // a real settings file always carries the chat provider block; without it every section resets to defaults
 function settingsFile(dir: string, settings: Record<string, unknown>): string {
@@ -69,7 +53,7 @@ describe('genoffice capabilities', () => {
     expect(d.search).toEqual({ available: true, via: 'serper' })
     expect(d.image_search).toEqual({ available: true, via: 'serper' })
     expect(d.image_generation).toEqual({ available: true, via: 'openai' })
-    expect(d.media_analysis.available).toBe(false)
+    expect(d.media_analysis).toEqual({ available: true, via: 'openai' })
     expect(d.app.available).toBe(true)
     expect(r.json().summary).toContain('image_generation')
   })
@@ -91,9 +75,8 @@ describe('genoffice capabilities', () => {
   })
 
   it.each(['tavily', 'parallel'])(
-    '%s does not advertise Genspark image search when signed in',
+    '%s does not advertise image tools without a BYOK media key',
     async (provider) => {
-      vi.spyOn(aiSearch, 'hasGskAuth').mockReturnValue(true)
       const settings = settingsFile(tempDir(), {
         search: { provider, providers: { [provider]: { apiKey: 'test-key' } } },
       })
@@ -103,8 +86,8 @@ describe('genoffice capabilities', () => {
       const d = r.json().detail
       expect(d.search).toEqual({ available: true, via: provider })
       expect(d.image_search).toEqual({ available: false, via: null })
-      expect(d.image_generation).toEqual({ available: true, via: 'genspark' })
-      expect(d.media_analysis).toEqual({ available: true, via: 'genspark' })
+      expect(d.image_generation).toEqual({ available: false, via: null })
+      expect(d.media_analysis).toEqual({ available: false, via: null })
     },
   )
 

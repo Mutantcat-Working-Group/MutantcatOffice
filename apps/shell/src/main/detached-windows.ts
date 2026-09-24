@@ -1,7 +1,7 @@
 import { basename } from 'node:path'
 import { BrowserWindow } from 'electron'
 import type { WebContents, WebContentsView } from 'electron'
-import type { WatchRendererOptions } from '@genoffice/electron-utils/renderer-watchdog'
+import type { WatchRendererOptions } from '@mutantcatoffice/electron-utils/renderer-watchdog'
 
 import {
   docsQueryDirty,

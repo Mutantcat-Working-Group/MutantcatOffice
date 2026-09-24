@@ -2,7 +2,7 @@ import { basename } from 'node:path'
 import { realpathSync } from 'node:fs'
 import { BrowserWindow } from 'electron'
 import type { Rectangle, WebContents, WebContentsView } from 'electron'
-import type { WatchRendererOptions } from '@genoffice/electron-utils/renderer-watchdog'
+import type { WatchRendererOptions } from '@mutantcatoffice/electron-utils/renderer-watchdog'
 
 import {
   createDocsView,
@@ -102,7 +102,7 @@ export class TabManager {
     // then once more on the next tick. On Linux/X11, `resize` fires before the
     // window manager applies the new size, so getContentBounds() is still the
     // pre-maximize size inside the handler and a follow-up layout is required.
-    // See https://github.com/genspark-ai/genoffice/issues/15
+    // See https://github.com/Mutantcat-Working-Group/MutantcatOffice/issues/15
     shellWindow.on('resize', () => {
       this.layout()
       setImmediate(() => this.layout())

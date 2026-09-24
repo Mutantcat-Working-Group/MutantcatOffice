@@ -1,4 +1,4 @@
-import { defineStrings } from '@genoffice/i18n'
+import { defineStrings } from '@mutantcatoffice/i18n'
 
 /** Strings for the Zotero integration in the References tab. */
 export const zoteroStrings = defineStrings({

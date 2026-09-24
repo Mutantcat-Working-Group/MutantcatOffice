@@ -1,4 +1,4 @@
-import { workbookOperationSchema } from '@genoffice/xlsx-gateway/domain/workbook-dsl'
+import { workbookOperationSchema } from '@mutantcatoffice/xlsx-gateway/domain/workbook-dsl'
 import { z } from 'zod'
 import {
   renderGroups,

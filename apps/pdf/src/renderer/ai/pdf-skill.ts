@@ -1,4 +1,4 @@
-import type { AgentSkill } from '@genoffice/agent-core'
+import type { AgentSkill } from '@mutantcatoffice/agent-core'
 import { AGENT_TOOLS, executePdfTool } from './tools'
 import type { PdfAiDeps } from './tools'
 
@@ -45,7 +45,7 @@ const SYSTEM_PROMPT = `You are MutantcatOffice's PDF assistant, helping the user
 const SELECTION_CONTEXT_CHARS = 12_000
 
 const IMAGE_GEN_OFF_NOTE =
-  '\n\nNote: generate_image is currently unavailable (no image provider: signed out of Genspark or cloud tools off, and no media API key in Settings). Do not call or promise it; use image_search for imagery.'
+  '\n\nNote: generate_image is currently unavailable (no image provider: signed out of Mutantcat AI or cloud tools off, and no media API key in Settings). Do not call or promise it; use image_search for imagery.'
 
 export function createPdfSkill(deps: PdfAiDeps): AgentSkill {
   return {

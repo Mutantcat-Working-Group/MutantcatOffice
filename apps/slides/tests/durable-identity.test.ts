@@ -13,9 +13,9 @@ import {
   savePptx,
   type OpenedPptx,
   type TextElement,
-} from '@genoffice/pptx-engine'
-import { runTxn, elementDurableId, slideDurableId } from '@genoffice/pptx-ops'
-import { elementCNvPrId, groupChildDurableId, patchSlideXml } from '@genoffice/pptx-engine'
+} from '@mutantcatoffice/pptx-engine'
+import { runTxn, elementDurableId, slideDurableId } from '@mutantcatoffice/pptx-ops'
+import { elementCNvPrId, groupChildDurableId, patchSlideXml } from '@mutantcatoffice/pptx-engine'
 
 let opened: OpenedPptx
 

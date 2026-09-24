@@ -6,7 +6,7 @@ import {
   useDismissablePopover,
   wordArtSolidColor,
   type WordArtPreset,
-} from '@genoffice/ui'
+} from '@mutantcatoffice/ui'
 import {
   buildLineParagraphXml,
   buildShapeParagraphXml,
@@ -15,7 +15,7 @@ import {
   LINE_KINDS,
   type HeaderFooter,
   type TextboxDisplay,
-} from '@genoffice/docx-engine'
+} from '@mutantcatoffice/docx-engine'
 import type { DocsTabInfo } from '../../shared/ipc'
 import { runUiOps } from '../ai/ops'
 import { tableModelToPmNode } from '../editor/convert'

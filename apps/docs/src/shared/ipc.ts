@@ -33,7 +33,7 @@ export interface PickImageResult {
   name: string
 }
 
-// ---- AI provider settings/config/streaming: canonical types live in @genoffice/ai-provider ----
+// ---- AI provider settings/config/streaming: canonical types live in @mutantcatoffice/ai-provider ----
 
 import type {
   AiChatRequest,
@@ -41,11 +41,10 @@ import type {
   AiSettings,
   AiStreamChunk,
   AiStreamRequest,
-  GenSparkAccountStatus,
-} from '@genoffice/ai-provider'
-import type { HeadlessExportTarget } from '@genoffice/electron-utils/headless-export'
-import type { FaceVerticalMetrics } from '@genoffice/font-metrics'
-import type { AiPanelPrefs } from '@genoffice/ui'
+} from '@mutantcatoffice/ai-provider'
+import type { HeadlessExportTarget } from '@mutantcatoffice/electron-utils/headless-export'
+import type { FaceVerticalMetrics } from '@mutantcatoffice/font-metrics'
+import type { AiPanelPrefs } from '@mutantcatoffice/ui'
 
 export type { FaceVerticalMetrics }
 
@@ -58,18 +57,17 @@ export type {
   AiSettings,
   AiStreamChunk,
   AiStreamRequest,
-  GenSparkAccountStatus,
-} from '@genoffice/ai-provider'
-export { AI_PROVIDERS } from '@genoffice/ai-provider/browser'
+} from '@mutantcatoffice/ai-provider'
+export { AI_PROVIDERS } from '@mutantcatoffice/ai-provider/browser'
 
-// ---- agent protocol: canonical types live in @genoffice/agent-core ----
+// ---- agent protocol: canonical types live in @mutantcatoffice/agent-core ----
 
 export type {
   AgentMessage,
   AgentToolCall,
   AgentToolDef,
   AgentToolResult,
-} from '@genoffice/agent-core'
+} from '@mutantcatoffice/agent-core'
 
 // ---- chat attachments (local files fed to the agent via tools) ----
 
@@ -421,10 +419,6 @@ export interface DesktopApi {
   /** start a streaming AI call; deltas arrive via onAiStream with the same requestId */
   aiStream(request: AiStreamRequest): Promise<void>
   aiStreamCancel(requestId: string): Promise<void>
-  /** Genspark account status (gsk login state); withEmail also returns the email (needs a network request, slower) */
-  aiGskStatus(withEmail?: boolean): Promise<GenSparkAccountStatus>
-  /** Open the browser to log in to Genspark (fire-and-forget; aiGskStatus flips to logged-in when done) */
-  aiGskLogin(): Promise<void>
   webSearch(
     query: string,
     maxResults?: number,
@@ -457,7 +451,7 @@ export interface DesktopApi {
     requirements: string
   }): Promise<{ text?: string; error?: string }>
   fetchImage(url: string): Promise<{ base64: string; mime: string } | null>
-  /** AI image generation via the Genspark cloud channel (requires login + cloud tools) */
+  /** AI image generation */
   aiGenerateImage(op: {
     prompt: string
     aspectRatio?: string
@@ -496,5 +490,5 @@ export interface DesktopApi {
   reportViewMenuState(state: { aiSidebar: boolean; darkCanvas: boolean }): void
 }
 
-/** mirrors VIEW_IMAGE_CHANNEL in @genoffice/electron-utils (kept literal so the preload stays free of main-only deps) */
+/** mirrors VIEW_IMAGE_CHANNEL in @mutantcatoffice/electron-utils (kept literal so the preload stays free of main-only deps) */
 export const VIEW_IMAGE_CHANNEL = 'genoffice:view-image'

@@ -26,8 +26,8 @@ RUN npm ci --ignore-scripts
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal
 ENV PATH="/root/.cargo/bin:${PATH}"
 
-RUN npm run build -w @genoffice/cli
-RUN npm run native:build -w @genoffice/sheets
+RUN npm run build -w @mutantcatoffice/cli
+RUN npm run native:build -w @mutantcatoffice/sheets
 
 FROM node:22-bookworm-slim AS runtime
 
@@ -35,13 +35,13 @@ ENV NODE_ENV=production
 WORKDIR /opt/mutantcatoffice
 
 COPY --from=build /work/packages/cli/dist ./cli
-COPY --from=build /work/packages/cli/bin/genoffice ./cli/genoffice
-COPY --from=build /work/packages/cli/bin/genoffice.cmd ./cli/genoffice.cmd
+COPY --from=build /work/packages/cli/bin/mutantcatoffice ./cli/mutantcatoffice
+COPY --from=build /work/packages/cli/bin/mutantcatoffice.cmd ./cli/mutantcatoffice.cmd
 COPY --from=build /work/packages/cli/package.json ./cli/package.json
-COPY --from=build /work/skills/genoffice ./cli/skills/genoffice
+COPY --from=build /work/skills/mutantcatoffice ./cli/skills/mutantcatoffice
 COPY --from=build /work/node_modules/@embedpdf/pdfium/dist/pdfium.wasm ./wasm/pdfium.wasm
 COPY --from=build /work/apps/pdf/node_modules/harfbuzzjs/hb-subset.wasm ./wasm/hb-subset.wasm
 COPY --from=build /work/apps/sheets/native/xlsx-engine/target/release/xlsx-sidecar ./native/xlsx-sidecar
 
-ENTRYPOINT ["node", "/opt/mutantcatoffice/cli/genoffice.cjs"]
+ENTRYPOINT ["node", "/opt/mutantcatoffice/cli/mutantcatoffice.cjs"]
 CMD ["--help"]

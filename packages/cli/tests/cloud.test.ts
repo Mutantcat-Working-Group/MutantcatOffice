@@ -98,7 +98,7 @@ describe('cloud command plumbing', () => {
     expect(missingUrl.json().message).toContain('/nonexistent/photo.jpg')
   })
 
-  it('unwraps the Genspark per-file analysis map and leaves prose alone', () => {
+  it('unwraps the Mutantcat AI per-file analysis map and leaves prose alone', () => {
     expect(analysisText('A red square.')).toBe('A red square.')
     expect(
       analysisText(

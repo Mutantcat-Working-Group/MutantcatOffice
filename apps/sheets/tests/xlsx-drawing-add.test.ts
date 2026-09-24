@@ -6,9 +6,12 @@ import {
   assertOnlyTouchedEntriesChanged,
   createBufferEntrySource,
   planCellEditsToXlsx,
-} from '@genoffice/xlsx-gateway/gateway/xlsx-gateway'
-import type { CellEdit, SheetVisualAddition } from '@genoffice/xlsx-gateway/gateway/xlsx-gateway'
-import type { SheetEditPlan } from '@genoffice/xlsx-gateway/gateway/xlsx-sheets'
+} from '@mutantcatoffice/xlsx-gateway/gateway/xlsx-gateway'
+import type {
+  CellEdit,
+  SheetVisualAddition,
+} from '@mutantcatoffice/xlsx-gateway/gateway/xlsx-gateway'
+import type { SheetEditPlan } from '@mutantcatoffice/xlsx-gateway/gateway/xlsx-sheets'
 import { buildEditFixture, buildSheetsFixture } from './fixture-builder'
 
 const ANCHOR = {

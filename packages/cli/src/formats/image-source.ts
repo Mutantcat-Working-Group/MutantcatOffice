@@ -5,7 +5,7 @@ import {
   ResponseTooLargeError,
   fetchRemoteImage,
   readBodyCapped,
-} from '@genoffice/electron-utils/remote-image'
+} from '@mutantcatoffice/electron-utils/remote-image'
 import { assertAllowed, type PathContext } from '../fs'
 import { imageSize } from './image-size'
 

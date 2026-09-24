@@ -1,5 +1,5 @@
 import { fileURLToPath } from 'node:url'
-import { analyzeMediaTool } from '@genoffice/ai-search'
+import { analyzeMediaTool } from '@mutantcatoffice/ai-search'
 import { flagString } from '../args'
 import { aiSettingsPath, prepareCloud } from '../cloud'
 import { resolveInput } from '../fs'
@@ -41,7 +41,7 @@ export const mediaCommand: CommandDef = {
   },
 }
 
-/** Genspark reports a fetch/analysis failure as { status: "error", error|message } per file. */
+/** Mutantcat AI reports a fetch/analysis failure as { status: "error", error|message } per file. */
 export function providerFailure(text: string): string | null {
   if (!text.trimStart().startsWith('{')) return null
   try {
@@ -56,7 +56,7 @@ export function providerFailure(text: string): string | null {
   }
 }
 
-/** Genspark answers with a JSON map of upload → { analysis }; BYOK providers with prose. */
+/** Mutantcat AI answers with a JSON map of upload → { analysis }; BYOK providers with prose. */
 export function analysisText(text: string): string {
   if (!text.trimStart().startsWith('{')) return text
   try {

@@ -1,5 +1,9 @@
-import { elementDurableId, openPptx, slideDurableId } from '@genoffice/pptx-engine'
-import { buildRenderSlide, EMU_PER_PX_96, type FontMetricsProvider } from '@genoffice/pptx-render'
+import { elementDurableId, openPptx, slideDurableId } from '@mutantcatoffice/pptx-engine'
+import {
+  buildRenderSlide,
+  EMU_PER_PX_96,
+  type FontMetricsProvider,
+} from '@mutantcatoffice/pptx-render'
 import { auditSlideFindings, type AuditFinding } from './layout-audit'
 
 export interface DeckAuditPage {

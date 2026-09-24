@@ -6,8 +6,8 @@ import type {
   HfPartInfo,
   SectionInfo,
   SectionSettings,
-} from '@genoffice/docx-engine'
-import { decodeEntities } from '@genoffice/docx-engine'
+} from '@mutantcatoffice/docx-engine'
+import { decodeEntities } from '@mutantcatoffice/docx-engine'
 import {
   appendEndnotesBlock,
   appendFloatSpillBlock,

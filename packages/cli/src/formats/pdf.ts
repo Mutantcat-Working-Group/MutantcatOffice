@@ -7,7 +7,7 @@ import {
   PdfLoadError,
   type OcrEngine,
   type PdfiumModule,
-} from '@genoffice/pdf2docx'
+} from '@mutantcatoffice/pdf2docx'
 import { createVisionOcrEngine, createWindowsOcrEngine } from '../../../pdf2docx/src/ocr-vision'
 import { ocrHelperPath, pdfiumWasmPath } from '../resources'
 

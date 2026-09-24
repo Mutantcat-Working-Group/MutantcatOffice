@@ -8,7 +8,7 @@ import type {
   ChartRenderNode,
   PictureRenderNode,
   TableRenderNode,
-} from '@genoffice/pptx-render'
+} from '@mutantcatoffice/pptx-render'
 import { handleSlidesControl, type ControlRequest } from './control'
 import type {
   AiSettings,
@@ -99,9 +99,9 @@ import {
   useAutoSavePref,
   type AiScopeQuoteData,
   type WordArtPreset,
-} from '@genoffice/ui'
+} from '@mutantcatoffice/ui'
 import type { ChartPresetDef, IconDef, SmartArtDef } from './insert-presets'
-import { GensparkMark, IconAiBeautify, IconAiFactCheck, IconAiImage } from './components/icons'
+import { MutantcatMark, IconAiBeautify, IconAiFactCheck, IconAiImage } from './components/icons'
 import { ToastHost } from './components/toast'
 import { showToast } from './components/toast-bus'
 import { t, useI18n } from './i18n/locale'
@@ -3484,7 +3484,7 @@ export function App() {
                 data-tip={t('appAiRailExpand')}
                 aria-label={t('appAiRailExpand')}
               >
-                <GensparkMark size={22} />
+                <MutantcatMark size={22} />
               </button>
             )}
           </div>
@@ -3818,8 +3818,8 @@ export function App() {
                               data-tip={t('aiOpenAssistant')}
                               onClick={toggleAi}
                             >
-                              <GensparkMark size={14} />
-                              <span>Genspark AI</span>
+                              <MutantcatMark size={14} />
+                              <span>Mutantcat AI</span>
                             </button>
                             {/* Same one-click presets as the Home tab; hidden instead of
                         disabled while the deck has no real content */}

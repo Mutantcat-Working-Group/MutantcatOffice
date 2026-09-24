@@ -5,7 +5,12 @@
  * ReviewContext built fresh per call so state never goes stale.
  */
 import type { Editor } from '@tiptap/core'
-import { nextNoteId, parseDocx, type CommentInfo, type NoteInfo } from '@genoffice/docx-engine'
+import {
+  nextNoteId,
+  parseDocx,
+  type CommentInfo,
+  type NoteInfo,
+} from '@mutantcatoffice/docx-engine'
 import type { Dispatch, SetStateAction } from 'react'
 import { fetchDocBytes } from './doc-bytes'
 import type { DocState } from './doc-state'

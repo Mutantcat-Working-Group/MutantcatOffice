@@ -13,10 +13,10 @@
 Word、Excel、PowerPoint 與 PDF 檔案，由你與你的 AI 共同編輯，並以原生格式存回。</p>
 
 <p align="center">
-  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/genspark-ai/genoffice" alt="License: Apache-2.0"></a>
-  <a href="https://github.com/genspark-ai/genoffice/releases/latest"><img src="https://img.shields.io/github/v/release/genspark-ai/genoffice" alt="Latest release"></a>
-  <a href="https://github.com/genspark-ai/genoffice/releases"><img src="https://img.shields.io/github/downloads/genspark-ai/genoffice/total" alt="Downloads"></a>
-  <a href="https://github.com/genspark-ai/genoffice/stargazers"><img src="https://img.shields.io/github/stars/genspark-ai/genoffice?style=flat" alt="GitHub stars"></a>
+  <a href="../../LICENSE"><img src="https://img.shields.io/github/license/Mutantcat-Working-Group/MutantcatOffice" alt="License: Apache-2.0"></a>
+  <a href="https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest"><img src="https://img.shields.io/github/v/release/Mutantcat-Working-Group/MutantcatOffice" alt="Latest release"></a>
+  <a href="https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases"><img src="https://img.shields.io/github/downloads/Mutantcat-Working-Group/MutantcatOffice/total" alt="Downloads"></a>
+  <a href="https://github.com/Mutantcat-Working-Group/MutantcatOffice/stargazers"><img src="https://img.shields.io/github/stars/Mutantcat-Working-Group/MutantcatOffice?style=flat" alt="GitHub stars"></a>
 </p>
 
 <p align="center"><a href="../../README.md">English</a> · <a href="README.es.md">Español</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.zh-CN.md">简体中文</a> · <b>繁體中文</b> · <a href="README.ko.md">한국어</a> · <a href="README.ja.md">日本語</a> · <a href="README.ar.md">العربية</a> · <a href="README.ru.md">Русский</a> · <a href="README.it.md">Italiano</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.pl.md">Polski</a> · <a href="README.cs.md">Čeština</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.ms.md">Bahasa Melayu</a> · <a href="README.th.md">ไทย</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.he.md">עברית</a></p>
@@ -44,7 +44,7 @@ Windows 與 Linux。它能開啟並儲存原生的 `.docx`、`.xlsx` 與 `.pptx`
 - **本機優先的設計。** 檔案的開啟、編輯、儲存與轉換都在你的裝置上完成。
   PDF → Word / Excel / PowerPoint、Markdown → Word、HTML → Word 全部
   在本機執行。只有 AI 呼叫會離開這台裝置，且僅送往你選擇的服務商。
-- **用你自己的金鑰，或完全不用。** 用 Genspark 登入即可省去金鑰設定，
+- **用你自己的金鑰，或完全不用。** 用 Mutantcat AI 登入即可省去金鑰設定，
   或自行帶入 Claude、OpenAI、Gemini、DeepSeek、Kimi、GLM、Qwen、
   Doubao、MiniMax、Grok、Mistral、OpenRouter、Requesty，或任何相容 OpenAI 介面
   的服務端點，也支援本機伺服器。
@@ -53,9 +53,9 @@ Windows 與 Linux。它能開啟並儲存原生的 `.docx`、`.xlsx` 與 `.pptx`
   OpenCode 與 Windsurf 使用的 agent skill，讓程式開發代理不必開啟任何
   視窗，就能在你的裝置上建立、轉換、讀取與編輯真正的 Office 檔案。
 
-**立即取得：** [macOS](https://github.com/genspark-ai/genoffice/releases/latest)（Apple Silicon 與 Intel）·
-[Windows](https://github.com/genspark-ai/genoffice/releases/latest)（x64 與 Arm）·
-[Linux](https://github.com/genspark-ai/genoffice/releases/latest)（deb、rpm、AppImage）——
+**立即取得：** [macOS](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)（Apple Silicon 與 Intel）·
+[Windows](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)（x64 與 Arm）·
+[Linux](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)（deb、rpm、AppImage）——
 詳細內容與系統需求請見[下載](#download)。
 
 ## Demo
@@ -212,7 +212,7 @@ Claude Code、Codex、Cursor、Gemini CLI、GitHub Copilot、OpenCode 或 Windsu
 供你檢視。</td>
 <td><b>在設定 → 整合中一次安裝</b>——MutantcatOffice 會列出在這台電腦上找到的
 程式開發代理，並把 skill 寫入你勾選的每一個。也可以把 skill 下載成 zip
-壓縮檔，或執行 <code>npx skills add genspark-ai/genoffice</code>。命令與完整
+壓縮檔，或執行 <code>npx skills add Mutantcat-Working-Group/MutantcatOffice</code>。命令與完整
 工作流程請見<a href="#command-line-and-agent-skill">命令列與 agent skill</a>。</td>
 </tr>
 </table>
@@ -247,7 +247,7 @@ Cursor 及任何其他 MCP 用戶端都能自行啟動 `genoffice mcp`，不必�
   的部分會原樣複製。
 - **AI 直接編輯文件本身。** Docs 中的追蹤修訂、Sheets 中即時運算的公式與圖表、
   直接在畫布上生成的投影片，每一次 AI 操作都會留下可回復的快照。
-- **自帶模型，自帶金鑰。** 使用 Genspark 登入，或帶上 Claude、OpenAI、Gemini、
+- **自帶模型，自帶金鑰。** 使用 Mutantcat AI 登入，或帶上 Claude、OpenAI、Gemini、
   DeepSeek 等服務的金鑰，同時支援本機伺服器與任何相容 OpenAI 的服務端點。
 - **認真做好 PDF。** 直接在頁面內編輯文字，並在本機將 PDF 轉換為 Word、Excel 或
   PowerPoint，掃描檔案支援系統 OCR。
@@ -259,7 +259,7 @@ Cursor 及任何其他 MCP 用戶端都能自行啟動 `genoffice mcp`，不必�
 
 ## AI 後端
 
-**用 Genspark 登入**就完全不用設定：模型呼叫會透過 Genspark 代理路由
+**用 Mutantcat AI 登入**就完全不用設定：模型呼叫會透過 Mutantcat AI 代理路由
 （涵蓋 Claude、GPT 與 Gemini 家族），代理也能使用網頁與圖片搜尋、
 圖片生成，以及圖片／音訊／影片分析。
 
@@ -291,11 +291,11 @@ HTML，用的是同一套引擎，且無需介面。它隨 MutantcatOffice 一�
 
 ### 安裝 skill
 
-| 方式                                   | 效果                                                                                                                                |
-| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| 應用程式內的 **設定 → 整合**           | 列出在這台電腦上找到的代理；按一下就把 skill 寫入你選擇的每一個。當 MutantcatOffice 新版本附帶更新的 skill 時，會出現**更新**按鈕。 |
-| 同一頁面上的 **下載為 zip**            | claude.ai、Claude 桌面版應用程式與其他助理可作為上傳 skill 接受的目錄結構。                                                         |
-| `npx skills add genspark-ai/genoffice` | 從本儲存庫安裝到任何相容 skills 的代理。                                                                                            |
+| 方式                                                     | 效果                                                                                                                                |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| 應用程式內的 **設定 → 整合**                             | 列出在這台電腦上找到的代理；按一下就把 skill 寫入你選擇的每一個。當 MutantcatOffice 新版本附帶更新的 skill 時，會出現**更新**按鈕。 |
+| 同一頁面上的 **下載為 zip**                              | claude.ai、Claude 桌面版應用程式與其他助理可作為上傳 skill 接受的目錄結構。                                                         |
+| `npx skills add Mutantcat-Working-Group/MutantcatOffice` | 從本儲存庫安裝到任何相容 skills 的代理。                                                                                            |
 
 接著開一個新的對話，請它幫你做一份文件。這份 skill 會教代理何時該使用
 `genoffice`、編輯前如何先讀取檔案，以及如何檢查自己的成果。
@@ -397,18 +397,18 @@ deck_replace(dir, n, page) ×3 · slides_render(file, out)
 
 ## 下載
 
-| 平台                                 | 系統需求                                               | 下載                                                                                     |
-| ------------------------------------ | ------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| **macOS** — Apple Silicon（arm64）   | macOS 11 以上                                          | [最新版 `.dmg`（arm64）](https://github.com/genspark-ai/genoffice/releases/latest)       |
-| **macOS** — Intel（x64）             | macOS 11 以上                                          | [最新版 `.dmg`（x64）](https://github.com/genspark-ai/genoffice/releases/latest)         |
-| **Windows**（x64，一般 PC）          | Windows 10 以上，Intel/AMD                             | [最新版 `-x64.exe` 安裝程式](https://github.com/genspark-ai/genoffice/releases/latest)   |
-| **Windows** on Arm（ARM64）          | Windows 11 on Arm（Snapdragon X 及同類機型）           | [最新版 `-arm64.exe` 安裝程式](https://github.com/genspark-ai/genoffice/releases/latest) |
-| **Linux** — Debian / Ubuntu          | x86_64，glibc 2.34+（Ubuntu 22.04 或以上）             | [最新版 `.deb`](https://github.com/genspark-ai/genoffice/releases/latest)                |
-| **Linux** — Fedora / RHEL / openSUSE | x86_64，glibc 2.34+（Fedora 35+、RHEL 9+、Leap 15.6+） | [最新版 `.rpm`](https://github.com/genspark-ai/genoffice/releases/latest)                |
-| **Linux** — 其他發行版               | x86_64，glibc 2.34+，FUSE 2                            | [最新版 `.AppImage`](https://github.com/genspark-ai/genoffice/releases/latest)           |
+| 平台                                 | 系統需求                                               | 下載                                                                                                       |
+| ------------------------------------ | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| **macOS** — Apple Silicon（arm64）   | macOS 11 以上                                          | [最新版 `.dmg`（arm64）](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)       |
+| **macOS** — Intel（x64）             | macOS 11 以上                                          | [最新版 `.dmg`（x64）](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)         |
+| **Windows**（x64，一般 PC）          | Windows 10 以上，Intel/AMD                             | [最新版 `-x64.exe` 安裝程式](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)   |
+| **Windows** on Arm（ARM64）          | Windows 11 on Arm（Snapdragon X 及同類機型）           | [最新版 `-arm64.exe` 安裝程式](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest) |
+| **Linux** — Debian / Ubuntu          | x86_64，glibc 2.34+（Ubuntu 22.04 或以上）             | [最新版 `.deb`](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)                |
+| **Linux** — Fedora / RHEL / openSUSE | x86_64，glibc 2.34+（Fedora 35+、RHEL 9+、Leap 15.6+） | [最新版 `.rpm`](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)                |
+| **Linux** — 其他發行版               | x86_64，glibc 2.34+，FUSE 2                            | [最新版 `.AppImage`](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)           |
 
 所有版本皆由 `main` 分支建置，macOS 與 Windows 安裝程式皆有簽署。
-較舊版本可在[發行頁面](https://github.com/genspark-ai/genoffice/releases)找到。
+較舊版本可在[發行頁面](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases)找到。
 
 <details>
 <summary><b>在 Linux 上安裝</b></summary>
@@ -469,14 +469,14 @@ npm run dist:linux   # 打包 Linux AppImage + deb + rpm
 ```
 
 sheets 應用程式還需要 Rust 工具鏈來編譯其 xlsx sidecar
-（`cargo` 需在 PATH 中）；執行 `npm run build -w @genoffice/sheets`
+（`cargo` 需在 PATH 中）；執行 `npm run build -w @mutantcatoffice/sheets`
 會自動完成編譯。
 
 ## 社群
 
 MutantcatOffice 正在積極開發中，你的意見回饋會影響它的方向。
 
-- 在 [GitHub Issues](https://github.com/genspark-ai/genoffice/issues)
+- 在 [GitHub Issues](https://github.com/Mutantcat-Working-Group/MutantcatOffice/issues)
   **回報問題或提出功能需求**。
 - 到 [GenTeam](https://genoffice.ai/join) **加入 MutantcatOffice 群組聊天**，
   和團隊及其他使用者交流。
@@ -507,7 +507,7 @@ Office 中依然能正常使用。
 
 文件編輯完全在本機執行——檔案在開啟、編輯、儲存或轉換的過程中
 都不會離開你的裝置。AI 功能（代理、搜尋、圖片工具）需要網路連線，
-可透過 Genspark 登入或使用你自己的模型 API 金鑰。
+可透過 Mutantcat AI 登入或使用你自己的模型 API 金鑰。
 
 </details>
 
@@ -532,7 +532,7 @@ Office 中依然能正常使用。
 <details>
 <summary><b>我可以使用自己的 AI 模型或 API 金鑰嗎？</b></summary>
 
-可以。除了免金鑰的 Genspark 登入之外，MutantcatOffice 也支援自帶金鑰，
+可以。除了免金鑰的 Mutantcat AI 登入之外，MutantcatOffice 也支援自帶金鑰，
 涵蓋 Claude、OpenAI、Gemini、DeepSeek、Kimi、GLM、Qwen、Doubao、
 MiniMax、Grok、Mistral、OpenRouter、Requesty 與 OpenCode Zen/Go，以及任何相容
 OpenAI 的服務端點——包括本機模型伺服器。搜尋、圖片生成與圖片／影片
@@ -628,6 +628,6 @@ MutantcatOffice 採用 [Apache License 2.0](../../LICENSE) 授權，唯一例外
 `ee/` 目錄，該目錄保留給未來的企業模組，適用
 [MutantcatOffice 企業授權](../../ee/LICENSE)。
 
-MutantcatOffice 與 Genspark 的名稱與標誌皆為 Mainfunc, Inc. 的商標。
+MutantcatOffice 與 Mutantcat AI 的名稱與標誌皆為 Mainfunc, Inc. 的商標。
 Apache-2.0 授權並未授予使用這些商標的權利（詳見第 6 節）；
 基於本專案的分支請使用自己的品牌識別。

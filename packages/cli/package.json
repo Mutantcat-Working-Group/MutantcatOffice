@@ -1,5 +1,5 @@
 {
-  "name": "@genoffice/cli",
+  "name": "@mutantcatoffice/cli",
   "version": "1.0.20260923",
   "license": "Apache-2.0",
   "private": true,
@@ -12,7 +12,7 @@
     "./control-protocol": "./src/control-protocol.ts"
   },
   "bin": {
-    "genoffice": "./bin/genoffice"
+    "mutantcatoffice": "./bin/mutantcatoffice"
   },
   "scripts": {
     "build": "node build.mjs && node collect-deps.mjs",
@@ -21,15 +21,15 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@genoffice/ai-provider": "*",
-    "@genoffice/ai-search": "*",
-    "@genoffice/docx-engine": "*",
-    "@genoffice/pdf2docx": "*",
-    "@genoffice/pipelines": "*",
-    "@genoffice/pptx-engine": "*",
-    "@genoffice/pptx-ops": "*",
-    "@genoffice/pptx-render": "*",
-    "@genoffice/xlsx-gateway": "*",
+    "@mutantcatoffice/ai-provider": "*",
+    "@mutantcatoffice/ai-search": "*",
+    "@mutantcatoffice/docx-engine": "*",
+    "@mutantcatoffice/pdf2docx": "*",
+    "@mutantcatoffice/pipelines": "*",
+    "@mutantcatoffice/pptx-engine": "*",
+    "@mutantcatoffice/pptx-ops": "*",
+    "@mutantcatoffice/pptx-render": "*",
+    "@mutantcatoffice/xlsx-gateway": "*",
     "@modelcontextprotocol/sdk": "^1.30.0",
     "@tiptap/core": "3.31.0",
     "jsdom": "^28.0.0",

@@ -1,5 +1,5 @@
 {
-  "name": "@genoffice/pptx-ops",
+  "name": "@mutantcatoffice/pptx-ops",
   "version": "0.1.0",
   "license": "Apache-2.0",
   "private": true,
@@ -16,8 +16,8 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@genoffice/docx-engine": "*",
-    "@genoffice/pptx-engine": "*"
+    "@mutantcatoffice/docx-engine": "*",
+    "@mutantcatoffice/pptx-engine": "*"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",

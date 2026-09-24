@@ -4,12 +4,12 @@
 // src/resources.ts finds the runtime assets without code changes:
 //
 //   mutantcatoffice-cli-<version>-<arch>.tar.gz
-//   ├── cli/{genoffice,genoffice.cmd,genoffice.cjs,package.json,node_modules,skills}
+//   ├── cli/{genoffice,genoffice.cmd,mutantcatoffice.cjs,package.json,node_modules,skills}
 //   ├── wasm/{pdfium.wasm,hb-subset.wasm}
 //   └── native/xlsx-sidecar
 //
 // The xlsx-sidecar must already be built for this host/arch
-// (npm run native:build -w @genoffice/sheets); the script fails loudly when it
+// (npm run native:build -w @mutantcatoffice/sheets); the script fails loudly when it
 // is missing so the tar never ships dead workbook support.
 //
 // Usage: node scripts/package-cli.mjs [x64|arm64]
@@ -31,8 +31,8 @@ function fatal(message) {
   process.exit(1)
 }
 
-console.log(`[package-cli] building genoffice CLI ${version} (${arch})`)
-execFileSync('npm', ['run', 'build', '-w', '@genoffice/cli'], { cwd: root, stdio: 'inherit' })
+console.log(`[package-cli] building mutantcatoffice CLI ${version} (${arch})`)
+execFileSync('npm', ['run', 'build', '-w', '@mutantcatoffice/cli'], { cwd: root, stdio: 'inherit' })
 
 const pdfiumWasm = join(root, 'node_modules/@embedpdf/pdfium/dist/pdfium.wasm')
 const hbSubsetWasm = join(root, 'apps/pdf/node_modules/harfbuzzjs/hb-subset.wasm')
@@ -54,10 +54,10 @@ mkdirSync(join(stage, 'wasm'), { recursive: true })
 mkdirSync(join(stage, 'native'), { recursive: true })
 
 const cliStage = join(stage, 'cli')
-cpSync(join(cliDir, 'bin/genoffice'), join(cliStage, 'genoffice'))
-chmodSync(join(cliStage, 'genoffice'), 0o755)
-cpSync(join(cliDir, 'bin/genoffice.cmd'), join(cliStage, 'genoffice.cmd'))
-cpSync(join(cliDir, 'dist/genoffice.cjs'), join(cliStage, 'genoffice.cjs'))
+cpSync(join(cliDir, 'bin/genoffice'), join(cliStage, 'mutantcatoffice'))
+chmodSync(join(cliStage, 'mutantcatoffice'), 0o755)
+cpSync(join(cliDir, 'bin/genoffice.cmd'), join(cliStage, 'mutantcatoffice.cmd'))
+cpSync(join(cliDir, 'dist/mutantcatoffice.cjs'), join(cliStage, 'mutantcatoffice.cjs'))
 cpSync(join(cliDir, 'dist/node_modules'), join(cliStage, 'node_modules'), { recursive: true })
 cpSync(join(cliDir, 'package.json'), join(cliStage, 'package.json'))
 cpSync(join(root, 'skills/genoffice'), join(cliStage, 'skills/genoffice'), { recursive: true })

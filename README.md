@@ -1,675 +1,163 @@
-<p align="center">
-  <a href="https://github.com/Mutantcat-Working-Group/MutantcatOffice">
-    <picture>
-      <source srcset="docs/assets/readme/hero-dark.webp" media="(prefers-color-scheme: dark)">
-      <img src="docs/assets/readme/hero.webp" alt="MutantcatOffice — the open-source AI Office suite: Docs, Sheets, Slides, PDF, Markdown and HTML with a built-in AI panel" width="100%">
-    </picture>
-  </a>
-</p>
+<div align=center>
+<img src="icon.png" style="width:100px;" width="100"/>
+<h2>MutantcatOffice</h2>
+</div>
 
-<h1 align="center">MutantcatOffice</h1>
+### 一、产品概述
 
-<p align="center"><b>The world's first full-featured open-source AI Office suite.</b><br>
-Word, Excel, PowerPoint and PDF files, edited by you and your AI, saved back in the real formats.</p>
+- 自由、开源的 AI 原生办公套件，支持 macOS、Windows 和 Linux。
+- 打开并保存原生 `.docx`、`.xlsx`、`.pptx` 文件，编辑 PDF、Markdown 与 HTML。
+- 文件在本地打开、编辑、保存和转换；只有 AI 请求会按所选提供方离开设备。
+- 内置 `genoffice` 命令行、Agent Skill 和 MCP 服务，使编码代理可以直接创建、转换、读取和编辑真实 Office 文件。
 
-<p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/Mutantcat-Working-Group/MutantcatOffice" alt="License: Apache-2.0"></a>
-  <a href="https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest"><img src="https://img.shields.io/github/v/release/Mutantcat-Working-Group/MutantcatOffice" alt="Latest release"></a>
-  <a href="https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases"><img src="https://img.shields.io/github/downloads/Mutantcat-Working-Group/MutantcatOffice/total" alt="Downloads"></a>
-  <a href="https://github.com/Mutantcat-Working-Group/MutantcatOffice/stargazers"><img src="https://img.shields.io/github/stars/Mutantcat-Working-Group/MutantcatOffice?style=flat" alt="GitHub stars"></a>
-</p>
+核心价值：
 
-<p align="center"><b>English</b> · <a href="docs/i18n/README.es.md">Español</a> · <a href="docs/i18n/README.pt-BR.md">Português (Brasil)</a> · <a href="docs/i18n/README.de.md">Deutsch</a> · <a href="docs/i18n/README.fr.md">Français</a> · <a href="docs/i18n/README.zh-CN.md">简体中文</a> · <a href="docs/i18n/README.zh-TW.md">繁體中文</a> · <a href="docs/i18n/README.ko.md">한국어</a> · <a href="docs/i18n/README.ja.md">日本語</a> · <a href="docs/i18n/README.ar.md">العربية</a> · <a href="docs/i18n/README.ru.md">Русский</a> · <a href="docs/i18n/README.it.md">Italiano</a> · <a href="docs/i18n/README.nl.md">Nederlands</a> · <a href="docs/i18n/README.pl.md">Polski</a> · <a href="docs/i18n/README.cs.md">Čeština</a> · <a href="docs/i18n/README.id.md">Bahasa Indonesia</a> · <a href="docs/i18n/README.ms.md">Bahasa Melayu</a> · <a href="docs/i18n/README.th.md">ไทย</a> · <a href="docs/i18n/README.hi.md">हिन्दी</a> · <a href="docs/i18n/README.he.md">עברית</a></p><!-- lang-switcher · public-hygiene: allow -->
+- 按字节保留原文件：只重写被编辑的部分，未触碰的内容逐字节保留，文档在 Word、Excel、PowerPoint 中继续正常工作。
+- AI 编辑可审查：以修订和差异落地，支持一键回滚；表格生成实时公式，演示文稿直接绘制到画布。
+- 本地转换：PDF 转 Word / Excel / PowerPoint、Markdown 转 Word、HTML 转 Word 全部在设备上运行。
+- 自带模型与密钥：支持 Claude、OpenAI、Gemini、DeepSeek、Kimi、GLM、Qwen、Doubao、MiniMax、Grok、Mistral、OpenRouter、Requesty、Opper 及任意 OpenAI 兼容端点。
 
-<p align="center">
-  <a href="#download"><b>Download</b></a> ·
-  <a href="#command-line-and-agent-skill"><b>CLI</b></a> ·
-  <a href="#mcp-server"><b>MCP</b></a> ·
-  <a href="https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases"><b>Releases</b></a> ·
-  <a href="https://github.com/Mutantcat-Working-Group/MutantcatOffice/issues"><b>Issues</b></a> ·
-  <a href="PRIVACY.md"><b>Privacy</b></a>
-</p>
+### 二、功能说明
 
-MutantcatOffice is a free, open-source alternative to Microsoft Office for macOS,
-Windows and Linux. It opens and saves native `.docx`, `.xlsx` and `.pptx`
-files, edits PDF, Markdown and HTML, and puts an AI agent next to every
-document — not a chat box bolted on the side, but an editor that reads the
-file, makes the change, and shows you exactly what it touched.
+#### 文档（Docs）
 
-- **Real formats, byte-preserving.** Only what you edit is rewritten. Everything
-  else in the file survives byte-for-byte, so documents keep working in Word,
-  Excel and PowerPoint.
-- **AI you can review.** Edits land as tracked changes and diffs with one-click
-  rollback. Spreadsheets get live formulas, not pasted numbers. Decks and pages
-  are generated onto the canvas and stay fully editable.
-- **Local by design.** Files open, edit, save and convert on your machine.
-  PDF → Word / Excel / PowerPoint, Markdown → Word and HTML → Word all run
-  on-device. Only the AI calls leave the machine, to the provider you choose.
-- **Find files by what they say.** The home screen searches the names,
-  folders and full text of your `.docx`, `.xlsx`, `.pptx`, PDF, Markdown and
-  HTML files from a local SQLite index, CJK included. Optionally, the top hits
-  are reranked by **[TypeSafe Jev](https://typesafe.ai/)**, the System One
-  judgment model, so the file that answers your question comes first.
-- **Your keys or none.** Sign in with Genspark and skip keys, or bring your own
-  key for Claude, OpenAI, Gemini, DeepSeek, Kimi, GLM, Qwen, Doubao, MiniMax,
-  Grok, Mistral, OpenRouter, Requesty, Opper, or any OpenAI-compatible endpoint, local
-  servers included.
-- **Scriptable and agent-ready.** The app ships a `genoffice` command line and
-  a skill for Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, OpenCode
-  and Windsurf, so a coding agent can create, convert, read and edit real
-  Office files on your machine without opening a window.
+- 以接近 Word 的排版打开和编辑 `.docx`，支持双栏、通栏图片、底纹表格、页眉页脚与分页。
+- 样式、批注、修订、公式和墨迹均可往返保存。
+- AI 可直接改写和插入内容，开启跟踪修订后按 Word 修订样式落地。
 
-**Get it:** [macOS](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest) (Apple Silicon and Intel) ·
-[Windows](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest) (x64 and Arm) ·
-[Linux](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest) (deb, rpm, AppImage) —
-details and requirements in [Download](#download).
+#### 表格（Sheets）
 
-## Demo
+- 打开并保存原生 `.xlsx`，支持透视表、切片器、条件格式与公式追踪。
+- AI 可根据一句话新增汇总表、实时 SUMIF 公式与图表，并以单个可撤销批次应用变更。
+- 内置 Rust `.xlsx` 引擎负责读取与计算。
 
-Six apps, one AI panel, a file search reranked by TypeSafe Jev, and a
-command line for your coding agent. Every
-screenshot is the real app on macOS, with the AI driven from the prompt you
-can read in the panel.
+#### 演示（Slides）
 
-### 1 · Docs — open and edit `.docx` with an AI you can review
+- 从一句话提示生成完整的 `.pptx` 演示文稿。
+- 支持母版、版式、参考线、非破坏性裁剪，以及 AI 重排、改写和调整顺序。
 
-<table>
-<tr>
-<td width="50%"><img src="docs/assets/readme/docs-report.webp" alt="MutantcatOffice Docs rendering a two-column annual-report page with a full-width cover image, shaded KPI table, header and footer, at 80% zoom with the AI panel collapsed"></td>
-<td width="50%"><img src="docs/assets/readme/docs-ai.webp" alt="MutantcatOffice Docs: a company overview with a banner image; the AI tightened the Overview and inserted a new bulleted section, and the panel offers a one-click roll back"></td>
-</tr>
-<tr>
-<td><b>Opens the file as Word lays it out</b> — two-column sections, full-bleed images, shaded tables, headers and footers, pagination on Word's line metrics. Styles, comments, tracked changes, equations and ink round-trip untouched.</td>
-<td><b>Ask for the edit</b> — the AI reads the blocks it needs, rewrites the Overview and inserts a new bulleted section. Every AI turn is a snapshot you can roll back; with <b>Track changes</b> on, edits arrive as Word-style revisions.</td>
-</tr>
-</table>
+#### PDF
 
-### 2 · Sheets — `.xlsx` with live formulas and charts, not pasted numbers
+- 编辑 PDF 文本：改写内容流并保留原字体，而非覆盖式批注。
+- 在本地将 PDF 转换为 Word、Excel 或 PowerPoint，扫描页通过系统 OCR 识别。
 
-<table>
-<tr>
-<td width="50%"><img src="docs/assets/readme/sheets-ai.webp" alt="MutantcatOffice Sheets: the AI added a Summary sheet with revenue by region and category using SUMIF formulas, plus a column chart, and reports 43 applied changes with an Undo button"></td>
-<td width="50%"><img src="docs/assets/readme/sheets-qa.webp" alt="MutantcatOffice Sheets: asked which region led Q2 revenue, the AI answers Europe with the category breakdown and cites the cells it used as links, next to the Orders sheet"></td>
-</tr>
-<tr>
-<td><b>Build it</b> — from one sentence the agent adds a Summary sheet with real <code>SUMIF</code>s by region and category, inserts a column chart, and applies the 43 changes as a single undoable batch.</td>
-<td><b>Ask it</b> — questions about the workbook come back with the reasoning and the exact cells used as clickable citations. Under the hood: an in-house Rust <code>.xlsx</code> engine, pivot tables, slicers, conditional formatting and formula tracing.</td>
-</tr>
-</table>
+#### Markdown 与 HTML
 
-### 3 · Slides — from a prompt to a `.pptx` deck
+- Markdown：基于 Tiptap 的块编辑器，支持表格、图片、代码块和 Mermaid 图，写回纯 `.md`，并本地导出 Word。
+- HTML：按设计简报生成自包含页面，支持实时预览、源代码视图与一键重设计，可导出 PDF 或原生 Word 文档。
 
-<img src="docs/assets/readme/slides-generate.webp" alt="Time-lapse of MutantcatOffice Slides generating the Aurora Home investor deck: the AI plans the storyline in the panel, slides appear on the canvas one after another, and the finished deck ends on the closing ask" width="100%">
+#### 搜索
 
-<table>
-<tr>
-<td width="50%"><img src="docs/assets/readme/slides-cover.webp" alt="MutantcatOffice Slides: the cover slide of an AI-generated Aurora Home investor deck on the canvas, with the original one-line prompt and the AI's summary of what it built in the panel"></td>
-<td width="50%"><img src="docs/assets/readme/slides-ai.webp" alt="MutantcatOffice Slides: the designed closing slide of the same 11-slide deck, with the thumbnail strip on the left and the AI panel summarizing the storyline"></td>
-</tr>
-<tr>
-<td><b>One line in</b> — "Create a 10-slide investor pitch deck for Aurora Home…". MutantcatOffice plans the storyline, researches the numbers, and drafts every slide onto the canvas as a real <code>.pptx</code>.</td>
-<td><b>A finished deck out</b> — eleven designed slides with consistent typography, imagery and a closing call to action; keep editing with masters, layouts, smart guides and non-destructive cropping, or ask the panel to restyle, rewrite and reorder.</td>
-</tr>
-</table>
+- 对工作目录中的 Word、Excel、PowerPoint、PDF、Markdown 与 HTML 建立本地 SQLite 全文索引，支持中文分词。
+- 可选开启 TypeSafe Jev 重排序，让回答问题的文件排在最前。
 
-### 4 · PDF — edit PDF text in place, convert PDF to Word on-device
+#### 命令行与 MCP
 
-<table>
-<tr>
-<td width="50%"><img src="docs/assets/readme/pdf-edit.webp" alt="MutantcatOffice PDF: Edit text mode outlines every text block on the page for in-place editing while the AI panel answers a question about the report with page citations"></td>
-<td width="50%"><img src="docs/assets/readme/pdf-convert.webp" alt="MutantcatOffice Docs showing a Word document converted locally from the Helios quarterly review PDF, opened in a second tab beside the original PDF"></td>
-</tr>
-<tr>
-<td><b>Edit inside the page</b> — Edit text mode outlines every text block for in-place retyping; the content stream is rewritten through PDFium with the original fonts, not a cover-up annotation. Ask the AI about a long report and get answers with page citations.</td>
-<td><b>Convert on-device</b> — <b>PDF Converter → PDF to Word</b> produces an editable <code>.docx</code> that opens in Docs next to the source, headings, stat rows and paragraphs intact. Excel and PowerPoint targets work the same way; scanned pages go through the system OCR.</td>
-</tr>
-</table>
+- `genoffice` 提供检测、转换、创建、读取、编辑、渲染、搜索、图片与媒体命令，支持 `--json` 输出。
+- 同一套命令可作为 MCP 工具（stdio 或 HTTP）供 Claude Code、Cursor、Claude Desktop 等客户端使用。
 
-### 5 · HTML — an AI page and UI builder, design brief first
+### 三、安装与下载
 
-Say what the page is for and who it is for. The AI proposes a **design brief**
-first — hook, palette, typography and style directions — then builds a single
-self-contained `.html` file against those tokens.
+从 [Releases](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases) 下载对应平台安装包。
 
-<img src="docs/assets/readme/html-restyle-motion.webp" alt="Time-lapse of MutantcatOffice HTML restyling the Lumen landing page: one Restyle request in the panel turns the dark Midnight Studio page into the warm Solar Daybreak version while every section and all copy stay in place" width="100%">
+| 平台                              | 要求                        | 安装包                |
+| --------------------------------- | --------------------------- | --------------------- |
+| macOS（Apple Silicon）            | macOS 11+                   | `.dmg` (arm64)        |
+| macOS（Intel）                    | macOS 11+                   | `.dmg` (x64)          |
+| Windows（x64）                    | Windows 10+                 | `-x64.exe` 安装程序   |
+| Windows（ARM64）                  | Windows 11 on Arm           | `-arm64.exe` 安装程序 |
+| Linux（Debian / Ubuntu）          | x86_64，glibc 2.34+         | `.deb`                |
+| Linux（Fedora / RHEL / openSUSE） | x86_64，glibc 2.34+         | `.rpm`                |
+| Linux（其他发行版）               | x86_64，glibc 2.34+，FUSE 2 | `.AppImage`           |
+| Linux（ARM64）                    | glibc 2.34+，FUSE 2         | `.AppImage` (arm64)   |
 
-<table>
-<tr>
-<td width="50%"><img src="docs/assets/readme/html-ai.webp" alt="MutantcatOffice HTML: a generated landing page for a solar desk lamp in the dark Midnight Studio direction, shown in the live preview with the AI panel summarizing the page it just built"></td>
-<td width="50%"><img src="docs/assets/readme/html-restyle.webp" alt="The same Lumen landing page restyled by the AI into the warm Solar Daybreak direction: paper background, serif headlines and an orange accent, with every section and all copy kept"></td>
-</tr>
-<tr>
-<td><b>Generated from one prompt</b> — a bold hero, feature cards, pricing and a waitlist form for Lumen, built in the Midnight Studio direction. Click any element to restyle it, double-click to edit text, or switch to the CodeMirror source view.</td>
-<td><b>Same design, new direction</b> — one <b>Restyle</b> request swaps the brief's tokens and the page follows: warm paper, editorial serif, sun-orange accent, nothing rewritten. Present fullscreen, or export as PDF or a native editable Word document.</td>
-</tr>
-</table>
-<table>
-<tr>
-<td width="50%"><img src="docs/assets/readme/html-dashboard.webp" alt="MutantcatOffice HTML: a generated personal dashboard UI for a freelance designer in a warm linen style, with a left rail, serif greeting and four metric cards"></td>
-<td width="50%"><img src="docs/assets/readme/html-report.webp" alt="MutantcatOffice HTML: a generated EV-market data report in a broadsheet style, with a serif masthead, a 17.3 million headline figure and a stat row"></td>
-</tr>
-<tr>
-<td><b>UI mockups</b> — the "personal dashboard" starter turns a persona into a working layout: left rail, greeting, billable-hours sparkline, invoice and utilization cards, all real HTML you can hand to a developer.</td>
-<td><b>Data stories</b> — the "data report" starter builds an editorial broadsheet: serif masthead, one headline number, a rule-separated stat row, inline SVG charts and a methodology note.</td>
-</tr>
-</table>
-
-### 6 · Markdown — a block editor over plain `.md`, with Ask AI
-
-<table>
-<tr>
-<td width="50%"><img src="docs/assets/readme/markdown-ai.webp" alt="MutantcatOffice Markdown: a selected paragraph shows an Ask AI popover with a typed instruction and suggestion chips such as Polish, Make more concise, Expand and Fix grammar, plus Send now and Add to queue buttons"></td>
-<td width="50%"><img src="docs/assets/readme/markdown-render.webp" alt="MutantcatOffice Markdown rendering a launch-notes document with a table, a Mermaid flowchart and a task list, with the AI panel's starter prompts on the left"></td>
-</tr>
-<tr>
-<td><b>Ask AI about a selection</b> — select any passage and an <b>Ask AI</b> chip appears: type an instruction or pick a suggestion, send it now, or queue several anchored edits and run them in one pass. The same entry exists in every app.</td>
-<td><b>Rendered, saved as plain Markdown</b> — headings, lists, tables, images, code blocks and Mermaid diagrams in a Tiptap block editor, written back as plain <code>.md</code>, with a fully local <b>Markdown → Word</b> export.</td>
-</tr>
-</table>
-
-### 7 · Search — find the file that answers the question, with TypeSafe Jev
-
-Every file in your work folder is indexed on-device: names, folders and the
-extracted text of Word, Excel, PowerPoint, PDF, Markdown and HTML files, in a
-SQLite full-text index with CJK-aware tokenizing. Switch on **Jev search
-reranking** and the top 20 local hits are judged by
-[TypeSafe Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev),
-the System One model that returns one calibrated relevance score per document
-in a single call instead of generating text. The list is reordered by
-that score; if the call fails or times out, the local order stays.
-
-<img src="docs/assets/readme/search-jev-motion.webp" alt="Screen recording of the MutantcatOffice home screen: typing laptop refresh policy lists a browser-cache policy, a brand-refresh plan and a dashboard-refresh schedule first while the equipment standards document is last; the Settings page shows Jev search reranking switched on under AI Media & Search with the TypeSafe endpoint; the same search then shows the equipment standards document first with a Jev badge next to the result count" width="100%">
-
-<table>
-<tr>
-<td width="50%"><img src="docs/assets/readme/search-jev-before-after.webp" alt="Two result lists for the query laptop refresh policy side by side: without Jev the dashboard refresh schedule, brand refresh plan and browser cache refresh policy lead and the company equipment standards document is fifth; with Jev the equipment standards document, which states the three-year laptop replacement cycle, is first"></td>
-<td width="50%"><img src="docs/assets/readme/search-jev-settings.webp" alt="MutantcatOffice Settings, AI Media & Search page: the Local file search block with the Jev search reranking switch, the endpoint choice between OpenRouter and TypeSafe, and the API key field"></td>
-</tr>
-<tr>
-<td><b>Same words, different answers</b> — "laptop refresh policy" matches a browser-cache refresh policy, a brand-refresh plan and a dashboard-refresh schedule word for word, so full-text ranking puts them first. Jev reads the excerpts and moves the equipment standards document, the one that states the three-year replacement cycle, to the top. The <b>Jev</b> badge next to the result count shows when the order came from the model.</td>
-<td><b>Off by default, one switch to turn on</b> — Settings → AI Media & Search → Local file search. Pick OpenRouter or TypeSafe direct, paste a key, hit Test connection. Only when the switch is on do excerpts of the top hits leave the device; the index itself never does.</td>
-</tr>
-</table>
-
-### 8 · CLI — your coding agent drives MutantcatOffice, on your machine
-
-MutantcatOffice ships a `genoffice` command line and an agent skill. Install the
-skill and Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, OpenCode or
-Windsurf can create, convert, read and edit real Office files through the
-same engines as the apps, without opening a window.
-
-<img src="docs/assets/readme/cli-deck-in-app.webp" alt="MutantcatOffice Slides showing an eight-slide Solar System deck that a coding agent built through the genoffice command line: the cover slide on the canvas, eight thumbnails on the left and the AI panel open" width="100%">
-
-<table>
-<tr>
-<td width="50%"><img src="docs/assets/readme/cli-slides-grid.webp" alt="The eight rendered slides of the Solar System deck side by side: cover, exploration timeline, four key numbers, planet-diameter bar chart, rocky worlds versus giants, the Sun's 99.8% hero number, the four giants grid and takeaways"></td>
-<td width="50%"><img src="docs/assets/readme/cli-integrations.webp" alt="MutantcatOffice Settings, Integrations page: the genoffice skill installed into Claude Code, with Install buttons next to Codex and Cursor"></td>
-</tr>
-<tr>
-<td><b>One prompt to your agent</b> — "Build an eight-slide deck about the Solar System." The agent reads the skill, writes a style sheet, an outline and one page spec per slide, generates the two photos with <code>genoffice image</code>, and lets <code>genoffice slides check</code> reject anything that overflows or overlaps before <code>genoffice create</code> assembles the <code>.pptx</code> and <code>slides render</code> hands back a PNG per slide to look at.</td>
-<td><b>Install once, from Settings → Integrations</b> — MutantcatOffice lists the coding agents it finds on this computer and writes the skill into each one you pick. Or download the skill as a zip, or run <code>npx skills add Mutantcat-Working-Group/MutantcatOffice</code>. Commands and the full workflow are in <a href="#command-line-and-agent-skill">Command line and agent skill</a>.</td>
-</tr>
-</table>
-
-### 9 · MCP — the same tools over the Model Context Protocol
-
-Every `genoffice` command is also an MCP tool. Claude Code, Claude Desktop,
-Cursor and any other MCP client can start `genoffice mcp` themselves, with no
-skill to install and no window open, and get 29 tools plus the op references
-as resources. A second, HTTP server inside the app lets an agent build a Word
-document in a visible editor tab while you watch.
-
-<img src="docs/assets/readme/mcp-deck-motion.webp" alt="Time-lapse of Claude Code building an eight-slide renewable-energy investor briefing through the genoffice MCP server: it searches for figures and photos, checks each candidate picture with media, deck_start writes the style sheet and outline, deck_page adds one checked page at a time, deck_build assembles the .pptx and slides_render returns a picture of every slide; the finished deck then opens in MutantcatOffice Slides" width="100%">
-
-<table>
-<tr>
-<td width="50%"><img src="docs/assets/readme/mcp-deck-in-app.webp" alt="MutantcatOffice Slides showing the eight-slide Renewable Energy 2026 deck that Claude Code built through the genoffice MCP server: the cover slide with a wind-farm photograph on the canvas and eight thumbnails on the left"></td>
-<td width="50%"><img src="docs/assets/readme/mcp-integrations.webp" alt="MutantcatOffice Settings, Integrations page, MCP part: the one-line claude mcp add command for Claude Code, the JSON block for Cursor, Claude Desktop and other MCP clients, and the local HTTP server option below"></td>
-</tr>
-<tr>
-<td><b>One prompt, 38 tool calls, no shell</b> — "Build an eight-slide investor briefing about renewable energy in 2026, with a real photo on the cover and wherever a photo helps." The agent pulls the figures and the photos with <code>search</code>, asks <code>media</code> whether each candidate picture is a real photograph, calls <code>deck_start</code> with a style sheet and an outline, then <code>deck_page</code> once per slide; every page is checked against the outline and the palette before it is kept, <code>deck_build</code> assembles the <code>.pptx</code>, <code>slides_audit</code> looks for overflow, <code>slides_render</code> hands back a PNG per slide as image content the model can look at, and <code>deck_replace</code> fixes the three pages it did not like.</td>
-<td><b>Connect once, from Settings → Integrations</b> — copy the <code>claude mcp add</code> line for Claude Code, or the JSON block into Cursor, Claude Desktop or any other MCP client. Option B switches on the local HTTP server for the visible Word editor. Both are described in <a href="#mcp-server">MCP server</a>.</td>
-</tr>
-</table>
-
-## Why MutantcatOffice
-
-- **Open source**, Apache-2.0, built in the open on GitHub.
-- **Yours to run.** Native apps for macOS, Windows and Linux; files stay on your
-  disk and every edit, save and conversion happens on your machine.
-- **Real Office files.** Native `.docx`, `.xlsx` and `.pptx`, byte-preserving:
-  the parts of a file you did not touch are copied exactly as they were.
-- **An AI that edits the document itself.** Tracked changes in Docs, live
-  formulas and charts in Sheets, slides drawn onto the canvas, every AI turn a
-  snapshot you can roll back.
-- **Your model, your key.** Sign in with Genspark, or bring a key for Claude,
-  OpenAI, Gemini, DeepSeek and more, local servers and any OpenAI-compatible
-  endpoint included.
-- **PDF done properly.** Edit text inside the page, and convert PDF to Word,
-  Excel or PowerPoint on-device, with system OCR for scans.
-- **Markdown and HTML too**, with the same AI panel and local export to Word.
-- **Search that finds the answer, not the keyword.** Full-text search over
-  every document in your folders, indexed on-device, with optional reranking
-  by TypeSafe Jev, the System One judgment model.
-- **Scriptable.** A `genoffice` command line, an agent skill and an MCP server
-  put every engine at the service of Claude Code, Claude Desktop, Codex, Cursor
-  and other agents, still on-device.
-- **Free**, for individuals and teams alike.
-
-## AI backends
-
-**Sign in with Genspark** and there is nothing to configure: model calls route
-through the Genspark proxy (Claude, GPT and Gemini families) and the agents get
-web and image search, image generation, and image/audio/video analysis.
-
-**Or bring your own key.** Settings → AI lists Claude, OpenAI, Gemini,
-DeepSeek, Kimi, GLM, Qwen, Doubao, MiniMax, Grok, Mistral, OpenRouter, Requesty, Opper
-and OpenCode Zen/Go, plus a custom slot for any OpenAI-compatible endpoint (base
-URL + key), including local model servers. Search and media have their own
-per-capability providers under **AI Media & Search**: Serper, Tavily or Parallel for web
-search, and OpenAI, Gemini, Doubao/Seedream, GLM, Grok, Qwen, MiniMax or any
-OpenAI-compatible images endpoint for image generation and image/video
-analysis.
-
-**TypeSafe Jev** reranks the home screen's file search. Under **AI Media & Search →
-Local file search**, switch on Jev search reranking and pick an endpoint:
-[OpenRouter](https://openrouter.ai/typesafe) (model `typesafe/jev-1.13`) or
-TypeSafe's own API. The key is stored only on this device. It is off by
-default; when on, the excerpts of the top 20 local hits are sent for judgment
-and nothing else leaves the machine.
-
-**Parallel** works without an account: select it under Web search and leave the
-key blank to use its free Search MCP (rate-limited), or enter a
-[Parallel](https://platform.parallel.ai/) key for the Search API. Anonymous
-Parallel requests are only made once Parallel is the selected provider.
-
-The whole suite ships light, dark and system themes. Themes only change what
-is on screen: exports, prints and saved files always keep the document's own
-colors.
-
-## Command line and agent skill
-
-Everything the apps can do to a file, the `genoffice` command line can do from
-a terminal: inspect, convert, create, read and edit Word, Excel, PowerPoint,
-PDF, Markdown and HTML on the same engines, headless. It installs with
-MutantcatOffice, needs no runtime of its own, and never sends a document anywhere.
-Paired with the bundled **agent skill**, it turns a coding agent into a
-document worker that produces real Office files instead of Markdown
-approximations.
-
-**Works with:** Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot,
-OpenCode and Windsurf out of the box, any other agent that reads skills, and,
-through the [MCP server](#mcp-server), Claude Desktop and every MCP client.
-
-### Install the skill
-
-| How                                                      | What happens                                                                                                                                                                   |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Settings → Integrations** in the app                   | Lists the agents found on this computer; one click writes the skill into each one you choose. An **Update** button appears when a MutantcatOffice release ships a newer skill. |
-| **Download as zip** on the same page                     | The layout claude.ai, the Claude desktop apps and other assistants accept as an uploaded skill.                                                                                |
-| `npx skills add Mutantcat-Working-Group/MutantcatOffice` | Installs from this repository into any skills-compatible agent.                                                                                                                |
-
-Then start a new chat and ask for a document. The skill teaches the agent when
-to reach for `genoffice`, how to read a file before editing it, and how to
-check its own work.
-
-### Quickstart from the terminal
+macOS 安装包为 ad-hoc 签名（未公证），Gatekeeper 可能显示开发者未验证提示。
 
 ```bash
-genoffice --version
-genoffice info report.docx --json                  # headings and blocks; or sheets, slides, pages
-genoffice convert report.md --to pdf               # md/html/docx/xlsx/pptx → pdf, pdf → docx/xlsx/pptx, …
-genoffice create --type docx --from notes.md --out notes.docx
-genoffice create --type xlsx --from table.json --out sales.xlsx   # "=SUM(B2:B9)" cells stay live formulas
-genoffice docs read report.docx --range 0-9 --json # then `docs apply --ops edits.json` edits in place
-genoffice render report.docx --out shots/          # one PNG per page, to look at what you made
-genoffice open sales.xlsx                          # hand the result to the editor
-```
-
-Every command prints a one-line summary, or a single JSON object with
-`--json`. Edits are atomic: a rejected op leaves the file untouched and comes
-back with a guided error. `genoffice help` lists the current command surface;
-the full reference is [packages/cli/README.md](packages/cli/README.md).
-
-### What the agent actually runs
-
-The Solar System deck in the [demo](#demo) took one prompt in Claude Code.
-Behind it, the agent followed the skill's staged workflow and the CLI checked
-every stage before the next one started:
-
-```bash
-genoffice capabilities --json                        # which cloud tools MutantcatOffice has configured
-genoffice guide slides design                        # the deck workflow and layout library
-genoffice image "the eight planets in a row …" --aspect 16:9 --out deck/assets/cover.jpg
-genoffice slides check deck/outline.json --json      # 8 pages, no findings
-genoffice slides check deck/pages/01.json --json     # builds one slide, audits overflow and overlap
-…                                                    # one page file per slide, fixed until each check is clean
-genoffice create --type pptx --spec deck/pages --outline deck/outline.json --out deck/solar-system.pptx --json
-genoffice slides render deck/solar-system.pptx --out deck/shots --json
-genoffice slides audit deck/solar-system.pptx --json    # 8 slides, no layout issues
-genoffice slides replace deck/solar-system.pptx --slide 4 --spec deck/pages/05.json --json
-genoffice open deck/solar-system.pptx
-```
-
-No model call happens inside `genoffice`: the agent does the thinking, the CLI
-does the building and the checking, and the result opens in MutantcatOffice or
-PowerPoint as an ordinary `.pptx`.
-
-### MCP server
-
-The same commands are available as [Model Context Protocol](https://modelcontextprotocol.io)
-tools, for assistants that cannot run a terminal or that you would rather not
-give one. There are two ways in, both shown with copy-ready snippets in
-**Settings → Integrations → MCP**:
-
-| Way                                   | What it is                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **A · `genoffice mcp`** (recommended) | A stdio server the assistant starts itself; MutantcatOffice does not need to be open. One tool per command (`info`, `convert`, `create_docx`, `create_xlsx`, `create_pptx`, `create_pdf`, `docs_read` / `docs_apply` / `docs_check`, `sheet_*`, `slides_*`, `render`, `guide`, `search`, `image`, `media`, `open`) plus the staged deck flow `deck_start` → `deck_page` → `deck_build` → `deck_replace`. Ops, specs and Markdown are passed inline, so a client without a file system still works. |
-| **B · Local HTTP server**             | Runs inside the MutantcatOffice app on `http://127.0.0.1:3093/mcp` (Streamable HTTP, with legacy SSE). Its tools drive a visible Word editor tab: `create_session`, `insert_content`, `replace_blocks`, `apply_ops`, `read_document`, `save_session`, and you watch the document take shape. Off by default; switch it on in the same settings pane.                                                                                                                                               |
-| **C · `genoffice mcp --http`**        | The stdio tool set as a Streamable HTTP server for clients on other machines: a container, a sandbox, a shared box on your network. Files travel with the calls: `PUT /files/<name>` uploads one and returns a URL, every `file` parameter takes an http(s) URL, and a tool that writes a file hands it back as a download URL plus, when small, the bytes as an MCP resource. `--host 0.0.0.0` opens it to the network, `--token` protects it.                                                    |
-
-```bash
-# Claude Code
-claude mcp add --transport stdio genoffice -- genoffice mcp
-```
-
-```jsonc
-// Cursor, Claude Desktop or any other MCP client
-{ "mcpServers": { "genoffice": { "command": "genoffice", "args": ["mcp"] } } }
-```
-
-```bash
-# On the machine that has MutantcatOffice (private network; add --token for a shared box)
-genoffice mcp --http 3093 --host 0.0.0.0 --token "$GENOFFICE_MCP_TOKEN"
-
-# From the client: upload, then use the URL wherever a tool takes a file
-curl -T report.docx -H "Authorization: Bearer $GENOFFICE_MCP_TOKEN" http://server:3093/files/
-#   → { "url": "http://server:3093/files/<id>/report.docx", ... }
-#   docs_read({ "file": "http://server:3093/files/<id>/report.docx" })
-#   docs_apply(...) → output_url, downloadable with curl -o
-```
-
-Over HTTP every session gets a private scratch folder, relative paths and deck
-folders resolve inside it, `open` is not offered, and with
-`GENOFFICE_ALLOWED_ROOTS` unset the tools cannot leave the server's own file
-store. `render`, `convert` to PDF and `create_pdf` still start a hidden
-MutantcatOffice process, so a headless host needs the app installed and a virtual
-display (`xvfb-run`).
-
-`genoffice` here is the CLI shipped inside the app (on macOS
-`/Applications/MutantcatOffice.app/Contents/Resources/cli/genoffice`; the settings
-pane prints the exact path for your install). The server carries its own
-workflow instructions and exposes the op references as `genoffice://guide/*`
-resources, so no skill is needed; the skill and the MCP server can coexist and
-the assistant picks one. Cloud features (`search`, `image`, `media`) still go
-through the provider configured in MutantcatOffice; everything else runs locally, and
-`GENOFFICE_ALLOWED_ROOTS` confines every tool to the folders you list.
-
-The renewable-energy deck in the [demo](#demo) is what one prompt in Claude Code
-with only the `genoffice` MCP server attached looks like from the protocol
-side:
-
-```text
-capabilities · guide(slides, spec) · guide(slides, design)
-search(query) ×4                         → IEA, BNEF and IRENA figures for the slides
-search(query, images) ×7 · media(url, ask) ×7
-                                         → candidate photos, each one checked to be a real photograph
-deck_start(dir, style, outline)          → outline checked: 8 pages to write
-deck_page(dir, 0, page) … deck_page(dir, 7, page)
-                                         → each page checked against the outline and the palette; one page sent again
-deck_build(dir, out)                     → renewables-2026.pptx, no image failures
-slides_audit(file) · slides_render(file, out)
-                                         → no layout findings; 8 PNGs come back as image content
-deck_replace(dir, n, page) ×3 · slides_render(file, out)
-                                         → three pages fixed after looking at the renders
-```
-
-Thirty-eight calls, about thirteen minutes, and the assistant never touched a
-shell: the figures, the photos, the guides, the checks and the renders all
-travelled as MCP tool results. Only `search` and `media` left the machine, to
-the provider configured in MutantcatOffice.
-
-## Download
-
-| Platform                             | Requirements                                          | Download                                                                                                    |
-| ------------------------------------ | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| **macOS** — Apple Silicon (arm64)    | macOS 11+                                             | [Latest `.dmg` (arm64)](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)         |
-| **macOS** — Intel (x64)              | macOS 11+                                             | [Latest `.dmg` (x64)](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)           |
-| **Windows** (x64, most PCs)          | Windows 10+, Intel/AMD                                | [Latest `-x64.exe` installer](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)   |
-| **Windows** on Arm (ARM64)           | Windows 11 on Arm (Snapdragon X and similar)          | [Latest `-arm64.exe` installer](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest) |
-| **Linux** — Debian / Ubuntu          | x86_64, glibc 2.34+ (Ubuntu 22.04 or newer)           | [Latest `.deb`](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)                 |
-| **Linux** — Fedora / RHEL / openSUSE | x86_64, glibc 2.34+ (Fedora 35+, RHEL 9+, Leap 15.6+) | [Latest `.rpm`](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)                 |
-| **Linux** — other distributions      | x86_64, glibc 2.34+, FUSE 2                           | [Latest `.AppImage`](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)            |
-| **Linux** — ARM64 (arm64)            | glibc 2.34+, FUSE 2                                   | [Latest `.AppImage` (arm64)](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases/latest)    |
-
-All builds come from the version tags published to [Releases](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases). The macOS dmgs are ad-hoc signed (not notarized), so Gatekeeper may still show a developer-unverified warning; Windows and Linux installers are unsigned unless signing credentials are configured in CI.
-Older versions are on the [Releases](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases) page.
-
-<details>
-<summary><b>Installing on Linux</b></summary>
-
-The deb installs with apt — it pulls in the dependencies and adds MutantcatOffice
-to the applications menu:
-
-```bash
+# Debian / Ubuntu
 sudo apt install ./genoffice_<version>_amd64.deb
-```
 
-On Fedora / RHEL-family / openSUSE, install the rpm instead:
+# Fedora / RHEL
+sudo dnf install ./genoffice-<version>.x86_64.rpm
 
-```bash
-sudo dnf install ./genoffice-<version>.x86_64.rpm     # Fedora / RHEL family
-sudo zypper install ./genoffice-<version>.x86_64.rpm  # openSUSE
-```
-
-The AppImage runs in place: install the FUSE 2 runtime
-(`sudo apt install libfuse2`; on Ubuntu 24.04 the package is `libfuse2t64`),
-make the file executable, then run it:
-
-```bash
+# AppImage
 chmod +x MutantcatOffice-<version>.AppImage
 ./MutantcatOffice-<version>.AppImage
 ```
 
-</details>
+### 四、快速上手
 
-## How it works
+1. 安装应用并打开文档或工作目录。
+2. 在设置中填写任一受支持 AI 提供方的密钥。
+3. 在编辑器中通过 AI 面板提出操作请求，编辑以可回滚的差异或修订呈现。
+4. 需要自动化时使用命令行：
 
-Seven Electron apps — Docs, Sheets, Slides, PDF, Markdown, HTML and the
-tabbed shell — share one engine layer of pure TypeScript packages plus a Rust
-sidecar for `.xlsx`. The original file is always the source of truth: edits
-are applied as narrow patches, and everything the editor did not touch
-survives the round trip untouched.
-
-```
-open docx ─► archive original by hash (never touched)
-          ─► parse word/document.xml into a block tree, each block anchored to its original XML
-          ─► Tiptap editor (manual + AI editing, dirty tracking)
-save      ─► dirty blocks → OOXML fragments (referencing existing styles only)
-          ─► splice into the original document.xml; untouched blocks keep their bytes
-          ─► repack the zip; every other entry is copied byte-for-byte
+```bash
+genoffice --version
+genoffice info report.docx --json
+genoffice convert report.md --to pdf
+genoffice create --type docx --from notes.md --out notes.docx
+genoffice docs read report.docx --range 0-9 --json
+genoffice render report.docx --out shots/
+genoffice open sales.xlsx
 ```
 
-## Development
+### 五、接口说明
+
+#### 命令行 `genoffice`
+
+- 说明：以无头方式执行与桌面应用相同的文件引擎，提供检测、转换、创建、读取、编辑和渲染。
+- 请求方式：终端命令，支持 `--json` 输出。
+- 完整命令列表见 `genoffice help`，详细参考见 `packages/cli/README.md`。
+
+#### MCP 服务
+
+- 说明：将同一套命令暴露为 Model Context Protocol 工具，供编码代理直接调用。
+- 启用方式：
+
+```bash
+claude mcp add --transport stdio genoffice -- genoffice mcp
+```
+
+```jsonc
+{
+  "mcpServers": {
+    "genoffice": { "command": "genoffice", "args": ["mcp"] },
+  },
+}
+```
+
+- 应用内设置页也可开启本地 HTTP 服务（`http://127.0.0.1:3093/mcp`），使代理在可见的 Word 编辑器中构建文档。
+
+#### Agent Skill
+
+- 说明：随应用分发，安装到 Claude Code、Codex、Cursor、Gemini CLI、GitHub Copilot、OpenCode、Windsurf 等技能兼容代理。
+- 安装方式：应用内 Settings → Integrations，或 `npx skills add Mutantcat-Working-Group/MutantcatOffice`。
+
+### 六、开发进度
+
+- [x] 文档（Docs）：`.docx` 读取、编辑、修订与格式化
+- [x] 表格（Sheets）：`.xlsx` 编辑、公式、图表与透视表
+- [x] 演示（Slides）：`.pptx` 生成、编辑与设计检查
+- [x] PDF：本地编辑与转换
+- [x] Markdown 与 HTML：编辑、预览与导出 Word
+- [x] 本地全文搜索与可选 Jev 重排序
+- [x] `genoffice` 命令行、Agent Skill 与 MCP 服务
+- [x] 三平台安装包发布流水线
+- [ ] Android 与 iOS 移动端
+- [ ] 多人实时协作
+
+### 七、开发与构建
 
 ```bash
 npm install
-npm run fixtures     # generate test .docx fixtures
-npm test             # engine + app unit tests (docs/sheets/slides need no display)
-npm run typecheck    # tsc --noEmit across every workspace
-npm run dev          # all six editors + shell against Vite dev servers
-npm run dev:docs     # a single app (same pattern works per workspace)
-npm run dist:mac     # package macOS dmg (regenerates third-party notices)
-npm run dist:win     # package Windows nsis installer
-npm run dist:linux   # package Linux AppImage + deb + rpm
+npm run fixtures    # 生成测试文档
+npm test            # 单元测试
+npm run typecheck   # 类型检查
+npm run dev         # 启动全部编辑器与桌面壳
+npm run dist:mac    # macOS dmg
+npm run dist:win    # Windows nsis 安装包
+npm run dist:linux  # Linux deb / rpm / AppImage
 ```
 
-The sheets app additionally needs a Rust toolchain for its xlsx sidecar
-(`cargo` on PATH); `npm run build -w @genoffice/sheets` compiles it
-automatically.
-
-## Community
-
-MutantcatOffice is in active development and your feedback shapes it.
-
-- **Report a bug or request a feature** in
-  [GitHub Issues](https://github.com/Mutantcat-Working-Group/MutantcatOffice/issues).
-- **Follow releases and what is being built next** on the
-  [Releases](https://github.com/Mutantcat-Working-Group/MutantcatOffice/releases) page.
-- **Star the repo** if MutantcatOffice is useful to you — it is the best way to
-  support the project.
-
-## FAQ
-
-<details>
-<summary><b>Is MutantcatOffice free?</b></summary>
-
-Yes. MutantcatOffice is free and open-source under the Apache-2.0 license — no
-trial, no paid tier for the apps themselves.
-
-</details>
-
-<details>
-<summary><b>Can MutantcatOffice open Microsoft Word, Excel and PowerPoint files?</b></summary>
-
-Yes. MutantcatOffice opens and saves native `.docx`, `.xlsx` and `.pptx` files.
-Saving is byte-preserving: parts of the file you didn't touch are written
-back byte-for-byte, so documents keep working in Microsoft Office.
-
-</details>
-
-<details>
-<summary><b>Does MutantcatOffice work offline?</b></summary>
-
-Document editing is fully local — files never leave your machine to be
-opened, edited, saved or converted. The AI features (agents, search, image
-tools) need a network connection, with either a Genspark sign-in or your own
-model API key.
-
-</details>
-
-<details>
-<summary><b>Can MutantcatOffice edit PDF files?</b></summary>
-
-Yes — real PDF text and image editing that rewrites the page content stream
-with the original fonts preserved, not cover-up annotations.
-
-</details>
-
-<details>
-<summary><b>Can MutantcatOffice convert PDF to Word, Excel or PowerPoint?</b></summary>
-
-Yes — entirely on-device: PDFium character-level extraction plus
-geometry-based layout analysis, no cloud service, no upload. Scanned pages
-are covered too: on macOS and Windows the system OCR reads them, so they
-convert to editable text rather than a page image.
-
-</details>
-
-<details>
-<summary><b>Can I use my own AI model or API key?</b></summary>
-
-Yes. Besides the keyless Genspark sign-in, MutantcatOffice supports bring your own
-key for Claude, OpenAI, Gemini, DeepSeek, Kimi, GLM, Qwen, Doubao, MiniMax,
-Grok, Mistral, OpenRouter, Requesty, Opper and OpenCode Zen/Go, plus any OpenAI-compatible
-endpoint — including local model servers. Search, image generation and
-image/video analysis take their own keys under Settings → AI Media & Search.
-
-</details>
-
-<details>
-<summary><b>Can MutantcatOffice convert HTML to Word?</b></summary>
-
-Yes — Export as Word in the HTML app produces a native, editable `.docx`
-entirely on-device. The page is rendered in the built-in Chromium and reduced
-to real Word structures: headings, paragraphs, lists, tables, cards, KPI rows,
-form fields and page backgrounds; only visuals with no Word counterpart
-(charts, icons, decorated boxes) are embedded as pictures.
-
-</details>
-
-<details>
-<summary><b>Can I drive MutantcatOffice from Claude Code, Codex, Cursor or a script?</b></summary>
-
-Yes. MutantcatOffice installs a `genoffice` command line that runs the same engines
-headless: inspect, convert, create, read and edit documents from a terminal or
-a script, with `--json` output for programs. The bundled agent skill teaches
-Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, OpenCode and Windsurf
-to use it; install it from **Settings → Integrations**. See
-[Command line and agent skill](#command-line-and-agent-skill).
-
-</details>
-
-<details>
-<summary><b>Does MutantcatOffice collect any data?</b></summary>
-
-Official packaged builds send limited usage analytics by default, and you can
-disable reporting at any time under Settings → General. Analytics never sends
-document content, file names, file paths, account identity or email
-addresses. See [MutantcatOffice Privacy](PRIVACY.md) for the complete event and
-data disclosures.
-
-</details>
-
-## Security
-
-See [SECURITY.md](SECURITY.md) for the process security posture (renderer
-sandboxing, IPC validation, external-link gating) and the threat models for
-AI-generated content.
-
-## Acknowledgements
-
-MutantcatOffice is a fork of [genspark-ai/genoffice](https://github.com/genspark-ai/genoffice).
-Thank the original project and its authors for the excellent open-source work;
-this repository continues to maintain and improve on top of it.
-
-MutantcatOffice would not be possible without these open-source projects:
-
-- [Electron](https://www.electronjs.org/) — the desktop runtime for every app.
-- [Univer](https://github.com/dream-num/univer) (Apache-2.0) — the spreadsheet
-  UI core that Sheets extends.
-- [PDFium](https://pdfium.googlesource.com/pdfium/) (BSD-3-Clause, bundled via
-  [@embedpdf/pdfium](https://github.com/embedpdf/embed-pdf-viewer)) — the
-  content-stream engine behind true PDF text and image editing.
-- [pdf.js](https://github.com/mozilla/pdf.js) (Apache-2.0) and
-  [pdf-lib](https://github.com/Hopding/pdf-lib) (MIT) — PDF rendering and
-  document assembly.
-- [Tiptap](https://tiptap.dev/) / [ProseMirror](https://prosemirror.net/) —
-  the block editors in Docs and Markdown.
-- [CodeMirror](https://codemirror.net/) (MIT) — the source editor in HTML.
-- [Konva](https://konvajs.org/) — canvas rendering for Slides and Sheets
-  charts.
-- [HarfBuzz](https://github.com/harfbuzz/harfbuzz) (wasm) — text-shaping
-  metrics for complex scripts.
-- [calamine](https://github.com/tafia/calamine) and
-  [IronCalc](https://github.com/ironcalc/IronCalc) — the read and calc layers
-  of the Rust xlsx sidecar.
-- [libeot](https://github.com/umanwizard/libeot) (MPL-2.0) — the MicroType
-  Express decoder for embedded PowerPoint fonts, ported to TypeScript.
-- [React](https://react.dev/) (MIT) — the UI layer of every app.
-- [Mermaid](https://mermaid.js.org/) (MIT) and [KaTeX](https://katex.org/)
-  (MIT) — diagrams and math in Markdown and Docs.
-- [opentype.js](https://opentype.js.org/) (MIT) — font parsing for metrics
-  and glyph lookup.
-- [JSZip](https://stuk.github.io/jszip/) (MIT) and
-  [fast-xml-parser](https://github.com/NaturalIntelligence/fast-xml-parser)
-  (MIT) — the OOXML container and XML layers.
-- [Fluent UI System Icons](https://github.com/microsoft/fluentui-system-icons)
-  (MIT) — the icon set across the ribbons.
-- [electron-updater](https://www.electron.build/) (MIT) — in-app updates.
-- Liberation, Carlito, Caladea, and Noto CJK fonts (OFL/Apache-2.0) — bundled
-  document fonts.
-
-`npm run notices` regenerates the bundled third-party license summary
-(`tools/gen-third-party-notices.mjs`); all runtime dependencies are
-MIT/Apache-2.0/BSD-3-Clause/OFL.
-
-## License
-
-MutantcatOffice is licensed under the [Apache License 2.0](LICENSE), with one
-exception: the `ee/` directory is reserved for future enterprise modules and
-is covered by the [MutantcatOffice Enterprise License](ee/LICENSE).
-
-The `genoffice` command name and the upstream project's brand assets remain
-the property of their respective owners; this fork is not affiliated with
-the upstream maintainers.
+本项目以 [Apache License 2.0](LICENSE) 开源，安全说明见 [SECURITY.md](SECURITY.md)，隐私说明见 [PRIVACY.md](PRIVACY.md)。

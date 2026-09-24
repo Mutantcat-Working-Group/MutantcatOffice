@@ -3,7 +3,7 @@ import {
   decodeCsvBuffer,
   parseCsv,
   sniffDelimiter,
-} from '@genoffice/xlsx-gateway/gateway/csv-import'
+} from '@mutantcatoffice/xlsx-gateway/gateway/csv-import'
 
 export interface CsvInfo {
   rows: number

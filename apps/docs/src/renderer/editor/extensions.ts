@@ -83,7 +83,7 @@ import {
   type TextboxListMarker,
   type ParaFrame,
   type TextFlowDirection,
-} from '@genoffice/docx-engine'
+} from '@mutantcatoffice/docx-engine'
 import {
   bulletMarkerScale,
   computeListMarkerInfos,

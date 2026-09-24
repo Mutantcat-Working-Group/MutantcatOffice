@@ -16,11 +16,11 @@ import type {
   TransitionKind,
 } from '../../shared/ipc'
 import type { InkPenSettings, InkTool } from '../ink'
-import type { WordArtPreset } from '@genoffice/ui'
+import type { WordArtPreset } from '@mutantcatoffice/ui'
 import type { ChartPresetDef, IconDef, SmartArtDef } from '../insert-presets'
 import type { ZoomMode } from '../zoom-actions'
 import type { SlideThemePreset } from '../themes'
-import type { ChartStyleInfo } from '@genoffice/pptx-render'
+import type { ChartStyleInfo } from '@mutantcatoffice/pptx-render'
 import type { ContextTabRequest } from './context-tabs'
 import { useI18n } from '../i18n/locale'
 import { layoutLabel } from '../layout-names'
@@ -81,7 +81,7 @@ export const FONT_FAMILIES = [
 ]
 
 /** Font size dropdown candidates (pt): the same ladder grow/shrink font walks */
-export { FONT_SIZES } from '@genoffice/pptx-ops/font-size'
+export { FONT_SIZES } from '@mutantcatoffice/pptx-ops/font-size'
 
 /** Font color palette (applied with onMouseDown while editing, so the native picker doesn't steal focus and commit the edit) */
 export const TEXT_COLORS = [

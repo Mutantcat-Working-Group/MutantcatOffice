@@ -14,7 +14,7 @@ done
 here=$(cd "$(dirname "$self")" && pwd)
 
 if [ -n "$GENOFFICE_NODE" ]; then
-  exec "$GENOFFICE_NODE" "$here/genoffice.cjs" "$@"
+  exec "$GENOFFICE_NODE" "$here/mutantcatoffice.cjs" "$@"
 fi
 
 case "$here" in
@@ -27,10 +27,10 @@ case "$here" in
 esac
 
 if [ -n "$app" ] && [ -x "$app" ]; then
-  ELECTRON_RUN_AS_NODE=1 exec "$app" "$here/genoffice.cjs" "$@"
+  ELECTRON_RUN_AS_NODE=1 exec "$app" "$here/mutantcatoffice.cjs" "$@"
 fi
 
-if [ -f "$here/genoffice.cjs" ]; then
-  exec node "$here/genoffice.cjs" "$@"
+if [ -f "$here/mutantcatoffice.cjs" ]; then
+  exec node "$here/mutantcatoffice.cjs" "$@"
 fi
-exec node "$here/../dist/genoffice.cjs" "$@"
+exec node "$here/../dist/mutantcatoffice.cjs" "$@"

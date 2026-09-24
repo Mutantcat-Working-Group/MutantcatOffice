@@ -21,7 +21,7 @@ import {
   positionDecl,
   textEffectDecls,
 } from './text-effects'
-import { symbolGlyph, symbolPuaChar } from '@genoffice/docx-engine'
+import { symbolGlyph, symbolPuaChar } from '@mutantcatoffice/docx-engine'
 import { symbolFontCovers } from '../font-check'
 
 /**

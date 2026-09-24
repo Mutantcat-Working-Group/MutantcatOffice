@@ -1,4 +1,4 @@
-import { notchStep, type ZoomWheelIntent } from '@genoffice/ui'
+import { notchStep, type ZoomWheelIntent } from '@mutantcatoffice/ui'
 
 export const DOCS_ZOOM_MIN = 50
 export const DOCS_ZOOM_MAX = 200

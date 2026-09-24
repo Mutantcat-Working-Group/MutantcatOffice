@@ -138,7 +138,7 @@ export const id = {
   ribbonStylePaneTip: 'Panel Gaya: telusuri semua gaya, buat atau perbarui gaya dari pilihan',
   ribbonMoreStyles: 'Gaya lainnya',
   ribbonGroupStyles: 'Gaya',
-  ribbonAiAssistant: 'Genspark',
+  ribbonAiAssistant: 'Mutantcat AI',
   ribbonAiAssistantTip: 'Buka asisten AI',
   ribbonRemoveTableStyleTip: 'Hapus gaya tabel',
   ribbonNoStyle: 'Tanpa Gaya',

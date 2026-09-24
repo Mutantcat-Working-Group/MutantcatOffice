@@ -4,33 +4,36 @@ import {
   parseRange,
   rangeAddresses,
   type RangeBounds,
-} from '@genoffice/xlsx-gateway/domain/cell-address'
-import { InMemoryWorkbookAdapter } from '@genoffice/xlsx-gateway/domain/in-memory-workbook'
-import type { ChangePlan, WorkbookSnapshot } from '@genoffice/xlsx-gateway/domain/workbook.types'
+} from '@mutantcatoffice/xlsx-gateway/domain/cell-address'
+import { InMemoryWorkbookAdapter } from '@mutantcatoffice/xlsx-gateway/domain/in-memory-workbook'
+import type {
+  ChangePlan,
+  WorkbookSnapshot,
+} from '@mutantcatoffice/xlsx-gateway/domain/workbook.types'
 import type {
   CellFormatPatch,
   FillPatch,
   StyleColorInput,
-} from '@genoffice/xlsx-gateway/domain/workbook-dsl'
+} from '@mutantcatoffice/xlsx-gateway/domain/workbook-dsl'
 import {
   normalizeStyleColor,
   type FillSpec,
   type StyleColor,
-} from '@genoffice/xlsx-gateway/domain/style-color'
+} from '@mutantcatoffice/xlsx-gateway/domain/style-color'
 import {
   readBasicWorkbook,
   type CellEdit,
   type SheetStructuralOps,
-} from '@genoffice/xlsx-gateway/gateway/xlsx-gateway'
+} from '@mutantcatoffice/xlsx-gateway/gateway/xlsx-gateway'
 import {
   parseRelationships,
   parseSheetElements,
   type SheetEditPlan,
-} from '@genoffice/xlsx-gateway/gateway/xlsx-sheets'
-import type { StructuralOp } from '@genoffice/xlsx-gateway/gateway/xlsx-structure'
-import type { DefinedNameEntry } from '@genoffice/xlsx-gateway/gateway/xlsx-defined-names'
-import type { SheetNote } from '@genoffice/xlsx-gateway/gateway/xlsx-notes'
-import type { WorkbookStyleEdit } from '@genoffice/xlsx-gateway/shared/edit-schemas'
+} from '@mutantcatoffice/xlsx-gateway/gateway/xlsx-sheets'
+import type { StructuralOp } from '@mutantcatoffice/xlsx-gateway/gateway/xlsx-structure'
+import type { DefinedNameEntry } from '@mutantcatoffice/xlsx-gateway/gateway/xlsx-defined-names'
+import type { SheetNote } from '@mutantcatoffice/xlsx-gateway/gateway/xlsx-notes'
+import type { WorkbookStyleEdit } from '@mutantcatoffice/xlsx-gateway/shared/edit-schemas'
 import {
   expandToPrimitiveOps,
   isLayoutOp,
@@ -38,7 +41,7 @@ import {
   structuralOpLabel,
   workbookOperationSchema,
   type WorkbookOperation,
-} from '@genoffice/xlsx-gateway/domain/workbook-dsl'
+} from '@mutantcatoffice/xlsx-gateway/domain/workbook-dsl'
 import JSZip from 'jszip'
 import type { PathContext } from '../fs'
 import { classifyOpError } from '../op-errors'

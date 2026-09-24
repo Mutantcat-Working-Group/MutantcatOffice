@@ -3,8 +3,8 @@ import { describe, expect, it } from 'vitest'
 import {
   spillsDynamicArray,
   withFutureFunctionMarkers,
-} from '@genoffice/xlsx-gateway/gateway/future-functions'
-import { dynamicArrayCellMetaIndex } from '@genoffice/xlsx-gateway/gateway/xlsx-gateway'
+} from '@mutantcatoffice/xlsx-gateway/gateway/future-functions'
+import { dynamicArrayCellMetaIndex } from '@mutantcatoffice/xlsx-gateway/gateway/xlsx-gateway'
 
 describe('withFutureFunctionMarkers', () => {
   it('prefixes future functions for storage', () => {

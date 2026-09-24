@@ -4,8 +4,8 @@ import {
   applyPivotSlicer,
   PivotRefreshError,
   recomputePivotData,
-} from '@genoffice/xlsx-gateway/domain/pivot-engine'
-import { parsePivotDefinition } from '@genoffice/xlsx-gateway/gateway/xlsx-pivot'
+} from '@mutantcatoffice/xlsx-gateway/domain/pivot-engine'
+import { parsePivotDefinition } from '@mutantcatoffice/xlsx-gateway/gateway/xlsx-pivot'
 
 /// Minimal definition: single row field (Region: East/West/South) + Sum of Sales (same as the
 /// pivot-filters tests but without <filters>): the slicer drives hidden items directly.

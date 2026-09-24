@@ -4,7 +4,7 @@ import {
   type SaveBlock,
   type SaveOptions,
   type SectionInfo,
-} from '@genoffice/docx-engine'
+} from '@mutantcatoffice/docx-engine'
 import type { OpenDocument } from './docx'
 
 import type {

@@ -1,4 +1,4 @@
-import type { CellBounds } from '@genoffice/xlsx-gateway/domain/chart-visual'
+import type { CellBounds } from '@mutantcatoffice/xlsx-gateway/domain/chart-visual'
 
 export interface FormulaCellLike {
   readonly f?: string | null | undefined | void
