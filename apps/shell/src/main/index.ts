@@ -1,4 +1,4 @@
-// MutantcatOffice — 由异猫工作群（mutantcat.org）发行
+// MutantcatOffice — published by Mutantcat Working Group (mutantcat.org)
 // GitHub: https://github.com/Mutantcat-Working-Group
 import { execSync, spawn } from 'node:child_process'
 import {
