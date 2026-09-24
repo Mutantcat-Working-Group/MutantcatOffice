@@ -885,11 +885,26 @@ export function cssFontFamily(font: string, followAltName = true): string {
     'MutantcatOffice MS Mincho',
     'Noto Serif JP',
   ]
-  const KO_SANS = ['Malgun Gothic', 'MutantcatOffice Sans KR', 'Apple SD Gothic Neo', 'Noto Sans KR']
-  const KO_SERIF = ['MutantcatOffice Batang', 'MutantcatOffice Serif KR', 'MutantcatOffice Myungjo', 'Noto Serif KR']
+  const KO_SANS = [
+    'Malgun Gothic',
+    'MutantcatOffice Sans KR',
+    'Apple SD Gothic Neo',
+    'Noto Sans KR',
+  ]
+  const KO_SERIF = [
+    'MutantcatOffice Batang',
+    'MutantcatOffice Serif KR',
+    'MutantcatOffice Myungjo',
+    'Noto Serif KR',
+  ]
   const TC_SANS = ['Microsoft JhengHei', 'PingFang TC', 'MutantcatOffice Heiti TC', 'Noto Sans TC']
   // 'MutantcatOffice Fullwidth TC' (fonts.css): fullwidth U+FF0D/FF0F/FF3C/FF3F/FF5E whose Songti TC glyphs look half-width
-  const TC_SERIF = ['MutantcatOffice MingLiU', 'MutantcatOffice Fullwidth TC', 'Songti TC', 'Noto Serif TC']
+  const TC_SERIF = [
+    'MutantcatOffice MingLiU',
+    'MutantcatOffice Fullwidth TC',
+    'Songti TC',
+    'Noto Serif TC',
+  ]
   const SC_SANS = ['PingFang SC', 'Microsoft YaHei', CJK_SANS]
   const SC_SERIF = ['MutantcatOffice Songti SC', 'STSong', 'SimSun', CJK_SERIF]
   const nfkc = font.normalize('NFKC')
@@ -991,7 +1006,8 @@ export function cssFontFamily(font: string, followAltName = true): string {
     // claims: hangul lands on Batang (1em, Word probe 2026-09-06). The
     // SC/TC/JP chains carry no hangul, so without this tail Chromium falls to
     // the system sans (Apple SD Gothic Neo, 0.865em) and lines wrap late
-    const hangulTail = !isKr && missingLocally() ? ['MutantcatOffice Batang', 'MutantcatOffice Serif KR'] : []
+    const hangulTail =
+      !isKr && missingLocally() ? ['MutantcatOffice Batang', 'MutantcatOffice Serif KR'] : []
     return `${chain(...head, ...krLatin, ...chainFor, ...hangulTail)},${serif ? 'serif' : 'sans-serif'}`
   }
   if (

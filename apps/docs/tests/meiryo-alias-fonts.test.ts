@@ -33,7 +33,9 @@ describe('Meiryo UI GO', () => {
     rules.find((r) => r.range === range && r.bold === bold)
 
   it('serves kana and JP punctuation from the bundled faces without size-adjust', () => {
-    expect(find(KANA_RANGE)?.src).toBe("url('./MutantcatOfficeUIKanaJP-Regular.woff2') format('woff2')")
+    expect(find(KANA_RANGE)?.src).toBe(
+      "url('./MutantcatOfficeUIKanaJP-Regular.woff2') format('woff2')",
+    )
     expect(find(KANA_RANGE, true)?.src).toBe(
       "url('./MutantcatOfficeUIKanaJP-Bold.woff2') format('woff2')",
     )
