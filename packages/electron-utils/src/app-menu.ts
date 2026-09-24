@@ -571,6 +571,8 @@ export function checkUpdatesMenuItem(labels: AppMenuLabels): MenuItemConstructor
 /** Help > About: a native dialog with the app version — every window's menu
  * gets one, so users can report the exact build they run. */
 export function aboutMenuItem(labels: AppMenuLabels): MenuItemConstructorOptions {
+  // Shown in the About dialog; keeps the publisher attribution next to the version.
+  const publisherLines = '由异猫工作群（mutantcat.org）发行\nGitHub: https://github.com/Mutantcat-Working-Group'
   return {
     label: labels.about,
     click: async () => {
@@ -581,7 +583,7 @@ export function aboutMenuItem(labels: AppMenuLabels): MenuItemConstructorOptions
         type: 'info',
         title: 'MutantcatOffice',
         message: 'MutantcatOffice',
-        detail: `${labels.version} ${version}`,
+        detail: `${labels.version} ${version}\n\n${publisherLines}`,
         buttons: ['OK', labels.copy, ...(canCheck ? [labels.checkUpdates] : [])],
         defaultId: 0,
         cancelId: 0,

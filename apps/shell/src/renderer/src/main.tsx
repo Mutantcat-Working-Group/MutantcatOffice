@@ -1,3 +1,5 @@
+// MutantcatOffice — 由异猫工作群（mutantcat.org）发行
+// GitHub: https://github.com/Mutantcat-Working-Group
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { htmlLang } from '@mutantcatoffice/i18n'

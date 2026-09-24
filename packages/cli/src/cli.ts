@@ -1,3 +1,5 @@
+// MutantcatOffice CLI — 由异猫工作群（mutantcat.org）发行
+// GitHub: https://github.com/Mutantcat-Working-Group
 import { readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'

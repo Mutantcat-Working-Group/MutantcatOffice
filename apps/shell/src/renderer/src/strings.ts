@@ -192,6 +192,7 @@ export const strings = {
     setMcpLogRefresh: '刷新',
     setMcpLogEmpty: '暂无日志',
     setSecAbout: '关于',
+    setPublisher: "发行方",
     setSecIntegrations: '集成',
     intgHeroTitle: '在 AI 助手里使用 MutantcatOffice',
     intgHeroDesc:
@@ -537,6 +538,7 @@ export const strings = {
     setMcpLogRefresh: 'Refresh',
     setMcpLogEmpty: 'No log entries yet',
     setSecAbout: 'About',
+    setPublisher: "Publisher",
     setSecIntegrations: 'Integrations',
     intgHeroTitle: 'Use MutantcatOffice from your AI assistant',
     intgHeroDesc:
@@ -898,6 +900,7 @@ export const strings = {
     setMcpLogRefresh: '更新',
     setMcpLogEmpty: 'ログはまだありません',
     setSecAbout: '情報',
+    setPublisher: "発行元",
     setSecIntegrations: '連携',
     intgHeroTitle: 'AI アシスタントから MutantcatOffice を使う',
     intgHeroDesc:
@@ -1261,6 +1264,7 @@ export const strings = {
     setMcpLogRefresh: '새로 고침',
     setMcpLogEmpty: '로그가 아직 없습니다',
     setSecAbout: '정보',
+    setPublisher: "배포자",
     setSecIntegrations: '연동',
     intgHeroTitle: 'AI 어시스턴트에서 MutantcatOffice 사용하기',
     intgHeroDesc:
@@ -1625,6 +1629,7 @@ export const strings = {
     setMcpLogRefresh: 'Actualiser',
     setMcpLogEmpty: 'Journal vide',
     setSecAbout: 'À propos',
+    setPublisher: "Éditeur",
     setSecIntegrations: 'Intégrations',
     intgHeroTitle: 'Utiliser MutantcatOffice depuis votre assistant IA',
     intgHeroDesc:
@@ -1999,6 +2004,7 @@ export const strings = {
     setMcpLogRefresh: 'Aktualisieren',
     setMcpLogEmpty: 'Keine Einträge',
     setSecAbout: 'Über',
+    setPublisher: "Herausgeber",
     setSecIntegrations: 'Integrationen',
     intgHeroTitle: 'MutantcatOffice aus Ihrem KI-Assistenten nutzen',
     intgHeroDesc:
@@ -2371,6 +2377,7 @@ export const strings = {
     setMcpLogRefresh: 'Actualizar',
     setMcpLogEmpty: 'Aún sin entradas',
     setSecAbout: 'Acerca de',
+    setPublisher: "Editor",
     setSecIntegrations: 'Integraciones',
     intgHeroTitle: 'Usa MutantcatOffice desde tu asistente de IA',
     intgHeroDesc:
@@ -2733,6 +2740,7 @@ export const strings = {
     setMcpLogRefresh: 'รีเฟรช',
     setMcpLogEmpty: 'ยังไม่มีปูม',
     setSecAbout: 'เกี่ยวกับ',
+    setPublisher: "ผู้จัดจำหน่าย",
     setSecIntegrations: 'การเชื่อมต่อ',
     intgHeroTitle: 'ใช้ MutantcatOffice จากผู้ช่วย AI ของคุณ',
     intgHeroDesc:
@@ -3092,6 +3100,7 @@ export const strings = {
     setMcpLogRefresh: 'Segarkan',
     setMcpLogEmpty: 'Belum ada log',
     setSecAbout: 'Tentang',
+    setPublisher: "Penerbit",
     setSecIntegrations: 'Integrasi',
     intgHeroTitle: 'Gunakan MutantcatOffice dari asisten AI Anda',
     intgHeroDesc:
@@ -3455,6 +3464,7 @@ export const strings = {
     setMcpLogRefresh: 'Обновить',
     setMcpLogEmpty: 'Записей пока нет',
     setSecAbout: 'О программе',
+    setPublisher: "Издатель",
     setSecIntegrations: 'Интеграции',
     intgHeroTitle: 'Используйте MutantcatOffice из своего ИИ-ассистента',
     intgHeroDesc:
@@ -3820,6 +3830,7 @@ export const strings = {
     setMcpLogRefresh: 'تحديث',
     setMcpLogEmpty: 'لا توجد سجلات بعد',
     setSecAbout: 'حول',
+    setPublisher: "الناشر",
     setSecIntegrations: 'التكاملات',
     intgHeroTitle: 'استخدم MutantcatOffice من مساعد الذكاء الاصطناعي',
     intgHeroDesc:
@@ -4174,6 +4185,7 @@ export const strings = {
     setMcpLogRefresh: 'Atualizar',
     setMcpLogEmpty: 'Ainda sem registros',
     setSecAbout: 'Sobre',
+    setPublisher: "Editora",
     setSecIntegrations: 'Integrações',
     intgHeroTitle: 'Use o MutantcatOffice a partir do seu assistente de IA',
     intgHeroDesc:
@@ -4532,6 +4544,7 @@ export const strings = {
     setMcpLogRefresh: 'Aggiorna',
     setMcpLogEmpty: 'Nessuna voce di registro',
     setSecAbout: 'Informazioni',
+    setPublisher: "Editore",
     setSecIntegrations: 'Integrazioni',
     intgHeroTitle: 'Usa MutantcatOffice dal tuo assistente IA',
     intgHeroDesc:
@@ -4889,6 +4902,7 @@ export const strings = {
     setMcpLogRefresh: 'Odśwież',
     setMcpLogEmpty: 'Brak wpisów',
     setSecAbout: 'O aplikacji',
+    setPublisher: "Wydawca",
     setSecIntegrations: 'Integracje',
     intgHeroTitle: 'Używaj MutantcatOffice ze swojego asystenta AI',
     intgHeroDesc:
@@ -5223,6 +5237,7 @@ export const strings = {
     setMcpLogRefresh: 'Obnovit',
     setMcpLogEmpty: 'Zatím žádné záznamy',
     setSecAbout: 'O aplikaci',
+    setPublisher: "Vydavatel",
     setSecIntegrations: 'Integrace',
     intgHeroTitle: 'Používejte MutantcatOffice ze svého AI asistenta',
     intgHeroDesc:
@@ -5598,6 +5613,7 @@ export const strings = {
     setMcpLogRefresh: 'Vernieuwen',
     setMcpLogEmpty: 'Nog geen logregels',
     setSecAbout: 'Over',
+    setPublisher: "Uitgever",
     setSecIntegrations: 'Integraties',
     intgHeroTitle: 'MutantcatOffice gebruiken vanuit uw AI-assistent',
     intgHeroDesc:
@@ -5956,6 +5972,7 @@ export const strings = {
     setMcpLogRefresh: 'Segarkan',
     setMcpLogEmpty: 'Belum ada log',
     setSecAbout: 'Perihal',
+    setPublisher: "Penerbit",
     setSecIntegrations: 'Integrasi',
     intgHeroTitle: 'Gunakan MutantcatOffice daripada pembantu AI anda',
     intgHeroDesc:
@@ -6313,6 +6330,7 @@ export const strings = {
     setMcpLogRefresh: 'רענון',
     setMcpLogEmpty: 'עדיין אין רישומים',
     setSecAbout: 'אודות',
+    setPublisher: "מפיץ",
     setSecIntegrations: 'שילובים',
     intgHeroTitle: 'שימוש ב-MutantcatOffice מתוך עוזר ה-AI שלכם',
     intgHeroDesc:
@@ -6661,6 +6679,7 @@ export const strings = {
     setMcpLogRefresh: 'रिफ्रेश',
     setMcpLogEmpty: 'अभी कोई लॉग नहीं',
     setSecAbout: 'जानकारी',
+    setPublisher: "प्रकाशक",
     setSecIntegrations: 'इंटीग्रेशन',
     intgHeroTitle: 'अपने AI असिस्टेंट से MutantcatOffice इस्तेमाल करें',
     intgHeroDesc:
@@ -7011,6 +7030,7 @@ export const strings = {
     setMcpLogRefresh: '重新整理',
     setMcpLogEmpty: '尚無日誌',
     setSecAbout: '關於',
+    setPublisher: '發行方',
     setSecIntegrations: '整合',
     intgHeroTitle: '在 AI 助理中使用 MutantcatOffice',
     intgHeroDesc:
