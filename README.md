@@ -9,6 +9,7 @@
 - 打开并保存原生 `.docx`、`.xlsx`、`.pptx` 文件，编辑 PDF、Markdown 与 HTML。
 - 文件在本地打开、编辑、保存和转换；只有 AI 请求会按所选提供方离开设备。
 - 内置 `genoffice` 命令行、Agent Skill 和 MCP 服务，使编码代理可以直接创建、转换、读取和编辑真实 Office 文件。
+- **发行方** 由异猫工作群（mutantcat.org）发行，GitHub: https://github.com/Mutantcat-Working-Group
 
 核心价值：
 
@@ -161,3 +162,9 @@ npm run dist:linux  # Linux deb / rpm / AppImage
 ```
 
 本项目以 [Apache License 2.0](LICENSE) 开源，安全说明见 [SECURITY.md](SECURITY.md)，隐私说明见 [PRIVACY.md](PRIVACY.md)。
+
+---
+
+## 致谢
+
+本项目是 [genspark-ai/genoffice](https://github.com/genspark-ai/genoffice) 的 Fork，感谢原仓库及其作者的优秀开源工作，本仓库在其基础上继续维护与改进。
