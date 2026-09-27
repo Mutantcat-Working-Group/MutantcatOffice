@@ -30,11 +30,12 @@ const canvas = createCanvas(sourceImage.width, sourceImage.height)
 const context = canvas.getContext('2d')
 context.drawImage(sourceImage, 0, 0)
 
-function renderPng(size, insetRatio = 1) {
+// The source artwork is already full-bleed (the plate reaches the canvas edge),
+// so every platform icon is a plain downscale of it.
+function renderPng(size) {
   const output = createCanvas(size, size)
   const ctx = output.getContext('2d')
-  const inset = (size * (1 - insetRatio)) / 2
-  ctx.drawImage(sourceImage, inset, inset, size - inset * 2, size - inset * 2)
+  ctx.drawImage(sourceImage, 0, 0, size, size)
   return output.toBuffer('image/png')
 }
 
@@ -53,9 +54,9 @@ const iconsetSizes = [
 const iconset = join(shellBuild, 'icon.iconset')
 mkdirSync(iconset, { recursive: true })
 for (const [name, size] of iconsetSizes) {
-  writeFileSync(join(iconset, name), renderPng(size, 824 / 1024))
+  writeFileSync(join(iconset, name), renderPng(size))
 }
-writeFileSync(join(shellBuild, 'icon-mac.png'), renderPng(1024, 824 / 1024))
+writeFileSync(join(shellBuild, 'icon-mac.png'), renderPng(1024))
 
 if (process.platform === 'darwin') {
   execFileSync('iconutil', ['-c', 'icns', iconset, '-o', join(shellBuild, 'icon.icns')], {
