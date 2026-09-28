@@ -109,6 +109,26 @@ jobs:
       - name: Build installers
         run: npm run dist:mac
 
+      - name: Verify macOS DMGs
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          images=(apps/shell/release/*.dmg)
+          test "${#images[@]}" -eq 2
+          for image in "${images[@]}"; do
+            codesign --verify --strict --verbose=2 "${image}"
+            hdiutil verify "${image}"
+            mount="$(mktemp -d)"
+            hdiutil attach -nobrowse -readonly -mountpoint "${mount}" "${image}" >/dev/null
+            test -L "${mount}/Applications"
+            app=("${mount}"/*.app)
+            test "${#app[@]}" -eq 1
+            test -d "${app[0]}"
+            codesign --verify --deep --strict --verbose=2 "${app[0]}"
+            hdiutil detach "${mount}" >/dev/null
+          done
+
       - name: Upload macOS artifacts
         shell: bash
         run: |
@@ -169,6 +189,37 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Prepare Windows self-signed certificate
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $pfx = Join-Path $env:RUNNER_TEMP 'mutantcat-codesign.pfx'
+          $password = 'mutantcat'
+          $cert = New-SelfSignedCertificate `
+            -Subject 'CN=Mutantcat Working Group, O=Mutantcat Working Group, C=CN' `
+            -CertStoreLocation 'Cert:\CurrentUser\My' `
+            -KeyUsage DigitalSignature `
+            -Type CodeSigningCert `
+            -KeyExportPolicy Exportable `
+            -KeyLength 2048 `
+            -HashAlgorithm SHA256 `
+            -NotAfter (Get-Date).AddYears(10)
+          Export-PfxCertificate `
+            -Cert $cert `
+            -FilePath $pfx `
+            -Password (ConvertTo-SecureString -String $password -Force -AsPlainText) | Out-Null
+
+          $signtool = $null
+          foreach ($kit in (Get-ChildItem 'C:\Program Files (x86)\Windows Kits\10\bin' -Directory | Sort-Object Name -Descending)) {
+            $candidate = Join-Path $kit.FullName 'x64\signtool.exe'
+            if (Test-Path $candidate) { $signtool = $candidate; break }
+          }
+          if (-not $signtool) { throw 'signtool.exe not found in the Windows SDK' }
+
+          "GENOFFICE_WIN_SIGNTOOL=$signtool" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+          "GENOFFICE_WIN_PFX=$pfx" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+          "GENOFFICE_WIN_PFX_PASSWORD=$password" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+
       - name: Build installers
         shell: bash
         run: |
@@ -178,6 +229,30 @@ jobs:
           npm run dist:win -w @mutantcatoffice/shell
         env:
           SIDECAR_TARGET: ${{ matrix.sidecar_target }}
+
+      - name: Verify Windows signatures
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $expected = 'CN=Mutantcat Working Group'
+          $files = @(
+            "apps/shell/$env:BUILD_DIR/win-unpacked/MutantcatOffice.exe",
+            "apps/shell/$env:BUILD_DIR/win-unpacked/resources/native/xlsx-sidecar.exe",
+            "apps/shell/$env:BUILD_DIR/win-unpacked/resources/ocr/win-ocr.exe"
+          )
+          $installer = Get-ChildItem "apps/shell/$env:BUILD_DIR" -Filter '*.exe' -File |
+            Where-Object { $_.Name -like 'MutantcatOffice-Setup-*.exe' } |
+            Select-Object -First 1
+          if (-not $installer) { throw 'MutantcatOffice NSIS installer was not produced' }
+          $files += $installer.FullName
+          foreach ($file in $files) {
+            if (-not (Test-Path $file)) { throw "missing signed artifact: $file" }
+            $signature = Get-AuthenticodeSignature $file
+            if (-not $signature.SignerCertificate -or $signature.SignerCertificate.Subject -notlike "*$expected*") {
+              throw "invalid signer for $file : $($signature.Status)"
+            }
+            Write-Host "verified $file"
+          }
 
       - name: Upload Windows installer
         shell: bash

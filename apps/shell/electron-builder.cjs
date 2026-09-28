@@ -46,6 +46,9 @@ function normalizeHttpsBaseUrl(name, value) {
 const updateUrl = process.env.GENOFFICE_UPDATE_URL
 const ga4MeasurementId = process.env.GENOFFICE_GA4_MEASUREMENT_ID
 const ga4ApiSecret = process.env.GENOFFICE_GA4_API_SECRET
+const winSignTool = process.env.GENOFFICE_WIN_SIGNTOOL
+const winSignPfx = process.env.GENOFFICE_WIN_PFX
+const winSignPassword = process.env.GENOFFICE_WIN_PFX_PASSWORD
 const fontCdnUrl = normalizeHttpsBaseUrl(
   'GENOFFICE_FONT_CDN_URL',
   process.env.GENOFFICE_FONT_CDN_URL,
@@ -249,6 +252,18 @@ function assertModuleTreesPresent() {
       )
     }
   }
+}
+
+function signWindowsFile(file, description) {
+  if (!winSignTool || !winSignPfx || !winSignPassword) {
+    throw new Error('GENOFFICE_WIN_SIGNTOOL, GENOFFICE_WIN_PFX, and GENOFFICE_WIN_PFX_PASSWORD are required for Windows signing')
+  }
+  if (!existsSync(file)) throw new Error(`Windows signing target missing: ${file}`)
+  execFileSync(
+    winSignTool,
+    ['sign', '/fd', 'SHA256', '/f', winSignPfx, '/p', winSignPassword, '/d', description, file],
+    { stdio: 'inherit' },
+  )
 }
 
 /** @type {import('electron-builder').Configuration} */
@@ -583,6 +598,9 @@ const config = {
   nsis: {
     oneClick: false,
     allowToChangeInstallationDirectory: true,
+    perMachine: true,
+    installerLanguages: ['zh_CN'],
+    unicode: true,
     // The release workflow runs x64 and arm64 as two matrix jobs that both
     // upload their installer into one Release. The default name
     // ("<productName> Setup <version>.exe") carries no arch, so whichever job
@@ -599,6 +617,10 @@ const config = {
       throw new Error(
         `win extraResources source missing: ${WIN_SIDECAR} (cargo build --target ${winSidecarTarget} first)`,
       )
+    }
+    if (context.electronPlatformName === 'win32' && winSignTool) {
+      signWindowsFile(join(__dirname, WIN_SIDECAR), 'MutantcatOffice xlsx sidecar')
+      signWindowsFile(join(__dirname, WIN_OCR_HELPER), 'MutantcatOffice OCR helper')
     }
   },
   dmg: {
@@ -625,16 +647,14 @@ if (winSignMode) {
   if (winSignMode !== 'test' && winSignMode !== 'production') {
     throw new Error(`GENOFFICE_WIN_SIGN_MODE must be "test" or "production", got "${winSignMode}"`)
   }
+}
+if (winSignTool || winSignPfx || winSignPassword) {
   config.win.signtoolOptions = {
     // Single pass per file: the sha1+sha256 dual-signing default is a
     // pre-Win8 relic and would invoke the hook twice per binary.
     signingHashAlgorithms: ['sha256'],
     sign: (configuration) => {
-      execFileSync(
-        process.execPath,
-        [join(__dirname, '../../scripts/win-sign.cjs'), winSignMode, configuration.path],
-        { stdio: 'inherit' },
-      )
+      signWindowsFile(configuration.path, 'MutantcatOffice')
       return Promise.resolve()
     },
   }
