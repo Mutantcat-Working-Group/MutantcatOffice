@@ -87,7 +87,11 @@
     },
     "nsis": {
       "oneClick": false,
-      "allowToChangeInstallationDirectory": true
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": true,
+      "installerLanguages": [
+        "zh_CN"
+      ]
     }
   },
   "dependencies": {
