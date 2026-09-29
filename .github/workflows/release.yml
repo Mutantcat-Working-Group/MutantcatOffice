@@ -137,16 +137,18 @@ jobs:
 
   win:
     needs: create-release
-    runs-on: windows-latest
+    runs-on: ${{ matrix.runner }}
     timeout-minutes: 120
     strategy:
       matrix:
         include:
           - name: x64
+            runner: windows-latest
             arm64: ''
             sidecar_target: x86_64-pc-windows-msvc
             build_dir: release
           - name: arm64
+            runner: windows-11-arm
             arm64: '1'
             sidecar_target: aarch64-pc-windows-msvc
             build_dir: release-arm64
